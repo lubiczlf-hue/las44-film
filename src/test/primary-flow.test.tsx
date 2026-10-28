@@ -34,6 +34,25 @@ describe('primary visitor flow', () => {
     expect(target).toHaveTextContent('Making of i wypowiedzi twórców')
   })
 
+  it('shows the mobile support button only after scrolling', () => {
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 0 })
+    render(<App />)
+
+  const button = document.querySelector('.mobile-support-cta') as HTMLElement
+
+    expect(button).toHaveAttribute('aria-hidden', 'true')
+    expect(button).not.toHaveClass('mobile-support-cta--visible')
+
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 80 })
+    fireEvent.scroll(window)
+    expect(button).toHaveAttribute('aria-hidden', 'false')
+    expect(button).toHaveClass('mobile-support-cta--visible')
+
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: 0 })
+    fireEvent.scroll(window)
+    expect(button).toHaveAttribute('aria-hidden', 'true')
+  })
+
   it('opens and closes the mobile navigation accessibly', async () => {
     const user = userEvent.setup()
     render(<App />)

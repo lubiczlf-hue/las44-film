@@ -438,14 +438,19 @@
   }
 
   .hero {
-    min-height: 46rem;
-    align-items: end;
-    padding-top: 8rem;
-    background-position: 61% center;
+    --hero-photo-height: clamp(18rem, 88vw, 24rem);
+    --hero-photo-top: 4.5rem;
+    min-height: 0;
+    align-items: flex-start;
+    padding-top: calc(var(--hero-photo-top) + var(--hero-photo-height) + 1.5rem);
+    background-color: #080b09;
+    background-position: right var(--hero-photo-top);
+    background-repeat: no-repeat;
+    background-size: auto var(--hero-photo-height);
   }
 
   .hero::before {
-    background: linear-gradient(0deg, rgba(5, 7, 6, 0.96) 0%, rgba(5, 7, 6, 0.7) 53%, rgba(5, 7, 6, 0.22) 100%);
+    background: linear-gradient(180deg, transparent var(--hero-photo-top), rgba(5, 7, 6, 0.16) 13rem, #080b09 calc(var(--hero-photo-top) + var(--hero-photo-height)));
   }
 
   .hero__content {
@@ -498,24 +503,48 @@
   .mobile-support-cta {
     position: fixed;
     z-index: 18;
-    right: 0.75rem;
-    bottom: max(0.75rem, env(safe-area-inset-bottom));
-    left: 0.75rem;
+    right: 1rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
     display: flex;
-    min-height: 3.5rem;
+    min-height: 2.75rem;
     align-items: center;
     justify-content: center;
+    padding: 0.65rem 1rem;
     background: var(--gold);
     color: #10110f;
-    font-size: 0.72rem;
+    font-size: 0.64rem;
     font-weight: 800;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    box-shadow: 0 0.7rem 2rem rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(0.75rem);
+    transition: opacity 320ms ease, transform 320ms ease, visibility 320ms;
+  }
+
+  .mobile-support-cta--visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    animation: support-glow 3.2s ease-in-out infinite;
   }
 
   .teaser__frame {
     aspect-ratio: 16 / 9;
+  }
+}
+
+@keyframes support-glow {
+  0%, 100% { box-shadow: 0 0.45rem 1.4rem rgba(0, 0, 0, 0.34), 0 0 0.25rem rgba(211, 171, 79, 0.12); }
+  50% { box-shadow: 0 0.55rem 1.6rem rgba(0, 0, 0, 0.38), 0 0 1.1rem rgba(211, 171, 79, 0.52); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-support-cta {
+    transition: none;
+    animation: none;
   }
 }
 

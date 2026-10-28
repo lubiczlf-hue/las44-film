@@ -11,6 +11,7 @@ import { Creator } from './components/Creator'
 import { Partners } from './components/Partners'
 import { Faq } from './components/Faq'
 import { FinalCta } from './components/FinalCta'
+import { MobileSupportCta } from './components/MobileSupportCta'
 import { Footer } from './components/Footer'
 import { siteConfig } from './content/siteConfig'
 import type { SiteConfig } from './content/siteConfig'
@@ -42,7 +43,7 @@ export default function App({ config = siteConfig }: { config?: SiteConfig }) {
         <Faq items={config.faq} contact={config.contact} />
         <FinalCta supportHref={supportHref} />
       </main>
-      <a className="mobile-support-cta" href={supportHref}>Wesprzyj film</a>
+      <MobileSupportCta href={supportHref} />
       <Footer contact={config.contact} producer={config.producer} logo={config.logo} />
     </div>
   )
