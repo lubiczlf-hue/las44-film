@@ -91,7 +91,7 @@ export const siteConfig: SiteConfig = {
   ],
   hero: {
     eyebrow: 'Film fabularny oparty na prawdziwych wydarzeniach',
-    headline: 'Bitwa pod Pecynką. Jeden dzień, który odbiera niewinność.',
+    headline: 'Bitwa pod Pecynką. Jedno ujęcie o honorze, braterstwie i walce o wolność.',
     description:
       'Podczas niemieckiej obławy na żołnierzy AK w Puszczy Białej osiemnastoletni partyzant sparaliżowany moralnymi wątpliwościami musi zabić pierwszy raz, by wydostać się z oblężenia i ocalić przyjaciela.',
     image: '/media/hero-czujna-para-got.jpg',
