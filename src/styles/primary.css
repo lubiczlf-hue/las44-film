@@ -471,7 +471,11 @@
   }
 
   .hero__description {
-    display: none;
+    display: block;
+    max-width: 35rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
 
   .hero__actions .button {

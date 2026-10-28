@@ -597,7 +597,7 @@
   }
 
   .one-take::before {
-    background: linear-gradient(0deg, #090c0a 28%, rgba(6, 8, 7, 0.82) 67%, rgba(6, 8, 7, 0.1) 100%);
+    background: linear-gradient(0deg, rgba(6, 8, 7, 0.88), rgba(6, 8, 7, 0.72) 65%, rgba(6, 8, 7, 0.16) 100%);
   }
 
   .one-take__content {
@@ -607,9 +607,9 @@
   }
 
   .one-take__backdrop {
-    height: auto;
-    object-fit: contain;
-    object-position: center top;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58% center;
   }
 
   .one-take__copy {
