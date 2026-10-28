@@ -438,19 +438,19 @@
   }
 
   .hero {
-    --hero-photo-height: clamp(18rem, 88vw, 24rem);
+    --hero-photo-height: clamp(17rem, 72vw, 20rem);
     --hero-photo-top: 4.5rem;
     min-height: 0;
     align-items: flex-start;
-    padding-top: calc(var(--hero-photo-top) + clamp(9.5rem, 47.5vw, 13rem));
+    padding-top: calc(var(--hero-photo-top) + 6rem);
     background-color: #080b09;
-    background-position: right var(--hero-photo-top);
+    background-position: calc(100% + 5rem) var(--hero-photo-top);
     background-repeat: no-repeat;
     background-size: auto var(--hero-photo-height);
   }
 
   .hero::before {
-    background: linear-gradient(180deg, transparent 14.5rem, rgba(5, 7, 6, 0.68) 18rem, #080b09 calc(var(--hero-photo-top) + var(--hero-photo-height)));
+    background: linear-gradient(90deg, rgba(5, 7, 6, 0.82), rgba(5, 7, 6, 0.2) 56%, transparent 80%), linear-gradient(180deg, transparent 14rem, rgba(5, 7, 6, 0.62) 19rem, #080b09 calc(var(--hero-photo-top) + var(--hero-photo-height)));
   }
 
   .hero__content {
@@ -458,7 +458,7 @@
   }
 
   .hero__eyebrow {
-    max-width: 26ch;
+    max-width: 14ch;
   }
 
   .hero__patrons {
