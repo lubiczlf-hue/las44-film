@@ -442,7 +442,7 @@
     --hero-photo-top: 4.5rem;
     min-height: 0;
     align-items: flex-start;
-    padding-top: calc(var(--hero-photo-top) + var(--hero-photo-height) + 1.5rem);
+    padding-top: calc(var(--hero-photo-top) + clamp(9.5rem, 47.5vw, 13rem));
     background-color: #080b09;
     background-position: right var(--hero-photo-top);
     background-repeat: no-repeat;
@@ -450,7 +450,7 @@
   }
 
   .hero::before {
-    background: linear-gradient(180deg, transparent var(--hero-photo-top), rgba(5, 7, 6, 0.16) 13rem, #080b09 calc(var(--hero-photo-top) + var(--hero-photo-height)));
+    background: linear-gradient(180deg, transparent 14.5rem, rgba(5, 7, 6, 0.68) 18rem, #080b09 calc(var(--hero-photo-top) + var(--hero-photo-height)));
   }
 
   .hero__content {
