@@ -442,7 +442,7 @@
     --hero-photo-top: 4.5rem;
     min-height: 0;
     align-items: flex-start;
-    padding-top: calc(var(--hero-photo-top) + 6rem);
+    padding-top: calc(var(--hero-photo-top) + 2rem);
     background-color: #080b09;
     background-position: calc(100% + 5rem) var(--hero-photo-top);
     background-repeat: no-repeat;
