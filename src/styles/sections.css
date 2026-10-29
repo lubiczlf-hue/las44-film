@@ -597,17 +597,29 @@
   }
 
   .one-take h2 {
-    font-size: clamp(3.05rem, 11vw, 3.4rem);
+    font-size: clamp(2.25rem, 9vw, 3.1rem);
   }
 
   .one-take::before {
-    background: linear-gradient(180deg, rgba(6, 8, 7, 0.02), rgba(6, 8, 7, 0.16) 16rem, #090c0a 32rem);
+    background: linear-gradient(90deg, rgba(6, 8, 7, 0.68), rgba(6, 8, 7, 0.36) 48%, transparent 80%), linear-gradient(180deg, rgba(6, 8, 7, 0.1), rgba(6, 8, 7, 0.08) 75%, #090c0a 100%);
   }
 
   .one-take__content {
+    display: grid;
+    grid-template-rows: clamp(23rem, 120vw, 36rem) auto;
     width: auto;
     margin: 0;
-    padding: clamp(18rem, 95vw, 28rem) var(--page-pad) 5rem;
+    padding: 0 var(--page-pad) 5rem;
+  }
+
+  .one-take__heading {
+    width: min(66%, 18rem);
+    padding-top: 2.5rem;
+  }
+
+  .one-take__subheading {
+    margin-bottom: 0;
+    font-size: clamp(0.83rem, 3.3vw, 1rem);
   }
 
   .one-take__backdrop {

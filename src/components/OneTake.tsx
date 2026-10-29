@@ -18,9 +18,11 @@ export function OneTake({ content }: { content: SiteConfig['oneTake'] }) {
         loading="lazy"
       />
       <div className="one-take__content">
-        <p className="section-kicker">Forma realizacji</p>
-        <h2 id="one-take-title">{content.heading}</h2>
-        <p className="one-take__subheading">{content.subheading}</p>
+        <div className="one-take__heading">
+          <p className="section-kicker">Forma realizacji</p>
+          <h2 id="one-take-title">{content.heading}</h2>
+          <p className="one-take__subheading">{content.subheading}</p>
+        </div>
         <div className="one-take__copy">
           <p><strong>{content.lead}</strong>{renderInline(content.paragraphs[0])}</p>
           {content.paragraphs.slice(1).map((paragraph) => <p key={paragraph}>{renderInline(paragraph)}</p>)}
