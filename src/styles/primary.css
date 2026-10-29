@@ -122,8 +122,8 @@
   object-fit: contain;
 }
 
-.hero__patron--2 img {
-  transform: scale(2);
+.hero__patron--2 {
+  background: radial-gradient(circle 2.05rem at center, #e8ddc7 0 72%, rgba(232, 221, 199, 0.8) 83%, transparent 100%);
 }
 
 .hero h1 {

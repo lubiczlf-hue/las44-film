@@ -377,9 +377,18 @@
   margin-bottom: 3rem;
 }
 
+.partners__group-label {
+  margin-bottom: 0.8rem;
+  color: var(--gold-soft);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .partners__logos {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: start;
   gap: clamp(1rem, 2.2vw, 2rem);
   padding-top: 2rem;
@@ -406,8 +415,20 @@
   object-fit: contain;
 }
 
-.partners__logo--2 .partners__mark img {
-  transform: scale(2);
+.partners__logo--2 .partners__mark {
+  background: radial-gradient(circle 5.2rem at center, #e8ddc7 0 72%, rgba(232, 221, 199, 0.8) 83%, transparent 100%);
+}
+
+.partners__supporting {
+  margin-top: clamp(2rem, 4vw, 4rem);
+}
+
+.partners__logos--supporting {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.partners__logos--supporting .partners__mark {
+  justify-content: flex-start;
 }
 
 .pending-note {

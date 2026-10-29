@@ -131,6 +131,9 @@ it('shows partner artwork without repeated captions', () => {
   const logos = document.querySelectorAll('.partners__logo img')
 
   expect(logos).toHaveLength(4)
+  expect(screen.getByText('Patroni honorowi')).toBeInTheDocument()
+  expect(screen.getByText('Partner rekonstrukcyjny')).toBeInTheDocument()
+  expect(logos[1]).toHaveAttribute('src', '/media/patron-muzeum-wiezniow-transparent.svg')
   expect(logos[3]).toHaveAttribute('src', '/media/grh-zryw-white.png')
   expect(document.querySelectorAll('.hero__patron img')).toHaveLength(3)
   logos.forEach((logo) => {

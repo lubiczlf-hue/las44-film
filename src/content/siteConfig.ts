@@ -212,7 +212,7 @@ export const siteConfig: SiteConfig = {
         alt: 'Muzeum Dom Rodziny Pileckich',
       },
       {
-        src: '/media/patron-muzeum-wiezniow.png',
+        src: '/media/patron-muzeum-wiezniow-transparent.svg',
         alt: 'Muzeum Żołnierzy Wyklętych i Więźniów Politycznych PRL',
       },
       {
