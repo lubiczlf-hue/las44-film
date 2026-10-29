@@ -185,6 +185,15 @@ export const siteConfig: SiteConfig = {
       ],
       image: '/media/atanas-valkov.jpeg',
     },
+    {
+      name: 'Patryk Stefański',
+      role: 'Konsultant historyczny · GRH Zryw',
+      bio: [
+        'Pasjonat i kolekcjoner specjalizujący się w historii polskiego ruchu oporu podczas II wojny światowej. Absolwent Akademii Sztuki Wojennej w Warszawie.',
+        'Założyciel i przewodniczący Grupy Rekonstrukcji Historycznej „Zryw”. Za działalność na rzecz upamiętnienia Powstańców Warszawskich otrzymał odznaczenie „Dumni z Powstańców” przyznane przez Komitet Społeczny ds. obchodów 80. rocznicy Powstania Warszawskiego.',
+      ],
+      image: '/media/patryk-stefanski.jpg',
+    },
   ],
   partners: {
     heading: 'Patroni i sponsorzy',

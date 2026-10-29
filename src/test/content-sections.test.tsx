@@ -138,7 +138,7 @@ it('shows partner artwork without repeated captions', () => {
   })
 })
 
-it('shows the four film creators in order with portraits beside their bios', () => {
+it('shows the five film creators in order with portraits beside their bios', () => {
   render(<App />)
 
   const section = document.getElementById('tworcy') as HTMLElement
@@ -150,9 +150,10 @@ it('shows the four film creators in order with portraits beside their bios', () 
     'Krystian Parol',
     'Martinez Swystun',
     'Atanas Valkov',
+    'Patryk Stefański',
   ])
 
   const portraits = within(section).getAllByRole('img')
-  expect(portraits).toHaveLength(4)
+  expect(portraits).toHaveLength(5)
   portraits.forEach((portrait) => expect(portrait.closest('.creator__person')).not.toBeNull())
 })
