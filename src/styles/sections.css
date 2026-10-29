@@ -415,10 +415,6 @@
   object-fit: contain;
 }
 
-.partners__logo--2 .partners__mark {
-  background: radial-gradient(circle 5.2rem at center, #e8ddc7 0 72%, rgba(232, 221, 199, 0.8) 83%, transparent 100%);
-}
-
 .partners__supporting {
   margin-top: clamp(2rem, 4vw, 4rem);
 }
@@ -429,6 +425,11 @@
 
 .partners__logos--supporting .partners__mark {
   justify-content: flex-start;
+}
+
+.partners__logos--supporting .partners__mark img {
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .pending-note {
