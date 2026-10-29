@@ -194,6 +194,15 @@ export const siteConfig: SiteConfig = {
       ],
       image: '/media/patryk-stefanski.jpg',
     },
+    {
+      name: 'Mikołaj Paciorek',
+      role: 'Konsultant historyczny · GRH Zryw',
+      bio: [
+        'Urodzony 11 lutego 1997 roku w Poznaniu. Działacz społeczny, marszand, kolekcjoner i popularyzator historii. Specjalizuje się w badaniu odznak oddziałów Polskiego Państwa Podziemnego. Interesuje się także falerystyką, pamiątkami wojskowymi, historią Polskich Sił Zbrojnych na Zachodzie oraz materialnym dziedzictwem II wojny światowej.',
+        'Zastępca przewodniczącego Grupy Rekonstrukcji Historycznej „Zryw”.',
+      ],
+      image: '/media/mikolaj-paciorek.png',
+    },
   ],
   partners: {
     heading: 'Patroni i sponsorzy',
