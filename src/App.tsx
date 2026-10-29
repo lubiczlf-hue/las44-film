@@ -30,7 +30,7 @@ export default function App({ config = siteConfig }: { config?: SiteConfig }) {
         supportHref={supportHref}
       />
       <main>
-        <Hero content={config.hero} logo={config.logo} patrons={config.partners.logos} supportHref={supportHref} />
+        <Hero content={config.hero} logo={config.logo} patrons={config.partners.logos.filter((logo) => logo.showInHero !== false)} supportHref={supportHref} />
         <Campaign campaign={campaign} />
         <Teaser teaser={config.teaser} supportHref={supportHref} />
         <TrueStory content={config.trueStory} />

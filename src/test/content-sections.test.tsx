@@ -130,7 +130,9 @@ it('shows partner artwork without repeated captions', () => {
 
   const logos = document.querySelectorAll('.partners__logo img')
 
-  expect(logos).toHaveLength(3)
+  expect(logos).toHaveLength(4)
+  expect(logos[3]).toHaveAttribute('src', '/media/grh-zryw-white.png')
+  expect(document.querySelectorAll('.hero__patron img')).toHaveLength(3)
   logos.forEach((logo) => {
     expect(logo.parentElement).toHaveClass('partners__mark')
     expect(logo.closest('.partners__logo')).not.toBeNull()

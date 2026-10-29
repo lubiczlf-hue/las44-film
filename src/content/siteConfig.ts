@@ -64,7 +64,7 @@ export type SiteConfig = {
   }>
   partners: {
     heading: string
-    logos: Array<{ src: string; alt: string }>
+    logos: Array<{ src: string; alt: string; showInHero?: boolean }>
   }
   faq: PendingContent[]
   contact: {
@@ -218,6 +218,11 @@ export const siteConfig: SiteConfig = {
       {
         src: '/media/patron-muzeum-wykletych.png',
         alt: 'Muzeum Żołnierzy Wyklętych',
+      },
+      {
+        src: '/media/grh-zryw-white.png',
+        alt: 'Grupa Rekonstrukcji Historycznej „Zryw”',
+        showInHero: false,
       },
     ],
   },
