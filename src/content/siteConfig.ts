@@ -94,7 +94,7 @@ export const siteConfig: SiteConfig = {
     headline: 'Bitwa pod Pecynką. Jedno ujęcie o honorze, braterstwie i walce o wolność.',
     description:
       'Podczas niemieckiej obławy na żołnierzy AK w Puszczy Białej osiemnastoletni partyzant sparaliżowany moralnymi wątpliwościami musi zabić pierwszy raz, by wydostać się z oblężenia i ocalić przyjaciela.',
-    image: '/media/hero-czujna-para-got.jpg',
+    image: '/media/hero-czujna-para-got2.jpg',
   },
   campaign: {
     provider: 'pomagam',
