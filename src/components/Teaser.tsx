@@ -43,7 +43,7 @@ export function Teaser({ teaser, supportHref }: TeaserProps) {
           />
         )}
       </div>
-      <a className="text-link" href={supportHref}>Pomóż nam zrealizować cały film <span>↗</span></a>
+      <a className="text-link" href={supportHref}>Pomóż nam ocalić tę historię od zapomnienia. <span>↗</span></a>
     </section>
   )
 }

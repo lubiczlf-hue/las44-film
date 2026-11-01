@@ -524,6 +524,19 @@
   justify-self: end;
 }
 
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.4rem;
+}
+
+.footer__social svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: none;
+}
+
 .footer__producer {
   color: #a7aca5;
 }

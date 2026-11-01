@@ -589,13 +589,18 @@
   }
 
   .hero__patrons {
-    gap: 0.585rem;
-    margin-bottom: 1.2rem;
+    gap: 0.351rem;
+    margin-bottom: 0.8rem;
   }
 
   .hero__patron {
-    width: 5.69rem;
-    height: 3.67rem;
+    width: 3.414rem;
+    height: 2.202rem;
+  }
+
+  .hero__patrons-label {
+    margin-bottom: 0.3rem;
+    font-size: 0.5rem;
   }
 
   .hero__headline {

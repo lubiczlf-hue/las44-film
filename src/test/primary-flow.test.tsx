@@ -27,7 +27,7 @@ describe('primary visitor flow', () => {
     for (const link of screen.getAllByRole('link', { name: 'Wesprzyj film' })) {
       expect(link).toHaveAttribute('href', 'https://pomagam.pl/9crd9m')
     }
-    expect(screen.getByRole('link', { name: /Pomóż nam zrealizować cały film/ })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /Pomóż nam ocalić tę historię od zapomnienia/ })).toHaveAttribute(
       'href',
       'https://pomagam.pl/9crd9m',
     )
