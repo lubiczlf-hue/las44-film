@@ -115,15 +115,16 @@ it('shows the supplied FAQ answers without placeholders', () => {
   expect(screen.getByText(/Chcę przenieść na ekran wspomnienia mojego dziadka/)).toBeInTheDocument()
 })
 
-it('explains the preproduction and production goal with the supplied list', () => {
+it('explains the preproduction and production goal in plain prose', () => {
   render(<App />)
 
   const section = screen.getByRole('heading', { name: 'Na co zbieramy' }).closest('section') as HTMLElement
   expect(within(section).getByText(/Pierwszy etap, który możesz wesprzeć/)).toBeInTheDocument()
-  const items = within(section).getByRole('list').querySelectorAll('li')
-  expect(items).toHaveLength(8)
-  expect(items[0]).toHaveTextContent('Rozwój scenariusza')
-  expect(items[7]).toHaveTextContent('Realizację części zdjęć do filmu')
+  expect(section).toHaveTextContent('rozwój scenariusza')
+  expect(section).toHaveTextContent('konsultacje historyczne i merytoryczne')
+  expect(section).toHaveTextContent('próby aktorskie i techniczne')
+  expect(within(section).queryByRole('list')).not.toBeInTheDocument()
+  expect(section.querySelector('strong')).toBeNull()
   expect(within(section).getByText(/Postprodukcja będzie kolejnym etapem/)).toBeInTheDocument()
 })
 

@@ -273,28 +273,8 @@
   line-height: 1.75;
 }
 
-.budget__copy .budget__intro {
+.budget__copy p:first-child {
   color: var(--paper);
-}
-
-.budget__intro strong,
-.budget__list strong {
-  color: var(--paper);
-  font-weight: 700;
-}
-
-.budget__list {
-  display: grid;
-  gap: 0.9rem;
-  margin: 1.5rem 0 2rem;
-  padding-left: 1.25rem;
-  color: var(--paper-muted);
-  font-size: clamp(0.98rem, 1.16vw, 1.1rem);
-  line-height: 1.6;
-}
-
-.budget__list li::marker {
-  color: var(--gold-soft);
 }
 
 .creator {

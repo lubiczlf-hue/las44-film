@@ -50,9 +50,7 @@ export type SiteConfig = {
   }
   budget: {
     heading: string
-    intro: string
-    items: Array<{ title: string; detail?: string }>
-    closing: string
+    paragraphs: string[]
   }
   creators: Array<{
     name: string
@@ -150,18 +148,10 @@ export const siteConfig: SiteConfig = {
   },
   budget: {
     heading: 'Na co zbieramy',
-    intro: 'Pierwszy etap, który możesz wesprzeć, to fundament powstania filmu — preprodukcja i produkcja.',
-    items: [
-      { title: 'Rozwój scenariusza', detail: 'dokumentację, pracę scenarzysty, redakcję kolejnych wersji i script doctoring.' },
-      { title: 'Konsultacje historyczne i merytoryczne', detail: 'które pomogą zadbać o wiarygodność przedstawionych wydarzeń.' },
-      { title: 'Organizację planu zdjęciowego', detail: 'wybór lokalizacji, logistykę i przygotowanie zaplecza produkcji.' },
-      { title: 'Zaangażowanie profesjonalnej ekipy twórczej i technicznej.' },
-      { title: 'Przygotowanie kostiumów, charakteryzacji i rekwizytów', detail: 'odpowiadających realiom epoki.' },
-      { title: 'Wynajem sprzętu filmowego', detail: 'potrzebnego do realizacji zdjęć w kinowej jakości.' },
-      { title: 'Próby aktorskie i techniczne', detail: 'niezbędne do realizacji filmu w jednym nieprzerwanym ujęciu.' },
-      { title: 'Realizację części zdjęć do filmu.' },
+    paragraphs: [
+      'Pierwszy etap, który możesz wesprzeć, obejmuje preprodukcję i rozpoczęcie produkcji filmu. Zebrane środki przeznaczymy na rozwój scenariusza — dokumentację, pracę scenarzysty, redakcję kolejnych wersji i script doctoring — oraz konsultacje historyczne i merytoryczne, dzięki którym zadbamy o wiarygodność opowieści. Sfinansujemy także wybór lokacji, logistykę i organizację planu, pracę profesjonalnej ekipy twórczej i technicznej, kostiumy, charakteryzację i rekwizyty zgodne z realiami epoki oraz wynajem sprzętu potrzebnego do zdjęć w kinowej jakości. Przeprowadzimy próby aktorskie i techniczne niezbędne do realizacji filmu w jednym nieprzerwanym ujęciu, a następnie zrealizujemy część zdjęć.',
+      'Postprodukcja będzie kolejnym etapem, wymagającym dodatkowego finansowania.',
     ],
-    closing: 'Postprodukcja będzie kolejnym etapem, wymagającym dodatkowego finansowania.',
   },
   creators: [
     {
