@@ -156,7 +156,6 @@ export const siteConfig: SiteConfig = {
       { title: 'Konsultacje historyczne i merytoryczne', detail: 'które pomogą zadbać o wiarygodność przedstawionych wydarzeń.' },
       { title: 'Organizację planu zdjęciowego', detail: 'wybór lokalizacji, logistykę i przygotowanie zaplecza produkcji.' },
       { title: 'Zaangażowanie profesjonalnej ekipy twórczej i technicznej.' },
-      { title: 'Casting aktorów', detail: 'którzy wcielą się w Jerzego, Romka i pozostałych bohaterów.' },
       { title: 'Przygotowanie kostiumów, charakteryzacji i rekwizytów', detail: 'odpowiadających realiom epoki.' },
       { title: 'Wynajem sprzętu filmowego', detail: 'potrzebnego do realizacji zdjęć w kinowej jakości.' },
       { title: 'Próby aktorskie i techniczne', detail: 'niezbędne do realizacji filmu w jednym nieprzerwanym ujęciu.' },

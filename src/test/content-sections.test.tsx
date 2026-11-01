@@ -121,9 +121,9 @@ it('explains the preproduction and production goal with the supplied list', () =
   const section = screen.getByRole('heading', { name: 'Na co zbieramy' }).closest('section') as HTMLElement
   expect(within(section).getByText(/Pierwszy etap, który możesz wesprzeć/)).toBeInTheDocument()
   const items = within(section).getByRole('list').querySelectorAll('li')
-  expect(items).toHaveLength(9)
+  expect(items).toHaveLength(8)
   expect(items[0]).toHaveTextContent('Rozwój scenariusza')
-  expect(items[8]).toHaveTextContent('Realizację części zdjęć do filmu')
+  expect(items[7]).toHaveTextContent('Realizację części zdjęć do filmu')
   expect(within(section).getByText(/Postprodukcja będzie kolejnym etapem/)).toBeInTheDocument()
 })
 
