@@ -137,7 +137,7 @@
   position: absolute;
   z-index: -2;
   inset: 0;
-  background: linear-gradient(90deg, rgba(6, 8, 7, 0.94) 0%, rgba(6, 8, 7, 0.65) 38%, rgba(6, 8, 7, 0.05) 68%), linear-gradient(0deg, rgba(4, 5, 4, 0.64), transparent 48%);
+  background: linear-gradient(90deg, rgba(6, 8, 7, 0.96) 0%, rgba(6, 8, 7, 0.8) 34%, rgba(6, 8, 7, 0.46) 55%, rgba(6, 8, 7, 0.04) 80%), linear-gradient(0deg, rgba(4, 5, 4, 0.64), transparent 48%);
   content: '';
 }
 
@@ -577,7 +577,7 @@
   }
 
   .hero::before {
-    background: linear-gradient(90deg, rgba(5, 7, 6, 0.82), rgba(5, 7, 6, 0.2) 56%, transparent 80%), linear-gradient(180deg, transparent 14rem, rgba(5, 7, 6, 0.62) 19rem, #080b09 calc(var(--hero-photo-top) + var(--hero-photo-height)));
+    background: linear-gradient(90deg, rgba(5, 7, 6, 0.88), rgba(5, 7, 6, 0.28) 56%, transparent 80%), linear-gradient(180deg, transparent 14rem, rgba(5, 7, 6, 0.62) 19rem, #080b09 calc(var(--hero-photo-top) + var(--hero-photo-height)));
   }
 
   .hero__content {

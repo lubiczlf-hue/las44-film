@@ -99,7 +99,7 @@ export const siteConfig: SiteConfig = {
     headline: 'Bitwa pod Pecynką — film oparty na wspomnieniach mojego dziadka, w hołdzie jego pamięci.',
     description:
       'Podczas niemieckiej obławy na żołnierzy AK w Puszczy Białej osiemnastoletni partyzant sparaliżowany moralnymi wątpliwościami musi zabić pierwszy raz, by wydostać się z oblężenia i ocalić przyjaciela.',
-    image: '/media/hero-czujna-para-got2.jpg',
+    image: '/media/hero-czujna-para-nowe.jpg',
   },
   campaign: {
     provider: 'pomagam',
