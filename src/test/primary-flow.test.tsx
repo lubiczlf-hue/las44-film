@@ -20,7 +20,7 @@ describe('primary visitor flow', () => {
 
     expect(screen.getByTitle('Postęp zbiórki LAS 44 na Pomagam.pl')).toHaveAttribute(
       'src',
-      'https://pomagam.pl/9crd9m/widget/stream-progress',
+      'https://pomagam.pl/las44/widget/stream-progress',
     )
     expect(screen.queryByText(/^Cel: /)).not.toBeInTheDocument()
     expect(document.querySelector('.hero__patrons-label')).toHaveTextContent('Patronat honorowy')

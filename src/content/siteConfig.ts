@@ -105,7 +105,7 @@ export const siteConfig: SiteConfig = {
     provider: 'pomagam',
     goalAmount: 300000,
     campaignUrl: 'https://pomagam.pl/9crd9m',
-    widgetUrl: 'https://pomagam.pl/9crd9m/widget/stream-progress',
+    widgetUrl: 'https://pomagam.pl/las44/widget/stream-progress',
   },
   teaser: {
     provider: 'none',

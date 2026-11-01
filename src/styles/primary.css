@@ -129,15 +129,21 @@
   isolation: isolate;
   padding: 9rem var(--page-pad) 5rem;
   background-image: var(--hero-image);
-  background-position: center center;
+  background-position: left center;
   background-size: cover;
+}
+
+@media (min-width: 1250px) and (min-aspect-ratio: 16/10) {
+  .hero {
+    background-size: 115% auto;
+  }
 }
 
 .hero::before {
   position: absolute;
   z-index: -2;
   inset: 0;
-  background: linear-gradient(90deg, rgba(6, 8, 7, 0.96) 0%, rgba(6, 8, 7, 0.8) 34%, rgba(6, 8, 7, 0.46) 55%, rgba(6, 8, 7, 0.04) 80%), linear-gradient(0deg, rgba(4, 5, 4, 0.64), transparent 48%);
+  background: linear-gradient(90deg, rgba(6, 8, 7, 0.96) 0%, rgba(6, 8, 7, 0.82) 26%, rgba(6, 8, 7, 0.3) 48%, rgba(6, 8, 7, 0.03) 74%), linear-gradient(0deg, rgba(4, 5, 4, 0.64), transparent 48%);
   content: '';
 }
 
