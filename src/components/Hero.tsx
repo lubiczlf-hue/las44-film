@@ -20,7 +20,7 @@ export function Hero({ content, logo, patrons, supportHref }: HeroProps) {
       <div className="hero__veil" />
       <div className="hero__content">
         <p className="hero__eyebrow">{content.eyebrow}</p>
-        <p className="hero__patrons-label">Patroni honorowi</p>
+        <p className="hero__patrons-label">Patronat honorowy</p>
         <div className="hero__patrons" aria-label="Instytucje wspierające projekt">
           {patrons.map((patron, index) => (
             <span className={`hero__patron hero__patron--${index + 1}`} key={patron.src}>

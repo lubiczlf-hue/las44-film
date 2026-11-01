@@ -6,7 +6,7 @@ export function Partners({ content }: { content: SiteConfig['partners'] }) {
       <div className="partners__inner">
         <p className="section-kicker">Instytucje wspierające projekt</p>
         <h2 id="partners-title">{content.heading}</h2>
-        <p className="partners__group-label">Patroni honorowi</p>
+        <p className="partners__group-label">Patronat honorowy</p>
         <div className="partners__logos">
           {content.logos.slice(0, 3).map((logo, index) => (
             <div className={`partners__logo partners__logo--${index + 1}`} key={logo.src}>

@@ -23,7 +23,7 @@ describe('primary visitor flow', () => {
       'https://pomagam.pl/9crd9m/widget/stream-progress',
     )
     expect(screen.queryByText(/^Cel: /)).not.toBeInTheDocument()
-    expect(document.querySelector('.hero__patrons-label')).toHaveTextContent('Patroni honorowi')
+    expect(document.querySelector('.hero__patrons-label')).toHaveTextContent('Patronat honorowy')
     for (const link of screen.getAllByRole('link', { name: 'Wesprzyj film' })) {
       expect(link).toHaveAttribute('href', 'https://pomagam.pl/9crd9m')
     }
