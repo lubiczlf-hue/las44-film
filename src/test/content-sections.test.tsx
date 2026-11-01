@@ -9,7 +9,7 @@ it('renders the complete editorial path without a rewards area', () => {
   expect(screen.getByRole('heading', { name: 'Prawdziwa historia' })).toBeInTheDocument()
   expect(within(document.getElementById('prawdziwa-historia') as HTMLElement).getByText('Rys historyczny')).toBeInTheDocument()
   expect(screen.getByRole('heading', { name: 'Jedno nieprzerwane ujęcie.' })).toBeInTheDocument()
-  expect(screen.getByRole('heading', { name: 'Na co zbieramy 500 000 zł' })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: 'Na co zbieramy' })).toBeInTheDocument()
   expect(screen.getByRole('heading', { name: 'Patroni i sponsorzy' })).toBeInTheDocument()
   expect(screen.queryByRole('heading', { name: 'Harmonogram realizacji' })).not.toBeInTheDocument()
   expect(screen.queryByText(/pakiety wsparcia/i)).not.toBeInTheDocument()
@@ -81,7 +81,7 @@ it('places Romeks story and its title after the true story', () => {
   expect(within(story).getByText(/To przejmująca opowieść o braterstwie broni/)).toBeInTheDocument()
 })
 
-it('opens Teaser i przygotowania from O filmie and puts Forma realizacji below it', () => {
+it('opens Zapowiedź filmu i przygotowania from O filmie and puts Forma realizacji below it', () => {
   render(<App />)
 
   const link = within(screen.getByRole('navigation', { name: 'Główna nawigacja' })).getByRole('link', { name: 'O filmie' })
@@ -89,20 +89,20 @@ it('opens Teaser i przygotowania from O filmie and puts Forma realizacji below i
   const oneTake = screen.getByRole('heading', { name: 'Jedno nieprzerwane ujęcie.' }).closest('section') as HTMLElement
 
   expect(link).toHaveAttribute('href', '#o-filmie')
-  expect(within(section).getByText('Teaser i przygotowania')).toBeInTheDocument()
+  expect(within(section).getByText('Zapowiedź filmu i przygotowania')).toBeInTheDocument()
   expect(within(section).getByRole('heading', { name: 'Pierwszy krok już zrobiliśmy' })).toBeInTheDocument()
   expect(section.compareDocumentPosition(oneTake) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
 })
 
-it('reserves the second film for making of and creator interviews', () => {
+it('reserves the second film for the creators and their interviews', () => {
   render(<App />)
 
   const section = document.getElementById('o-filmie') as HTMLElement
-  const film = within(section).getByRole('heading', { name: 'Making of i wypowiedzi twórców' }).closest('#making-of') as HTMLElement
+  const film = within(section).getByRole('heading', { name: 'Od twórców' }).closest('#making-of') as HTMLElement
   const copy = section.querySelector('.production__heading') as HTMLElement
 
   expect(within(film).getByText('Film w przygotowaniu')).toBeInTheDocument()
-  expect(within(copy).getByText(/Zobacz making of i posłuchaj wypowiedzi twórców/)).toBeInTheDocument()
+  expect(within(copy).getByText(/Zobacz materiał od twórców i posłuchaj ich wypowiedzi/)).toBeInTheDocument()
   expect(copy.compareDocumentPosition(film) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   expect(within(film).queryByText('Drugi film')).not.toBeInTheDocument()
   expect(section.querySelector('.production__images')).toBeNull()
@@ -117,8 +117,8 @@ it('does not render empty schedule or FAQ answers as invented content', () => {
 it('explains the production goal without a speculative cost breakdown', () => {
   render(<App />)
 
-  const section = screen.getByRole('heading', { name: 'Na co zbieramy 500 000 zł' }).closest('section') as HTMLElement
-  expect(within(section).getByText(/Zbieramy 500 000 zł na preprodukcję i realizację zdjęć do filmu/)).toBeInTheDocument()
+  const section = screen.getByRole('heading', { name: 'Na co zbieramy' }).closest('section') as HTMLElement
+  expect(within(section).getByText(/Zbieramy środki na preprodukcję i realizację zdjęć do filmu/)).toBeInTheDocument()
   expect(within(section).getByText(/Postprodukcja nie jest objęta tą zbiórką/)).toBeInTheDocument()
   expect(within(section).getByText(/Narzędzia AI chcemy wykorzystać pomocniczo/)).toBeInTheDocument()
   expect(within(section).queryByRole('list')).not.toBeInTheDocument()
@@ -131,7 +131,7 @@ it('shows partner artwork without repeated captions', () => {
   const logos = document.querySelectorAll('.partners__logo img')
 
   expect(logos).toHaveLength(4)
-  expect(screen.getByText('Patroni honorowi')).toBeInTheDocument()
+  expect(within(document.getElementById('patroni') as HTMLElement).getByText('Patroni honorowi')).toBeInTheDocument()
   expect(screen.getByText('Grupa rekonstrukcyjna')).toBeInTheDocument()
   expect(logos[1]).toHaveAttribute('src', '/media/patron-muzeum-wiezniow-transparent.png')
   expect(logos[3]).toHaveAttribute('src', '/media/grh-zryw-white.png')

@@ -7,10 +7,10 @@ export function ProductionGallery({ content }: { content: SiteConfig['production
   return (
     <section className="production section" id="o-filmie" aria-labelledby="production-title">
       <div className="production__heading">
-        <p className="section-kicker">Teaser i przygotowania</p>
+        <p className="section-kicker">Zapowiedź filmu i przygotowania</p>
         <h2 id="production-title">{content.heading}</h2>
         <p>
-          Teaser pozwolił sprawdzić język wizualny filmu, pracę kamery oraz rytm scen rozgrywających się w lesie. Zobacz making of i posłuchaj wypowiedzi twórców.
+          Zapowiedź filmu pozwoliła sprawdzić język wizualny filmu, pracę kamery oraz rytm scen rozgrywających się w lesie. Zobacz materiał od twórców i posłuchaj ich wypowiedzi.
         </p>
       </div>
       <div className="production__film" id="making-of">

@@ -15,23 +15,38 @@ describe('primary visitor flow', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'LAS 44 — oficjalny logotyp filmu' })).toBeInTheDocument()
   })
 
-  it('explains that support is not open instead of showing fake totals', () => {
+  it('shows the live Pomagam widget and sends every support button to the fundraiser', async () => {
     render(<App />)
 
-    expect(screen.getByText('Zbiórka wkrótce')).toBeInTheDocument()
-    expect(screen.getByText('Cel: 500 000 zł')).toBeInTheDocument()
-    expect(screen.queryByText(/zebrano/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/wspierających/i)).not.toBeInTheDocument()
+    expect(screen.getByTitle('Postęp zbiórki LAS 44 na Pomagam.pl')).toHaveAttribute(
+      'src',
+      'https://pomagam.pl/9crd9m/widget/stream-progress',
+    )
+    expect(screen.queryByText(/^Cel: /)).not.toBeInTheDocument()
+    expect(document.querySelector('.hero__patrons-label')).toHaveTextContent('Patroni honorowi')
+    for (const link of screen.getAllByRole('link', { name: 'Wesprzyj film' })) {
+      expect(link).toHaveAttribute('href', 'https://pomagam.pl/9crd9m')
+    }
+    expect(screen.getByRole('link', { name: /Pomóż nam zrealizować cały film/ })).toHaveAttribute(
+      'href',
+      'https://pomagam.pl/9crd9m',
+    )
+
+    await userEvent.setup().click(screen.getByRole('button', { name: 'Otwórz menu' }))
+    expect(screen.getByRole('dialog', { name: 'Menu' }).querySelector('a.button--gold')).toHaveAttribute(
+      'href',
+      'https://pomagam.pl/9crd9m',
+    )
   })
 
-  it('links the making of button to the second film section', () => {
+  it('links the creators button to the second film section', () => {
     render(<App />)
 
-    const link = screen.getByRole('link', { name: 'Obejrzyj making of' })
+    const link = screen.getByRole('link', { name: 'Od twórców' })
     const target = document.getElementById('making-of') as HTMLElement
 
     expect(link).toHaveAttribute('href', '#making-of')
-    expect(target).toHaveTextContent('Making of i wypowiedzi twórców')
+    expect(target).toHaveTextContent('Od twórców')
   })
 
   it('shows the mobile support button only after scrolling', () => {
@@ -101,5 +116,17 @@ describe('primary visitor flow', () => {
     expect(footer).toHaveTextContent('franek@spacefilms.pl')
     expect(footer).not.toHaveTextContent('Regulamin')
     expect(footer).not.toHaveTextContent('Polityka prywatności')
+    expect(screen.getByRole('link', { name: 'LAS 44 na Facebooku' })).toHaveAttribute('href', 'https://www.facebook.com/profile.php?id=61588352177926')
+  })
+
+  it('offers a share link and a direct Facebook share option', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+    await user.click(screen.getByRole('button', { name: 'Udostępnij' }))
+    const dialog = screen.getByRole('dialog', { name: 'Udostępnij film LAS 44' })
+    expect(dialog.querySelector('input')).toHaveValue('https://las44-film-preview.lubiczlf.chatgpt.site/')
+    expect(screen.getByRole('link', { name: 'Udostępnij na Facebooku' })).toHaveAttribute('href', 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flas44-film-preview.lubiczlf.chatgpt.site%2F')
+    await user.keyboard('{Escape}')
+    expect(screen.queryByRole('dialog', { name: 'Udostępnij film LAS 44' })).not.toBeInTheDocument()
   })
 })

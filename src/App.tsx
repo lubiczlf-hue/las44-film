@@ -28,6 +28,7 @@ export default function App({ config = siteConfig }: { config?: SiteConfig }) {
         logo={config.logo}
         navigation={config.navigation}
         supportHref={supportHref}
+        shareUrl={config.social.siteUrl}
       />
       <main>
         <Hero content={config.hero} logo={config.logo} patrons={config.partners.logos.filter((logo) => logo.showInHero !== false)} supportHref={supportHref} />
@@ -44,7 +45,7 @@ export default function App({ config = siteConfig }: { config?: SiteConfig }) {
         <FinalCta supportHref={supportHref} />
       </main>
       <MobileSupportCta href={supportHref} />
-      <Footer contact={config.contact} producer={config.producer} logo={config.logo} />
+      <Footer contact={config.contact} producer={config.producer} logo={config.logo} facebookUrl={config.social.facebookUrl} />
     </div>
   )
 }

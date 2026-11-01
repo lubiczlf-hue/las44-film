@@ -12,7 +12,7 @@ export function Teaser({ teaser, supportHref }: TeaserProps) {
     <section className="teaser section" id="teaser" aria-labelledby="teaser-title">
       <div className="section-heading">
         <p className="section-kicker">Zobacz pierwszy materiał</p>
-        <h2 id="teaser-title">Teaser filmu</h2>
+        <h2 id="teaser-title">Zapowiedź filmu</h2>
       </div>
       <div
         className={`teaser__frame${hasVideo ? ' teaser__frame--active' : ''}`}
@@ -21,7 +21,7 @@ export function Teaser({ teaser, supportHref }: TeaserProps) {
         {!hasVideo ? (
           <div className="teaser__placeholder">
             <span className="teaser__play" aria-hidden="true"><i /></span>
-            <p>Teaser pojawi się tutaj wkrótce</p>
+            <p>Zapowiedź filmu pojawi się tutaj wkrótce</p>
           </div>
         ) : teaser.provider === 'local' ? (
           <video
@@ -30,13 +30,13 @@ export function Teaser({ teaser, supportHref }: TeaserProps) {
             poster={teaser.poster}
             controls
             preload="metadata"
-            aria-label="Teaser filmu LAS 44"
+            aria-label="Zapowiedź filmu LAS 44"
           />
         ) : (
           <iframe
             className="teaser__media"
             src={teaser.source}
-            title="Teaser filmu LAS 44"
+            title="Zapowiedź filmu LAS 44"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

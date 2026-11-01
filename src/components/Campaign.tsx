@@ -7,15 +7,20 @@ export function Campaign({ campaign }: { campaign: CampaignView }) {
         <div className="campaign__intro">
           <p className="section-kicker">Zbiórka na Pomagam.pl</p>
           <h2 id="campaign-title">Pomóż nam opowiedzieć tę historię</h2>
-          <p>Cel: {campaign.goalLabel}</p>
         </div>
-        <iframe
-          className="campaign__widget"
-          src={campaign.widgetUrl}
-          title="Postęp zbiórki LAS 44 na Pomagam.pl"
-          loading="lazy"
-          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-        />
+        <div className="campaign__widget-wrap">
+          <div className="campaign__widget-crop">
+            <iframe
+              className="campaign__widget"
+              src={campaign.widgetUrl}
+              title="Postęp zbiórki LAS 44 na Pomagam.pl"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+            />
+          </div>
+          <img className="campaign__provider-logo" src="/media/pomagam-logo.svg" alt="Pomagam.pl" />
+          <a className="button button--gold" href={campaign.campaignUrl}>Wesprzyj film</a>
+        </div>
       </section>
     )
   }

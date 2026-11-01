@@ -14,7 +14,7 @@ it('embeds a configured YouTube or Vimeo teaser URL', () => {
     />,
   )
 
-  expect(screen.getByTitle('Teaser filmu LAS 44')).toHaveAttribute(
+  expect(screen.getByTitle('Zapowiedź filmu LAS 44')).toHaveAttribute(
     'src',
     'https://www.youtube-nocookie.com/embed/example',
   )
@@ -32,5 +32,5 @@ it('renders a local video file when configured', () => {
     />,
   )
 
-  expect(screen.getByLabelText('Teaser filmu LAS 44')).toHaveAttribute('src', '/media/teaser.mp4')
+  expect(screen.getByLabelText('Zapowiedź filmu LAS 44')).toHaveAttribute('src', '/media/teaser.mp4')
 })

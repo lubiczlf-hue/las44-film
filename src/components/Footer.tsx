@@ -1,9 +1,10 @@
 import type { SiteConfig } from '../content/siteConfig'
 
-export function Footer({ contact, producer, logo }: {
+export function Footer({ contact, producer, logo, facebookUrl }: {
   contact: SiteConfig['contact']
   producer: SiteConfig['producer']
   logo: string
+  facebookUrl: string
 }) {
   return (
     <footer className="footer">
@@ -21,6 +22,7 @@ export function Footer({ contact, producer, logo }: {
         <span className="footer__label">Kontakt</span>
         <a href={`mailto:${contact.email}`}>{contact.email}</a>
         <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a>
+        <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="LAS 44 na Facebooku">Facebook LAS 44 ↗</a>
       </div>
     </footer>
   )

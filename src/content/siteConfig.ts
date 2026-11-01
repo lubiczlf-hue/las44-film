@@ -9,6 +9,7 @@ export type PendingContent = {
 export type SiteConfig = {
   title: string
   logo: string
+  social: { siteUrl: string; facebookUrl: string }
   navigation: Array<{ label: string; href: string }>
   hero: {
     eyebrow: string
@@ -83,6 +84,10 @@ export type SiteConfig = {
 export const siteConfig: SiteConfig = {
   title: 'LAS 44',
   logo: '/media/las44-official-logo.png',
+  social: {
+    siteUrl: 'https://las44-film-preview.lubiczlf.chatgpt.site/',
+    facebookUrl: 'https://www.facebook.com/profile.php?id=61588352177926',
+  },
   navigation: [
     { label: 'Prawdziwa historia', href: '#prawdziwa-historia' },
     { label: 'O filmie', href: '#o-filmie' },
@@ -98,9 +103,9 @@ export const siteConfig: SiteConfig = {
   },
   campaign: {
     provider: 'pomagam',
-    goalAmount: 500000,
-    campaignUrl: '',
-    widgetUrl: '',
+    goalAmount: 300000,
+    campaignUrl: 'https://pomagam.pl/9crd9m',
+    widgetUrl: 'https://pomagam.pl/9crd9m/widget/stream-progress',
   },
   teaser: {
     provider: 'none',
@@ -136,23 +141,23 @@ export const siteConfig: SiteConfig = {
   production: {
     heading: 'Pierwszy krok już zrobiliśmy',
     makingOf: {
-      title: 'Making of i wypowiedzi twórców',
+      title: 'Od twórców',
       provider: 'none',
       source: '',
     },
   },
   budget: {
-    heading: 'Na co zbieramy 500 000 zł',
+    heading: 'Na co zbieramy',
     paragraphs: [
       'Każda wpłata finansuje konkretny etap realizacji. Podział kwot dodamy po zamknięciu planu produkcyjnego.',
-      'Zbieramy 500 000 zł na preprodukcję i realizację zdjęć do filmu. Środki przeznaczymy na przygotowanie planu i pracę ekipy podczas zdjęć. Postprodukcja nie jest objęta tą zbiórką. Historia rozgrywa się głównie w lesie, z niewielką liczbą bohaterów i ograniczoną scenografią. Pozwala to skupić środki na tym, co najważniejsze na ekranie.',
+      'Zbieramy środki na preprodukcję i realizację zdjęć do filmu. Środki przeznaczymy na przygotowanie planu i pracę ekipy podczas zdjęć. Postprodukcja nie jest objęta tą zbiórką. Historia rozgrywa się głównie w lesie, z niewielką liczbą bohaterów i ograniczoną scenografią. Pozwala to skupić środki na tym, co najważniejsze na ekranie.',
       'Formuła jednego ujęcia wymaga starannych prób i precyzyjnej organizacji, ale może ograniczyć liczbę dni zdjęciowych. Narzędzia AI chcemy wykorzystać pomocniczo przy planowaniu ujęć i organizacji produkcji. Dzięki temu zakładamy budżet zdjęciowy niższy niż przy tradycyjnym filmie fabularnym osadzonym w epoce, bez rezygnacji z historycznej wiarygodności i jakości obrazu.',
     ],
   },
   creators: [
     {
       name: 'Franciszek Lubicz-Łapiński',
-      role: 'Autor scenariusza, operator i producent',
+      role: 'Pomysłodawca, operator i producent',
       bio: [
         'Absolwent Wydziału Operatorskiego PWSFTviT im. Leona Schillera w Łodzi oraz Warszawskiej Szkoły Reklamy. Realizował filmy fabularne, dokumentalne i reklamowe w Polsce i za granicą.',
         'Zanim powstał scenariusz, były rozmowy z dziadkiem Jerzym. Jego wspomnienia stały się dla Franciszka początkiem osobistej opowieści o chłopaku, którego wojna zmusza do dorosłości.',
