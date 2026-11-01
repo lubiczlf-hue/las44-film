@@ -34,11 +34,11 @@ export function Hero({ content, logo, patrons, supportHref }: HeroProps) {
         <div className="hero__actions">
           <a className="button button--outline" href="#teaser">
             <span className="play-mark" aria-hidden="true" />
-            Obejrzyj zapowiedź filmu
+            Zobacz zapowiedź filmu
           </a>
           <a className="button button--outline" href="#making-of">
             <span className="play-mark" aria-hidden="true" />
-            Od twórców
+            Twórcy o filmie
           </a>
           <a className="button button--gold" href={supportHref}>Wesprzyj film</a>
         </div>

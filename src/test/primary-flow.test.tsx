@@ -42,7 +42,8 @@ describe('primary visitor flow', () => {
   it('links the creators button to the second film section', () => {
     render(<App />)
 
-    const link = screen.getByRole('link', { name: 'Od twórców' })
+    expect(screen.getByRole('link', { name: 'Zobacz zapowiedź filmu' })).toHaveAttribute('href', '#teaser')
+    const link = screen.getByRole('link', { name: 'Twórcy o filmie' })
     const target = document.getElementById('making-of') as HTMLElement
 
     expect(link).toHaveAttribute('href', '#making-of')
