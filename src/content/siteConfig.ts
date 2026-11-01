@@ -50,7 +50,9 @@ export type SiteConfig = {
   }
   budget: {
     heading: string
-    paragraphs: string[]
+    intro: string
+    items: Array<{ title: string; detail?: string }>
+    closing: string
   }
   creators: Array<{
     name: string
@@ -148,11 +150,19 @@ export const siteConfig: SiteConfig = {
   },
   budget: {
     heading: 'Na co zbieramy',
-    paragraphs: [
-      'Każda wpłata finansuje konkretny etap realizacji. Podział kwot dodamy po zamknięciu planu produkcyjnego.',
-      'Zbieramy środki na preprodukcję i realizację zdjęć do filmu. Środki przeznaczymy na przygotowanie planu i pracę ekipy podczas zdjęć. Postprodukcja nie jest objęta tą zbiórką. Historia rozgrywa się głównie w lesie, z niewielką liczbą bohaterów i ograniczoną scenografią. Pozwala to skupić środki na tym, co najważniejsze na ekranie.',
-      'Formuła jednego ujęcia wymaga starannych prób i precyzyjnej organizacji, ale może ograniczyć liczbę dni zdjęciowych. Narzędzia AI chcemy wykorzystać pomocniczo przy planowaniu ujęć i organizacji produkcji. Dzięki temu zakładamy budżet zdjęciowy niższy niż przy tradycyjnym filmie fabularnym osadzonym w epoce, bez rezygnacji z historycznej wiarygodności i jakości obrazu.',
+    intro: 'Pierwszy etap, który możesz wesprzeć, to fundament powstania filmu — preprodukcja i produkcja.',
+    items: [
+      { title: 'Rozwój scenariusza', detail: 'dokumentację, pracę scenarzysty, redakcję kolejnych wersji i script doctoring.' },
+      { title: 'Konsultacje historyczne i merytoryczne', detail: 'które pomogą zadbać o wiarygodność przedstawionych wydarzeń.' },
+      { title: 'Organizację planu zdjęciowego', detail: 'wybór lokalizacji, logistykę i przygotowanie zaplecza produkcji.' },
+      { title: 'Zaangażowanie profesjonalnej ekipy twórczej i technicznej.' },
+      { title: 'Casting aktorów', detail: 'którzy wcielą się w Jerzego, Romka i pozostałych bohaterów.' },
+      { title: 'Przygotowanie kostiumów, charakteryzacji i rekwizytów', detail: 'odpowiadających realiom epoki.' },
+      { title: 'Wynajem sprzętu filmowego', detail: 'potrzebnego do realizacji zdjęć w kinowej jakości.' },
+      { title: 'Próby aktorskie i techniczne', detail: 'niezbędne do realizacji filmu w jednym nieprzerwanym ujęciu.' },
+      { title: 'Realizację części zdjęć do filmu.' },
     ],
+    closing: 'Postprodukcja będzie kolejnym etapem, wymagającym dodatkowego finansowania.',
   },
   creators: [
     {
