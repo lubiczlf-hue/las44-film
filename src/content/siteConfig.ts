@@ -232,12 +232,12 @@ export const siteConfig: SiteConfig = {
     ],
   },
   faq: [
-    { status: 'pending-content', title: 'Dlaczego powstaje ten film?' },
-    { status: 'pending-content', title: 'Na co zostaną przeznaczone pieniądze?' },
-    { status: 'pending-content', title: 'Kiedy film będzie gotowy?' },
-    { status: 'pending-content', title: 'Gdzie będzie można go zobaczyć?' },
-    { status: 'pending-content', title: 'Czy film można wesprzeć jako firma?' },
-    { status: 'pending-content', title: 'Co stanie się, jeżeli zbiórka przekroczy cel?' },
+    { status: 'pending-content', title: 'Dlaczego powstaje ten film?', answer: 'Chcę przenieść na ekran wspomnienia mojego dziadka i oddać hołd jego pokoleniu. Opowiedzieć o dojrzewaniu, moralnych wyborach i wartościach, o których dziś zbyt łatwo zapominamy.' },
+    { status: 'pending-content', title: 'Na co zostaną przeznaczone pieniądze?', answer: 'Na przygotowanie i realizację zdjęć — pracę aktorów i ekipy, kostiumy, rekwizyty oraz organizację planu. Postprodukcja nie jest objęta podstawowym celem zbiórki.' },
+    { status: 'pending-content', title: 'Kiedy film będzie gotowy?', answer: 'Termin premiery zależy od zebrania środków i harmonogramu produkcji. Podamy go, gdy będziemy mogli potwierdzić realną datę.' },
+    { status: 'pending-content', title: 'Gdzie będzie można go zobaczyć?', answer: 'Bardzo chcielibyśmy, żeby „LAS 44” trafił do kin. Przed nami jeszcze długa droga i nie możemy tego dziś obiecać, ale będziemy do tego dążyć. O pokazach będziemy informować na stronie projektu i w mediach społecznościowych.' },
+    { status: 'pending-content', title: 'Czy film można wesprzeć jako firma?', answer: 'Tak — zapraszamy firmy zainteresowane wsparciem lub współpracą sponsorską. Napisz na franek@spacefilms.pl.' },
+    { status: 'pending-content', title: 'Co stanie się, jeżeli zbiórka przekroczy cel?', answer: 'Obecny cel to minimalna kwota potrzebna na przygotowanie i realizację zdjęć. Jeśli ją osiągniemy, podniesiemy cel zbiórki — większy budżet pozwoli nam lepiej dopracować film i podnieść jakość realizacji.' },
   ],
   contact: {
     email: 'franek@spacefilms.pl',

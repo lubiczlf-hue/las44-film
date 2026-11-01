@@ -108,10 +108,11 @@ it('reserves the second film for the creators and their interviews', () => {
   expect(section.querySelector('.production__images')).toBeNull()
 })
 
-it('does not render empty schedule or FAQ answers as invented content', () => {
+it('shows the supplied FAQ answers without placeholders', () => {
   render(<App />)
 
-  expect(screen.getAllByText('Szczegóły podamy wkrótce').length).toBeGreaterThan(0)
+  expect(screen.queryByText('Szczegóły podamy wkrótce')).not.toBeInTheDocument()
+  expect(screen.getByText(/Chcę przenieść na ekran wspomnienia mojego dziadka/)).toBeInTheDocument()
 })
 
 it('explains the production goal without a speculative cost breakdown', () => {

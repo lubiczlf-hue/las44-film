@@ -119,6 +119,18 @@ describe('primary visitor flow', () => {
     expect(screen.getByRole('link', { name: 'LAS 44 na Facebooku' })).toHaveAttribute('href', 'https://www.facebook.com/profile.php?id=61588352177926')
   })
 
+  it('shows all six FAQ answers and a usable email link for sponsors', () => {
+    render(<App />)
+    const faq = document.getElementById('faq') as HTMLElement
+    expect(faq.querySelectorAll('details')).toHaveLength(6)
+    expect(faq).toHaveTextContent('Chcę przenieść na ekran wspomnienia mojego dziadka')
+    expect(faq).toHaveTextContent('Postprodukcja nie jest objęta podstawowym celem zbiórki')
+    expect(faq).toHaveTextContent('Termin premiery zależy od zebrania środków')
+    expect(faq).toHaveTextContent('żeby „LAS 44” trafił do kin')
+    expect(faq).toHaveTextContent('podniesiemy cel zbiórki')
+    expect(faq.querySelector('details:nth-child(5) a')).toHaveAttribute('href', 'mailto:franek@spacefilms.pl')
+  })
+
   it('offers a share link and a direct Facebook share option', async () => {
     const user = userEvent.setup()
     render(<App />)

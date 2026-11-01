@@ -17,7 +17,9 @@ export function Faq({ items, contact }: FaqProps) {
         {items.map((item) => (
           <details key={item.title}>
             <summary>{item.title}<span aria-hidden="true">+</span></summary>
-            <p>{item.answer || 'Szczegóły podamy wkrótce'}</p>
+            <p>{(item.answer || 'Szczegóły podamy wkrótce').split(contact.email).map((part, index) => (
+              <span key={index}>{index > 0 && <a href={`mailto:${contact.email}`}>{contact.email}</a>}{part}</span>
+            ))}</p>
           </details>
         ))}
       </div>
