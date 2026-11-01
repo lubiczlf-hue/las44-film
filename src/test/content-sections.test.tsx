@@ -137,6 +137,7 @@ it('shows partner artwork without repeated captions', () => {
   expect(within(document.getElementById('patroni') as HTMLElement).getByText('Patronat honorowy')).toBeInTheDocument()
   expect(screen.getByText('Grupa rekonstrukcyjna')).toBeInTheDocument()
   expect(logos[1]).toHaveAttribute('src', '/media/patron-muzeum-wiezniow-transparent.png')
+  expect(logos[2]).toHaveAttribute('src', '/media/patron-muzeum-wykletych-official-white.png')
   expect(logos[3]).toHaveAttribute('src', '/media/grh-zryw-white.png')
   expect(document.querySelectorAll('.hero__patron img')).toHaveLength(3)
   logos.forEach((logo) => {

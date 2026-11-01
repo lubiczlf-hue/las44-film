@@ -196,6 +196,10 @@
   object-fit: contain;
 }
 
+.hero__patron--3 img {
+  mix-blend-mode: screen;
+}
+
 .hero h1 {
   margin-bottom: 0.7rem;
   width: min(50%, 20.5rem);

@@ -414,6 +414,10 @@
   object-fit: contain;
 }
 
+.partners__logo--3 img {
+  mix-blend-mode: screen;
+}
+
 .partners__supporting {
   margin-top: clamp(2rem, 4vw, 4rem);
 }
@@ -676,6 +680,10 @@
 
   .partners__mark {
     height: 10rem;
+  }
+
+  .partners__logo--3 .partners__mark img {
+    max-width: 12rem;
   }
 
   .footer {

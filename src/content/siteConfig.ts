@@ -220,7 +220,7 @@ export const siteConfig: SiteConfig = {
         alt: 'Muzeum Żołnierzy Wyklętych i Więźniów Politycznych PRL',
       },
       {
-        src: '/media/patron-muzeum-wykletych.png',
+        src: '/media/patron-muzeum-wykletych-official-white.png',
         alt: 'Muzeum Żołnierzy Wyklętych',
       },
       {
