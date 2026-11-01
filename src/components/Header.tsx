@@ -118,7 +118,7 @@ export function Header({ title, logo, navigation, supportHref, shareUrl }: Heade
           <div className="share-dialog" role="dialog" aria-modal="true" aria-labelledby="share-title">
             <button className="share-dialog__close" type="button" aria-label="Zamknij udostępnianie" onClick={() => setIsShareOpen(false)}>×</button>
             <p className="share-dialog__eyebrow">LAS 44</p>
-            <h2 id="share-title">Udostępnij film LAS 44</h2>
+            <h2 id="share-title">Udostępnij stronę LAS 44</h2>
             <p>Wyślij link do strony lub udostępnij ją na Facebooku.</p>
             <label htmlFor="share-url">Link do strony</label>
             <input id="share-url" value={shareUrl} readOnly onFocus={(event) => event.target.select()} />
