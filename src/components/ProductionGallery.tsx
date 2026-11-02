@@ -10,7 +10,7 @@ export function ProductionGallery({ content }: { content: SiteConfig['production
         <p className="section-kicker">Zapowiedź filmu i przygotowania</p>
         <h2 id="production-title">{content.heading}</h2>
         <p>
-          Zapowiedź filmu pozwoliła sprawdzić język wizualny filmu, pracę kamery oraz rytm scen rozgrywających się w lesie. Zobacz materiał od twórców i posłuchaj ich wypowiedzi.
+          Padał deszcz, a na plan przyjechało 40 osób. Pracowali bez wynagrodzenia, bo uwierzyli, że tę historię trzeba opowiedzieć. Z ich czasu, energii i uporu powstała zapowiedź filmu. To dopiero początek — zobacz materiał od twórców i posłuchaj, dlaczego tak bardzo zależy nam na tym filmie.
         </p>
       </div>
       <div className="production__film" id="making-of">

@@ -139,7 +139,7 @@ export const siteConfig: SiteConfig = {
     closing: 'To projekt absolutnie wyjątkowy na polskim rynku – pierwszy fabularny film wojenny zrealizowany w całości w formule jednego ujęcia. Innowacyjny, surowy i prawdziwy.',
   },
   production: {
-    heading: 'Pierwszy krok już zrobiliśmy',
+    heading: 'Zrobiliśmy to razem',
     makingOf: {
       title: 'Od twórców',
       provider: 'none',
@@ -158,7 +158,7 @@ export const siteConfig: SiteConfig = {
       name: 'Franciszek Lubicz-Łapiński',
       role: 'Pomysłodawca, operator i producent',
       bio: [
-        'Absolwent Wydziału Operatorskiego PWSFTviT im. Leona Schillera w Łodzi oraz Warszawskiej Szkoły Reklamy. Realizował filmy fabularne, dokumentalne i reklamowe w Polsce i za granicą.',
+        'Studiował na Wydziale Operatorskim Szkoły Filmowej w Łodzi oraz ukończył Warszawską Szkołę Reklamy. Realizował filmy fabularne, dokumentalne i reklamowe w Polsce i za granicą.',
         'Zanim powstał scenariusz, były rozmowy z dziadkiem Jerzym. Jego wspomnienia stały się dla Franciszka początkiem osobistej opowieści o chłopaku, którego wojna zmusza do dorosłości.',
       ],
       image: '/media/creator.jpg',
