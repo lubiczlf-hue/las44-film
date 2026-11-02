@@ -119,7 +119,7 @@ describe('primary visitor flow', () => {
     expect(footer).not.toHaveTextContent('Regulamin')
     expect(footer).not.toHaveTextContent('Polityka prywatności')
     expect(screen.getByRole('link', { name: 'LAS 44 na Facebooku' })).toHaveAttribute('href', 'https://www.facebook.com/profile.php?id=61588352177926')
-    expect(screen.getByRole('link', { name: 'Polub nas na Facebooku — LAS 44' })).toHaveAttribute('href', 'https://www.facebook.com/profile.php?id=61588352177926')
+    expect(screen.getByRole('link', { name: 'Facebook LAS 44' })).toHaveAttribute('href', 'https://www.facebook.com/profile.php?id=61588352177926')
     expect(screen.getByRole('link', { name: 'LAS 44 na YouTube' })).toHaveAttribute('href', 'https://www.youtube.com/@FilmLas44')
   })
 
