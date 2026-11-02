@@ -9,7 +9,7 @@ export type PendingContent = {
 export type SiteConfig = {
   title: string
   logo: string
-  social: { siteUrl: string; facebookUrl: string }
+  social: { siteUrl: string; facebookUrl: string; youtubeUrl: string }
   navigation: Array<{ label: string; href: string }>
   hero: {
     eyebrow: string
@@ -87,6 +87,7 @@ export const siteConfig: SiteConfig = {
   social: {
     siteUrl: 'https://las44-film-preview.lubiczlf.chatgpt.site/',
     facebookUrl: 'https://www.facebook.com/profile.php?id=61588352177926',
+    youtubeUrl: 'https://www.youtube.com/@FilmLas44',
   },
   navigation: [
     { label: 'Prawdziwa historia', href: '#prawdziwa-historia' },

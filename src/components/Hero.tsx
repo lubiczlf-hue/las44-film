@@ -8,9 +8,10 @@ type HeroProps = {
     image: string
   }
   supportHref: string
+  facebookUrl: string
 }
 
-export function Hero({ content, logo, patrons, supportHref }: HeroProps) {
+export function Hero({ content, logo, patrons, supportHref, facebookUrl }: HeroProps) {
   return (
     <section
       className="hero"
@@ -42,6 +43,13 @@ export function Hero({ content, logo, patrons, supportHref }: HeroProps) {
           </a>
           <a className="button button--gold" href={supportHref}>Wesprzyj film</a>
         </div>
+        <a className="hero__facebook" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Polub nas na Facebooku — LAS 44">
+          <span className="hero__facebook-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M13.9 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H8v3.2h2.5V21h3.4Z" /></svg>
+          </span>
+          <span>Polub nas na Facebooku</span>
+          <span className="hero__facebook-arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
       <a className="hero__scroll" href="#wsparcie" aria-label="Przejdź dalej">
         <span />
