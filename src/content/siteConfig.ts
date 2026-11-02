@@ -139,9 +139,9 @@ export const siteConfig: SiteConfig = {
     closing: 'To projekt absolutnie wyjątkowy na polskim rynku – pierwszy fabularny film wojenny zrealizowany w całości w formule jednego ujęcia. Innowacyjny, surowy i prawdziwy.',
   },
   production: {
-    heading: 'Zrobiliśmy to razem',
+    heading: 'Pierwszy krok już zrobiliśmy',
     makingOf: {
-      title: 'Od twórców',
+      title: 'Twórcy o filmie',
       provider: 'none',
       source: '',
     },

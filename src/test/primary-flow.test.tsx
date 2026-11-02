@@ -39,15 +39,16 @@ describe('primary visitor flow', () => {
     )
   })
 
-  it('links the creators button to the second film section', () => {
+  it('links the creators button to the introduction before the second film', () => {
     render(<App />)
 
     expect(screen.getByRole('link', { name: 'Zobacz zapowiedź filmu' })).toHaveAttribute('href', '#teaser')
     const link = screen.getByRole('link', { name: 'Twórcy o filmie' })
-    const target = document.getElementById('making-of') as HTMLElement
+    const target = document.getElementById('o-filmie') as HTMLElement
 
-    expect(link).toHaveAttribute('href', '#making-of')
-    expect(target).toHaveTextContent('Od twórców')
+    expect(link).toHaveAttribute('href', '#o-filmie')
+    expect(target).toHaveTextContent('Pierwszy krok już zrobiliśmy')
+    expect(target).toHaveTextContent('Twórcy o filmie')
   })
 
   it('shows the mobile support button only after scrolling', () => {

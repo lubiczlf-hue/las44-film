@@ -90,7 +90,7 @@ it('opens Zapowiedź filmu i przygotowania from O filmie and puts Forma realizac
 
   expect(link).toHaveAttribute('href', '#o-filmie')
   expect(within(section).getByText('Zapowiedź filmu i przygotowania')).toBeInTheDocument()
-  expect(within(section).getByRole('heading', { name: 'Zrobiliśmy to razem' })).toBeInTheDocument()
+  expect(within(section).getByRole('heading', { name: 'Pierwszy krok już zrobiliśmy' })).toBeInTheDocument()
   expect(section.compareDocumentPosition(oneTake) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
 })
 
@@ -98,7 +98,7 @@ it('reserves the second film for the creators and their interviews', () => {
   render(<App />)
 
   const section = document.getElementById('o-filmie') as HTMLElement
-  const film = within(section).getByRole('heading', { name: 'Od twórców' }).closest('#making-of') as HTMLElement
+  const film = within(section).getByRole('heading', { name: 'Twórcy o filmie' }).closest('#making-of') as HTMLElement
   const copy = section.querySelector('.production__heading') as HTMLElement
 
   expect(within(film).getByText('Film w przygotowaniu')).toBeInTheDocument()

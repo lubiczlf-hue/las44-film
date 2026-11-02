@@ -36,7 +36,7 @@ export function Hero({ content, logo, patrons, supportHref }: HeroProps) {
             <span className="play-mark" aria-hidden="true" />
             Zobacz zapowiedź filmu
           </a>
-          <a className="button button--outline" href="#making-of">
+          <a className="button button--outline" href="#o-filmie">
             <span className="play-mark" aria-hidden="true" />
             Twórcy o filmie
           </a>
