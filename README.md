@@ -1,69 +1,34 @@
-# LAS 44 — lokalna strona crowdfundingowa
+# LAS 44 — oficjalna strona filmu
 
-## Uruchomienie
+Strona jest przygotowana do publikacji pod adresem **https://las44.pl/** przez GitHub Pages.
 
-Wymagany jest Node.js 20 lub nowszy.
+## Szybkie zmiany
 
-```bash
-npm install
-npm run dev
-```
+- Teksty, linki, filmy, cel zbiórki i dane twórców: `src/content/siteConfig.ts`.
+- Zdjęcia i logotypy: `public/media/`. Po dodaniu pliku wpisz jego ścieżkę w `siteConfig.ts` jako `/media/nazwa-pliku.jpg`.
+- Wygląd i układ: `src/styles/` oraz `src/components/`.
+- Tytuł, opis, obraz udostępniania i adres kanoniczny: `index.html`.
 
-Vite wyświetli lokalny adres, zwykle `http://localhost:5173/`.
+Po zatwierdzeniu zmian na gałęzi `main` GitHub Actions automatycznie buduje stronę i publikuje ją na GitHub Pages. Przebieg publikacji można sprawdzić w zakładce **Actions** repozytorium `lubiczlf-hue/las44-film`.
 
-## Edycja treści
+## Lokalny podgląd
 
-Wszystkie dane zmienne znajdują się w `src/content/siteConfig.ts`:
-
-- `hero` — pierwszy ekran i zdjęcie główne;
-- `logo` — oficjalny logotyp filmu widoczny w nagłówku, hero i stopce;
-- `campaign` — cel oraz integracja Pomagam.pl;
-- `teaser` — YouTube, Vimeo albo plik lokalny;
-- `story`, `trueStory`, `oneTake` — teksty filmu;
-- `production.images` — zdjęcia z realizacji;
-- `production.makingOf` — drugi film: ustaw `provider` na `local` lub `embed` i wpisz adres w `source`; dopóki źródło jest puste, widać komunikat „Film w przygotowaniu”;
-- `budget.categories` — kategorie budżetu;
-- `creator` — informacje o twórcy;
-- `partners.logos` — prawdziwe logotypy patronów i sponsorów;
-- `timeline`, `faq`, `contact` — harmonogram, pytania i dane kontaktowe.
-
-## Pomagam.pl
-
-Cel jest już ustawiony na `500000`. Dopóki pola `campaignUrl` i
-`widgetUrl` pozostają puste, strona pokazuje bezpieczny stan „Zbiórka
-wkrótce” bez fikcyjnych wyników.
-
-Po utworzeniu zbiórki wpisz:
-
-```ts
-campaign: {
-  provider: 'pomagam',
-  goalAmount: 500000,
-  campaignUrl: 'https://pomagam.pl/ADRES-ZBIORKI',
-  widgetUrl: 'https://pomagam.pl/ADRES-ZBIORKI/widget/large/',
-}
-```
-
-Widget i wszystkie przyciski wsparcia przełączą się automatycznie.
-
-## Teaser
-
-YouTube lub Vimeo:
-
-```ts
-teaser: {
-  provider: 'youtube',
-  source: 'https://www.youtube-nocookie.com/embed/ID-FILMU',
-  poster: '/media/teaser-poster.jpg',
-}
-```
-
-Plik lokalny umieść w `public/media/` i ustaw `provider: 'local'` oraz
-`source: '/media/nazwa-pliku.mp4'`.
-
-## Sprawdzenie projektu
+Wymagany jest Node.js 22 lub nowszy i pnpm 10.
 
 ```bash
-npm run test:run
-npm run build
+pnpm install --frozen-lockfile
+pnpm dev
 ```
+
+Podgląd jest zwykle dostępny pod adresem `http://localhost:5173/`.
+
+## Sprawdzenie zmian
+
+```bash
+pnpm test:run
+pnpm build
+```
+
+## Domena
+
+W ustawieniach repozytorium GitHub Pages domena niestandardowa to `las44.pl`. Rekordy DNS dla `las44.pl` i `www.las44.pl` dodaje się w strefie DNS u operatora domeny. Samo ustawienie serwerów nazw w KRU nie kieruje strony na GitHub Pages — potrzebna jest działająca strefa DNS z rekordami A i CNAME.

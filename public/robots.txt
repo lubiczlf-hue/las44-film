@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://las44-film-preview.lubiczlf.chatgpt.site/sitemap.xml
+Sitemap: https://las44.pl/sitemap.xml

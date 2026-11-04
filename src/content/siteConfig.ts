@@ -85,7 +85,7 @@ export const siteConfig: SiteConfig = {
   title: 'LAS 44',
   logo: '/media/las44-official-logo.png',
   social: {
-    siteUrl: 'https://las44-film-preview.lubiczlf.chatgpt.site/',
+    siteUrl: 'https://las44.pl/',
     facebookUrl: 'https://www.facebook.com/profile.php?id=61588352177926',
     youtubeUrl: 'https://www.youtube.com/@FilmLas44',
   },
