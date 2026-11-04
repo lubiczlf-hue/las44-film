@@ -249,17 +249,19 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  padding: 0.48rem 0.72rem;
+  border-radius: 0.65rem;
+  background: #3b5998;
   color: #fff;
   font-size: 0.72rem;
   font-weight: 650;
   letter-spacing: 0.02em;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.22);
 }
 
 .hero__facebook:hover,
 .hero__facebook:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
+  background: #4d6ba8;
 }
 
 .hero__facebook svg {
