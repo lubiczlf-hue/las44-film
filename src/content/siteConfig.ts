@@ -109,8 +109,8 @@ export const siteConfig: SiteConfig = {
     widgetUrl: 'https://pomagam.pl/las44/widget/stream-progress',
   },
   teaser: {
-    provider: 'none',
-    source: '',
+    provider: 'youtube',
+    source: 'https://www.youtube-nocookie.com/embed/Hfgt638MPUk',
     poster: '/media/teaser-poster.jpg',
   },
   story: {
