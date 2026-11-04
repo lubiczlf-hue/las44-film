@@ -143,8 +143,8 @@ export const siteConfig: SiteConfig = {
     heading: 'Pierwszy krok już zrobiliśmy',
     makingOf: {
       title: 'Twórcy o filmie',
-      provider: 'none',
-      source: '',
+      provider: 'embed',
+      source: 'https://www.youtube-nocookie.com/embed/8i_yz6MN8GQ',
     },
   },
   budget: {

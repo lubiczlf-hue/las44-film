@@ -101,7 +101,8 @@ it('reserves the second film for the creators and their interviews', () => {
   const film = within(section).getByRole('heading', { name: 'Twórcy o filmie' }).closest('#making-of') as HTMLElement
   const copy = section.querySelector('.production__heading') as HTMLElement
 
-  expect(within(film).getByText('Film w przygotowaniu')).toBeInTheDocument()
+  expect(within(film).getByTitle('Twórcy o filmie')).toHaveAttribute('src', 'https://www.youtube-nocookie.com/embed/8i_yz6MN8GQ')
+  expect(within(film).queryByText('Film w przygotowaniu')).not.toBeInTheDocument()
   expect(within(copy).getByText(/zobacz materiał od twórców i posłuchaj, dlaczego tak bardzo zależy nam na tym filmie/)).toBeInTheDocument()
   expect(copy.compareDocumentPosition(film) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   expect(within(film).queryByText('Drugi film')).not.toBeInTheDocument()
