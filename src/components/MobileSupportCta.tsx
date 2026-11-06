@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 export function MobileSupportCta({ href }: { href: string }) {
-  const [visible, setVisible] = useState(() => window.scrollY > 48)
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const updateVisibility = () => setVisible(window.scrollY > 48)
