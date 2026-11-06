@@ -1,4 +1,5 @@
 import type { SiteConfig } from '../content/siteConfig'
+import { useCopy } from '../content/locale'
 
 type TeaserProps = {
   teaser: SiteConfig['teaser']
@@ -6,13 +7,14 @@ type TeaserProps = {
 }
 
 export function Teaser({ teaser, supportHref }: TeaserProps) {
+  const t = useCopy()
   const hasVideo = teaser.provider !== 'none' && teaser.source.trim() !== ''
 
   return (
     <section className="teaser section" id="teaser" aria-labelledby="teaser-title">
       <div className="section-heading">
-        <p className="section-kicker">Zobacz pierwszy materiał</p>
-        <h2 id="teaser-title">Zapowiedź filmu</h2>
+        <p className="section-kicker">{t.firstMaterial}</p>
+        <h2 id="teaser-title">{t.trailer}</h2>
       </div>
       <div
         className={`teaser__frame${hasVideo ? ' teaser__frame--active' : ''}`}
@@ -21,7 +23,7 @@ export function Teaser({ teaser, supportHref }: TeaserProps) {
         {!hasVideo ? (
           <div className="teaser__placeholder">
             <span className="teaser__play" aria-hidden="true"><i /></span>
-            <p>Zapowiedź filmu pojawi się tutaj wkrótce</p>
+            <p>{t.trailerSoon}</p>
           </div>
         ) : teaser.provider === 'local' ? (
           <video
@@ -30,20 +32,20 @@ export function Teaser({ teaser, supportHref }: TeaserProps) {
             poster={teaser.poster}
             controls
             preload="metadata"
-            aria-label="Zapowiedź filmu LAS 44"
+            aria-label={`${t.trailer} LAS 44`}
           />
         ) : (
           <iframe
             className="teaser__media"
             src={teaser.source}
-            title="Zapowiedź filmu LAS 44"
+            title={`${t.trailer} LAS 44`}
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
         )}
       </div>
-      <a className="text-link" href={supportHref}>Pomóż nam ocalić tę historię od zapomnienia. <span>↗</span></a>
+      <a className="text-link" href={supportHref}>{t.saveStory} <span>↗</span></a>
     </section>
   )
 }

@@ -14,38 +14,44 @@ import { FinalCta } from './components/FinalCta'
 import { MobileSupportCta } from './components/MobileSupportCta'
 import { Footer } from './components/Footer'
 import { siteConfig } from './content/siteConfig'
+import { englishSiteConfig } from './content/siteConfig.en'
+import { LocaleContext, type Locale } from './content/locale'
 import type { SiteConfig } from './content/siteConfig'
 import { deriveCampaignView } from './lib/campaign'
 
-export default function App({ config = siteConfig }: { config?: SiteConfig }) {
-  const campaign = deriveCampaignView(config.campaign)
+export default function App({ config, locale = 'pl' }: { config?: SiteConfig; locale?: Locale }) {
+  const activeConfig = config ?? (locale === 'en' ? englishSiteConfig : siteConfig)
+  const campaign = deriveCampaignView(activeConfig.campaign)
   const supportHref = campaign.mode === 'live' ? campaign.campaignUrl : '#wsparcie'
 
   return (
+    <LocaleContext.Provider value={locale}>
     <div className="site-shell">
       <Header
-        title={config.title}
-        logo={config.logo}
-        navigation={config.navigation}
+        title={activeConfig.title}
+        logo={activeConfig.logo}
+        navigation={activeConfig.navigation}
         supportHref={supportHref}
-        shareUrl={config.social.siteUrl}
+        shareUrl={activeConfig.social.siteUrl}
+        locale={locale}
       />
       <main>
-        <Hero content={config.hero} logo={config.logo} patrons={config.partners.logos.filter((logo) => logo.showInHero !== false)} supportHref={supportHref} facebookUrl={config.social.facebookUrl} />
+        <Hero content={activeConfig.hero} logo={activeConfig.logo} patrons={activeConfig.partners.logos.filter((logo) => logo.showInHero !== false)} supportHref={supportHref} facebookUrl={activeConfig.social.facebookUrl} />
         <Campaign campaign={campaign} />
-        <Teaser teaser={config.teaser} supportHref={supportHref} />
-        <TrueStory content={config.trueStory} />
-        <Story content={config.story} />
-        <ProductionGallery content={config.production} />
-        <OneTake content={config.oneTake} />
-        <Budget content={config.budget} />
-        <Creator creators={config.creators} />
-        <Partners content={config.partners} />
-        <Faq items={config.faq} contact={config.contact} />
+        <Teaser teaser={activeConfig.teaser} supportHref={supportHref} />
+        <TrueStory content={activeConfig.trueStory} />
+        <Story content={activeConfig.story} />
+        <ProductionGallery content={activeConfig.production} />
+        <OneTake content={activeConfig.oneTake} />
+        <Budget content={activeConfig.budget} />
+        <Creator creators={activeConfig.creators} />
+        <Partners content={activeConfig.partners} />
+        <Faq items={activeConfig.faq} contact={activeConfig.contact} />
         <FinalCta supportHref={supportHref} />
       </main>
       <MobileSupportCta href={supportHref} />
-      <Footer contact={config.contact} producer={config.producer} logo={config.logo} facebookUrl={config.social.facebookUrl} youtubeUrl={config.social.youtubeUrl} />
+      <Footer contact={activeConfig.contact} producer={activeConfig.producer} logo={activeConfig.logo} facebookUrl={activeConfig.social.facebookUrl} youtubeUrl={activeConfig.social.youtubeUrl} />
     </div>
+    </LocaleContext.Provider>
   )
 }

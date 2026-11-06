@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+import { useCopy } from '../content/locale'
 
 export function MobileSupportCta({ href }: { href: string }) {
+  const t = useCopy()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export function MobileSupportCta({ href }: { href: string }) {
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
     >
-      Wesprzyj film
+      {t.support}
     </a>
   )
 }

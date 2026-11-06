@@ -1,6 +1,8 @@
 import type { SiteConfig } from '../content/siteConfig'
+import { useCopy } from '../content/locale'
 
 export function OneTake({ content }: { content: SiteConfig['oneTake'] }) {
+  const t = useCopy()
   const renderInline = (paragraph: string) => paragraph.split(/(\*[^*]+\*)/g).map((part, index) => (
     part.startsWith('*') && part.endsWith('*')
       ? <em key={index}>{part.slice(1, -1)}</em>
@@ -12,14 +14,14 @@ export function OneTake({ content }: { content: SiteConfig['oneTake'] }) {
       <img
         className="one-take__backdrop"
         src="/media/one-take-forest-extended.jpg"
-        alt="Partyzant w lesie — ilustracja filmu LAS 44"
+        alt={t.partisanImage}
         width="1254"
         height="1254"
         loading="lazy"
       />
       <div className="one-take__content">
         <div className="one-take__heading">
-          <p className="section-kicker">Forma realizacji</p>
+          <p className="section-kicker">{t.productionForm}</p>
           <h2 id="one-take-title">{content.heading}</h2>
           <p className="one-take__subheading">{content.subheading}</p>
         </div>

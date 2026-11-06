@@ -1,4 +1,5 @@
 import type { SiteConfig } from '../content/siteConfig'
+import { useCopy } from '../content/locale'
 
 type FaqProps = {
   items: SiteConfig['faq']
@@ -6,18 +7,19 @@ type FaqProps = {
 }
 
 export function Faq({ items, contact }: FaqProps) {
+  const t = useCopy()
   return (
     <section className="faq section" id="faq" aria-labelledby="faq-title">
       <div className="faq__heading">
-        <p className="section-kicker">Pytania i kontakt</p>
-        <h2 id="faq-title">Najczęstsze pytania</h2>
-        <p>Masz inne pytanie? Napisz na <a href={`mailto:${contact.email}`}>{contact.email}</a>.</p>
+        <p className="section-kicker">{t.questionsAndContact}</p>
+        <h2 id="faq-title">{t.faqHeading}</h2>
+        <p>{t.otherQuestion} <a href={`mailto:${contact.email}`}>{contact.email}</a>.</p>
       </div>
       <div className="faq__list">
         {items.map((item) => (
           <details key={item.title}>
             <summary>{item.title}<span aria-hidden="true">+</span></summary>
-            <p>{(item.answer || 'Szczegóły podamy wkrótce').split(contact.email).map((part, index) => (
+            <p>{(item.answer || t.detailsSoon).split(contact.email).map((part, index) => (
               <span key={index}>{index > 0 && <a href={`mailto:${contact.email}`}>{contact.email}</a>}{part}</span>
             ))}</p>
           </details>
