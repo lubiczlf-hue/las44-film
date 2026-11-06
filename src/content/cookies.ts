@@ -4,8 +4,9 @@ export const cookieCopy = {
   pl: {
     policy: 'Polityka cookies', settings: 'Zarządzaj zgodami cookie',
     bannerTitle: 'Dbamy o Twoją prywatność',
-    bannerBody: 'Używamy zapisu niezbędnego do zapamiętania Twojego wyboru. Za Twoją zgodą uruchomimy też Meta Pixel, aby mierzyć odwiedziny strony i skuteczność promocji filmu. Możesz odmówić bez wpływu na dostęp do strony.',
-    accept: 'Akceptuj analityczne', reject: 'Odrzuć', customize: 'Ustawienia', save: 'Zapisz wybór', close: 'Zamknij',
+    bannerBody: 'Używamy plików cookie, aby zapewnić Ci jak najlepsze wrażenia i odpowiednią komunikację.',
+    learnMore: 'Dowiedz się więcej',
+    accept: 'Akceptuj', reject: 'Odrzuć', customize: 'Wybierz pliki cookie', save: 'Zapisz wybór', close: 'Zamknij',
     necessary: 'Niezbędne', alwaysActive: 'Zawsze aktywne',
     necessaryShort: 'Zapisują wyłącznie Twoją decyzję o opcjonalnym pomiarze.',
     analytics: 'Analityczne pliki cookie',
@@ -28,8 +29,9 @@ export const cookieCopy = {
   en: {
     policy: 'Cookie policy', settings: 'Cookie settings',
     bannerTitle: 'Your privacy matters',
-    bannerBody: 'We save a necessary preference to remember your choice. With your consent, we also use Meta Pixel to measure visits and the effectiveness of promotion for the film. You can refuse without affecting access to the site.',
-    accept: 'Accept analytics', reject: 'Reject', customize: 'Settings', save: 'Save choice', close: 'Close',
+    bannerBody: 'We use cookies to give you the best possible experience and relevant communication.',
+    learnMore: 'Learn more',
+    accept: 'Accept', reject: 'Reject', customize: 'Choose cookies', save: 'Save choice', close: 'Close',
     necessary: 'Necessary', alwaysActive: 'Always active',
     necessaryShort: 'Stores only your choice about optional measurement.',
     analytics: 'Analytics cookies',

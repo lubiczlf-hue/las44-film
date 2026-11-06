@@ -31,7 +31,7 @@ it('does not load Meta Pixel before a decision and remembers rejection', async (
 it('activates the supplied Pixel after consent and lets visitors withdraw it', async () => {
   const user = userEvent.setup()
   render(<App locale="en" />)
-  await user.click(await screen.findByRole('button', { name: 'Accept analytics' }))
+  await user.click(await screen.findByRole('button', { name: 'Accept' }))
   await waitFor(() => expect(script()).toHaveAttribute('src', 'https://connect.facebook.net/en_US/fbevents.js'))
   const fbq = (window as Window & { fbq?: { queue: unknown[][] } }).fbq
   expect(fbq?.queue).toContainEqual(['init', '1599722991956351'])

@@ -72,7 +72,7 @@ export function CookieConsent({ locale, open, onClose }: { locale: Locale; open:
         </div>
       </div>}
       <div className="cookie-consent__bottom">
-        <a href={cookiePolicyUrl(locale)}>{t.policy}</a>
+        <a href={cookiePolicyUrl(locale)}>{t.learnMore}</a>
         <div className="cookie-consent__actions">
           {!detailed && <button type="button" className="cookie-consent__text-button" onClick={() => setDetailed(true)}>{t.customize}</button>}
           {detailed && <button type="button" className="cookie-consent__text-button" onClick={() => decide(analytics ? 'accepted' : 'rejected')}>{t.save}</button>}
