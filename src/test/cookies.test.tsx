@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, expect, it } from 'vitest'
 import App from '../App'
@@ -42,6 +42,26 @@ it('activates the supplied Pixel after consent and lets visitors withdraw it', a
   await user.click(screen.getByRole('button', { name: 'Reject' }))
   expect(localStorage.getItem('las44-cookie-choice')).toBe('rejected')
   expect(fbq?.queue).toContainEqual(['consent', 'revoke'])
+})
+
+it('tracks the fundraiser link click as a conversion event only while Pixel consent is active', async () => {
+  const user = userEvent.setup()
+  render(<App />)
+  const support = screen.getAllByRole('link', { name: 'Wesprzyj film' })[0]
+  support.addEventListener('click', (event) => event.preventDefault())
+
+  fireEvent.click(support)
+  expect((window as Window & { fbq?: unknown }).fbq).toBeUndefined()
+
+  await user.click(await screen.findByRole('button', { name: 'Akceptuj' }))
+  const fbq = (window as Window & { fbq?: { queue: unknown[][] } }).fbq
+  fireEvent.click(support)
+  expect(fbq?.queue).toContainEqual(['trackCustom', 'SupportFundraiserClick'])
+
+  await user.click(screen.getByRole('button', { name: 'Zarządzaj zgodami cookie' }))
+  await user.click(screen.getByRole('button', { name: 'Odrzuć' }))
+  fireEvent.click(support)
+  expect(fbq?.queue.filter(([method, event]) => method === 'trackCustom' && event === 'SupportFundraiserClick')).toHaveLength(1)
 })
 
 it('shows a bilingual cookie policy naming Space Films and only Meta as analytics provider', () => {

@@ -39,6 +39,11 @@ export function activatePixel() {
   pixelWindow.fbq('track', 'PageView')
 }
 
+export function trackSupportClick() {
+  if (document.documentElement.dataset.metaPixelConsent !== 'active') return
+  ;(window as PixelWindow).fbq?.('trackCustom', 'SupportFundraiserClick')
+}
+
 export function revokePixel() {
   if (document.documentElement.dataset.metaPixelConsent !== 'active') return
   ;(window as PixelWindow).fbq?.('consent', 'revoke')

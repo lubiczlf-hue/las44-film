@@ -21,6 +21,7 @@ import { englishSiteConfig } from './content/siteConfig.en'
 import { LocaleContext, type Locale } from './content/locale'
 import type { SiteConfig } from './content/siteConfig'
 import { deriveCampaignView } from './lib/campaign'
+import { trackSupportClick } from './lib/cookiePixel'
 
 export default function App({ config, locale = 'pl', page = 'home' }: { config?: SiteConfig; locale?: Locale; page?: 'home' | 'cookies' }) {
   const [cookieSettingsOpen, setCookieSettingsOpen] = useState(false)
@@ -28,9 +29,15 @@ export default function App({ config, locale = 'pl', page = 'home' }: { config?:
   const campaign = deriveCampaignView(activeConfig.campaign)
   const supportHref = campaign.mode === 'live' ? campaign.campaignUrl : '#wsparcie'
 
+  function handleClick(event: React.MouseEvent<HTMLDivElement>) {
+    if (campaign.mode !== 'live' || !(event.target instanceof Element)) return
+    const link = event.target.closest('a[href]') as HTMLAnchorElement | null
+    if (link?.href === campaign.campaignUrl) trackSupportClick()
+  }
+
   return (
     <LocaleContext.Provider value={locale}>
-    <div className="site-shell">
+    <div className="site-shell" onClickCapture={handleClick}>
       {page === 'cookies' ? <CookiePolicy locale={locale} producer={activeConfig.producer} email={activeConfig.contact.email} logo={activeConfig.logo} /> : <>
       <Header
         title={activeConfig.title}
