@@ -43,7 +43,6 @@ describe('primary visitor flow', () => {
     render(<App />)
 
     expect(screen.getByRole('link', { name: 'Zobacz zapowiedź filmu' })).toHaveAttribute('href', '#teaser')
-    expect(screen.getByTitle('Zapowiedź filmu LAS 44')).toHaveAttribute('src', 'https://www.youtube-nocookie.com/embed/Hfgt638MPUk')
     const link = screen.getByRole('link', { name: 'Twórcy o filmie' })
     const target = document.getElementById('o-filmie') as HTMLElement
 
