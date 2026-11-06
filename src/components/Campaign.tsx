@@ -20,7 +20,6 @@ export function Campaign({ campaign }: { campaign: CampaignView }) {
               sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
             />
           </div>
-          <img className="campaign__provider-logo" src="/media/pomagam-logo.svg" alt="Pomagam.pl" />
           <a className="button button--gold" href={campaign.campaignUrl}>{t.support}</a>
         </div>
       </section>
