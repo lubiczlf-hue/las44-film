@@ -113,7 +113,11 @@ it('shows the supplied FAQ answers without placeholders', () => {
   render(<App />)
 
   expect(screen.queryByText('Szczegóły podamy wkrótce')).not.toBeInTheDocument()
-  expect(screen.getByText(/Chcę przenieść na ekran wspomnienia mojego dziadka/)).toBeInTheDocument()
+  const answer = screen.getByText('Dlaczego powstaje ten film?').closest('details') as HTMLElement
+  expect(answer.querySelectorAll('p')).toHaveLength(7)
+  expect(answer).toHaveTextContent('„Las ’44” wyrasta ze wspomnień mojego dziadka')
+  expect(answer).toHaveTextContent('Każda wpłata przybliża nas do stworzenia filmu')
+  expect(answer).not.toHaveTextContent('Chcę przenieść na ekran wspomnienia mojego dziadka')
 })
 
 it('explains the preproduction and production goal in plain prose', () => {

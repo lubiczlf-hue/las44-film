@@ -111,7 +111,19 @@ export const englishSiteConfig: SiteConfig = {
     })),
   },
   faq: [
-    { status: 'pending-content', title: 'Why are you making this film?', answer: 'I want to bring my grandfather’s memories to the screen and pay tribute to his generation. It is a story of growing up, moral choices and values that are too easily forgotten today.' },
+    {
+      status: 'pending-content',
+      title: 'Why are you making this film?',
+      answer: [
+        'LAS 44 grew out of my grandfather’s memories. He was a soldier of the Polish Home Army and fought in the Battle of Pecynka. He was only eighteen at the time. Like many of his peers, instead of entering adulthood in peace, he had to face war, hunger and the daily fear for his life.',
+        'For me, this story began with family conversations and his written recollections. Over time, I came to understand that my grandfather’s story is part of a much larger one: the story of young people who fought for a free Poland, knowing how much they stood to lose.',
+        'We want to make this film as a tribute to all of them. We want to show their courage, but also what was most human in their experience: friendship, longing for loved ones, fear and the hope of surviving another day. We want audiences to see them as people whose choices and sacrifices kept the hope of freedom alive.',
+        'The Battle of Pecynka was one of the largest partisan battles of the German occupation, yet many people in Poland have never heard of it. We believe a film can bring these events back into public memory and reach younger audiences through the stories of people barely older than they are.',
+        'The generation that remembers the war is passing away. With them go the voices of people who could tell us about it in their own words. That is why it matters so much to us to preserve their memories and pass them on.',
+        'We have already made a proof of concept that shows the atmosphere and direction of our work. Now we want to develop the screenplay, prepare the production and shoot the film itself. To do that, we need your support.',
+        'Every contribution brings us closer to making a film that honours those who fought at Pecynka and helps future generations learn their story.',
+      ].join('\n\n'),
+    },
     { status: 'pending-content', title: 'What will the money pay for?', answer: 'It will fund preparation and filming: the work of the cast and crew, costumes, props and production logistics. Postproduction is not included in the initial fundraising goal.' },
     { status: 'pending-content', title: 'When will the film be ready?', answer: 'The premiere date depends on raising the funds and on the production schedule. We will announce it once we can confirm a realistic date.' },
     { status: 'pending-content', title: 'Where will I be able to watch it?', answer: 'We would love for LAS 44 to reach cinemas. There is still a long way to go, so we cannot promise that today, but it is what we are working towards. We will announce screenings on the project website and social media.' },

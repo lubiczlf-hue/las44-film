@@ -19,9 +19,11 @@ export function Faq({ items, contact }: FaqProps) {
         {items.map((item) => (
           <details key={item.title}>
             <summary>{item.title}<span aria-hidden="true">+</span></summary>
-            <p>{(item.answer || t.detailsSoon).split(contact.email).map((part, index) => (
-              <span key={index}>{index > 0 && <a href={`mailto:${contact.email}`}>{contact.email}</a>}{part}</span>
-            ))}</p>
+            {(item.answer || t.detailsSoon).split(/\n\s*\n/).map((paragraph, paragraphIndex) => (
+              <p key={paragraphIndex}>{paragraph.split(contact.email).map((part, index) => (
+                <span key={index}>{index > 0 && <a href={`mailto:${contact.email}`}>{contact.email}</a>}{part}</span>
+              ))}</p>
+            ))}
           </details>
         ))}
       </div>

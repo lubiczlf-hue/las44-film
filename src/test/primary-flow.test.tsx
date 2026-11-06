@@ -127,7 +127,7 @@ describe('primary visitor flow', () => {
     render(<App />)
     const faq = document.getElementById('faq') as HTMLElement
     expect(faq.querySelectorAll('details')).toHaveLength(6)
-    expect(faq).toHaveTextContent('Chcę przenieść na ekran wspomnienia mojego dziadka')
+    expect(faq).toHaveTextContent('„Las ’44” wyrasta ze wspomnień mojego dziadka')
     expect(faq).toHaveTextContent('Postprodukcja nie jest objęta podstawowym celem zbiórki')
     expect(faq).toHaveTextContent('Termin premiery zależy od zebrania środków')
     expect(faq).toHaveTextContent('żeby „LAS 44” trafił do kin')

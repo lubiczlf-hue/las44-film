@@ -232,7 +232,19 @@ export const siteConfig: SiteConfig = {
     ],
   },
   faq: [
-    { status: 'pending-content', title: 'Dlaczego powstaje ten film?', answer: 'Chcę przenieść na ekran wspomnienia mojego dziadka i oddać hołd jego pokoleniu. Opowiedzieć o dojrzewaniu, moralnych wyborach i wartościach, o których dziś zbyt łatwo zapominamy.' },
+    {
+      status: 'pending-content',
+      title: 'Dlaczego powstaje ten film?',
+      answer: [
+        '„Las ’44” wyrasta ze wspomnień mojego dziadka — żołnierza Armii Krajowej, uczestnika bitwy pod Pecynką. Miał wtedy zaledwie osiemnaście lat. Tak jak wielu jego rówieśników, zamiast spokojnie wchodzić w dorosłość, musiał zmierzyć się z wojną, głodem i codziennym strachem o życie.',
+        'Dla mnie ta historia zaczęła się od rodzinnych rozmów i zapisanych wspomnień. Z czasem zrozumiałem, że opowieść mojego dziadka jest częścią znacznie większej historii — historii młodych ludzi, którzy stanęli do walki o wolną Polskę, choć wiedzieli, jak wiele mogą stracić.',
+        'Chcemy stworzyć film w hołdzie im wszystkim. Pokazać ich odwagę, ale też to, co w ich doświadczeniu było najbardziej ludzkie: przyjaźń, tęsknotę za bliskimi, strach i nadzieję, że uda się przeżyć kolejny dzień. Chcemy, aby widzowie zobaczyli w nich ludzi, których wybory i poświęcenie pozwoliły zachować nadzieję na wolność.',
+        'Bitwa pod Pecynką była jednym z największych starć partyzanckich podczas niemieckiej okupacji, a mimo to wielu Polaków nigdy o niej nie słyszało. Wierzymy, że film może przywrócić pamięć o tych wydarzeniach i dotrzeć także do młodych widzów — poruszyć ich historią bohaterów, którzy byli niewiele starsi od nich.',
+        'Pokolenie, które pamięta wojnę, odchodzi. Razem z nim znikają głosy ludzi, którzy mogliby opowiedzieć nam o niej własnymi słowami. Dlatego tak ważne jest dla nas, by zachować ich wspomnienia i przekazać je dalej.',
+        'Zrealizowaliśmy już materiał demonstracyjny, pokazujący klimat i kierunek naszej pracy. Teraz chcemy rozwinąć scenariusz, przygotować produkcję i zrealizować właściwe zdjęcia. Aby to było możliwe, potrzebujemy Twojego wsparcia.',
+        'Każda wpłata przybliża nas do stworzenia filmu, który odda hołd uczestnikom bitwy pod Pecynką i pomoże kolejnym pokoleniom poznać ich historię.',
+      ].join('\n\n'),
+    },
     { status: 'pending-content', title: 'Na co zostaną przeznaczone pieniądze?', answer: 'Na przygotowanie i realizację zdjęć — pracę aktorów i ekipy, kostiumy, rekwizyty oraz organizację planu. Postprodukcja nie jest objęta podstawowym celem zbiórki.' },
     { status: 'pending-content', title: 'Kiedy film będzie gotowy?', answer: 'Termin premiery zależy od zebrania środków i harmonogramu produkcji. Podamy go, gdy będziemy mogli potwierdzić realną datę.' },
     { status: 'pending-content', title: 'Gdzie będzie można go zobaczyć?', answer: 'Bardzo chcielibyśmy, żeby „LAS 44” trafił do kin. Przed nami jeszcze długa droga i nie możemy tego dziś obiecać, ale będziemy do tego dążyć. O pokazach będziemy informować na stronie projektu i w mediach społecznościowych.' },
