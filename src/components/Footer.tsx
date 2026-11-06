@@ -1,17 +1,23 @@
 import type { SiteConfig } from '../content/siteConfig'
 import { useCopy } from '../content/locale'
+import type { Locale } from '../content/locale'
+import { cookieCopy, cookiePolicyUrl } from '../content/cookies'
 
-export function Footer({ contact, producer, logo, facebookUrl, youtubeUrl }: {
+export function Footer({ contact, producer, logo, facebookUrl, youtubeUrl, locale, homeHref = '#top', onCookieSettings }: {
   contact: SiteConfig['contact']
   producer: SiteConfig['producer']
   logo: string
   facebookUrl: string
   youtubeUrl: string
+  locale: Locale
+  homeHref?: string
+  onCookieSettings: () => void
 }) {
   const t = useCopy()
+  const cookies = cookieCopy[locale]
   return (
     <footer className="footer">
-      <a className="wordmark" href="#top" aria-label={`LAS 44 — ${t.start}`}>
+      <a className="wordmark" href={homeHref} aria-label={`LAS 44 — ${t.start}`}>
         <img src={logo} alt={`LAS 44 — ${t.officialLogo}`} />
       </a>
       <div className="footer__producer">
@@ -37,6 +43,8 @@ export function Footer({ contact, producer, logo, facebookUrl, youtubeUrl }: {
           </svg>
           <span>YouTube LAS 44</span>
         </a>
+        <a className="footer__cookie-link" href={cookiePolicyUrl(locale)}>{cookies.policy}</a>
+        <button className="footer__cookie-link" type="button" onClick={onCookieSettings}>{cookies.settings}</button>
       </div>
     </footer>
   )

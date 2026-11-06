@@ -15,6 +15,8 @@ try {
   const { default: App } = await import(pathToFileURL(join(ssrDirectory, 'App.js')).href)
   const output = new URL('../dist/index.html', import.meta.url)
   const englishOutput = new URL('../dist/en/index.html', import.meta.url)
+  const polishPolicyOutput = new URL('../dist/polityka-cookies/index.html', import.meta.url)
+  const englishPolicyOutput = new URL('../dist/en/cookie-policy/index.html', import.meta.url)
   const html = await readFile(output, 'utf8')
   const emptyRoot = '<div id="root"></div>'
 
@@ -59,9 +61,47 @@ try {
     sameAs: ['https://www.facebook.com/profile.php?id=61588352177926', 'https://www.youtube.com/@FilmLas44'],
   }
   englishHtml = englishHtml.replace(/<script type="application\/ld\+json">.*?<\/script>/, `${originalSchema}${JSON.stringify(englishSchema)}</script>`)
+  const englishTemplate = englishHtml
   englishHtml = englishHtml.replace(emptyRoot, `<div id="root">${englishMarkup}</div>`)
   await mkdir(dirname(englishOutput.pathname), { recursive: true })
   await writeFile(englishOutput, englishHtml)
+
+  const policyPages = [
+    {
+      output: polishPolicyOutput,
+      template: html,
+      markup: renderToString(createElement(App, { page: 'cookies' })),
+      canonical: 'https://las44.pl/polityka-cookies/',
+      title: 'Polityka cookies — LAS 44',
+      polishAlternate: 'https://las44.pl/polityka-cookies/',
+      englishAlternate: 'https://las44.pl/en/cookie-policy/',
+    },
+    {
+      output: englishPolicyOutput,
+      template: englishTemplate,
+      markup: renderToString(createElement(App, { locale: 'en', page: 'cookies' })),
+      canonical: 'https://las44.pl/en/cookie-policy/',
+      title: 'Cookie policy — LAS 44',
+      polishAlternate: 'https://las44.pl/polityka-cookies/',
+      englishAlternate: 'https://las44.pl/en/cookie-policy/',
+    },
+  ]
+
+  for (const page of policyPages) {
+    const policyHtml = page.template
+      .replace(emptyRoot, `<div id="root">${page.markup}</div>`)
+      .replace(/<link rel="canonical" href="[^"]+" \/>/, `<link rel="canonical" href="${page.canonical}" />`)
+      .replace(/<meta property="og:url" content="[^"]+" \/>/, `<meta property="og:url" content="${page.canonical}" />`)
+      .replace(/<meta name="robots" content="[^"]+" \/>/, '<meta name="robots" content="noindex, follow" />')
+      .replace(/<title>.*?<\/title>/, `<title>${page.title}</title>`)
+      .replace(/<meta property="og:title" content="[^"]+" \/>/, `<meta property="og:title" content="${page.title}" />`)
+      .replace(/<meta name="twitter:title" content="[^"]+" \/>/, `<meta name="twitter:title" content="${page.title}" />`)
+      .replace(/<link rel="alternate" hreflang="pl" href="[^"]+" \/>/, `<link rel="alternate" hreflang="pl" href="${page.polishAlternate}" />`)
+      .replace(/<link rel="alternate" hreflang="en" href="[^"]+" \/>/, `<link rel="alternate" hreflang="en" href="${page.englishAlternate}" />`)
+      .replace(/<link rel="alternate" hreflang="x-default" href="[^"]+" \/>/, `<link rel="alternate" hreflang="x-default" href="${page.polishAlternate}" />`)
+    await mkdir(dirname(page.output.pathname), { recursive: true })
+    await writeFile(page.output, policyHtml)
+  }
 } finally {
   await rm(ssrDirectory, { recursive: true, force: true })
 }

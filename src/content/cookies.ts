@@ -1,0 +1,56 @@
+import type { Locale } from './locale'
+
+export const cookieCopy = {
+  pl: {
+    policy: 'Polityka cookies', settings: 'Zarządzaj zgodami cookie',
+    bannerTitle: 'Dbamy o Twoją prywatność',
+    bannerBody: 'Używamy zapisu niezbędnego do zapamiętania Twojego wyboru. Za Twoją zgodą uruchomimy też Meta Pixel, aby mierzyć odwiedziny strony i skuteczność promocji filmu. Możesz odmówić bez wpływu na dostęp do strony.',
+    accept: 'Akceptuj analityczne', reject: 'Odrzuć', customize: 'Ustawienia', save: 'Zapisz wybór', close: 'Zamknij',
+    necessary: 'Niezbędne', alwaysActive: 'Zawsze aktywne',
+    necessaryShort: 'Zapisują wyłącznie Twoją decyzję o opcjonalnym pomiarze.',
+    analytics: 'Analityczne pliki cookie',
+    analyticsShort: 'Meta (Facebook) — Pixel LAS 44. Pomiar odwiedzin i skuteczności promocji.',
+    intro: 'Ta polityka wyjaśnia, jak na stronie las44.pl korzystamy z plików cookie i podobnych technologii. W każdej chwili możesz wrócić do ustawień zgody w stopce strony.',
+    controller: 'Administrator danych',
+    controllerBody: 'Administratorem danych związanych z tą stroną jest',
+    controllerContact: 'W sprawach prywatności napisz na',
+    essentialHeading: 'Niezbędne technologie',
+    essentialBody: 'W pamięci przeglądarki (localStorage) zapisujemy wartość las44-cookie-choice: przyjęcie lub odrzucenie opcjonalnego pomiaru. Pozwala to zapamiętać Twój wybór przy kolejnych odwiedzinach. Ten zapis nie służy do analityki ani reklamy i nie wymaga zgody.',
+    analyticsBody: 'Jedynym narzędziem analitycznym uruchamianym przez LAS 44 jest Meta Pixel firmy Meta Platforms Ireland Limited (identyfikator 1599722991956351). Po udzieleniu zgody mierzy wyświetlenia strony (PageView). Meta może zapisywać identyfikatory, m.in. _fbp i _fbc, oraz otrzymywać dane o przeglądarce, adresie IP i odwiedzonej stronie. Technologia może także służyć do mierzenia skuteczności reklam i tworzenia grup odbiorców w usługach Meta. Nie uruchamiamy Pixela przed zgodą.',
+    legalBasis: 'Podstawą włączenia Pixela i powiązanego przetwarzania danych jest Twoja zgoda (art. 6 ust. 1 lit. a RODO). Odmowa nie ogranicza korzystania ze strony. Okresy przechowywania danych po stronie Meta opisują jej zasady.',
+    metaPolicy: 'Zasady prywatności Meta',
+    externalHeading: 'Materiały i serwisy zewnętrzne',
+    externalBody: 'Na stronie znajdują się osadzone filmy YouTube w trybie rozszerzonej prywatności oraz licznik zbiórki Pomagam.pl. Ich dostawcy mogą przetwarzać dane zgodnie z własnymi zasadami, gdy wczytujesz te materiały. Wpłaty i dane przekazywane podczas wpłat obsługuje Pomagam.pl na swojej stronie; nie są częścią analityki LAS 44.',
+    manageHeading: 'Zmiana lub wycofanie zgody',
+    manageBody: 'Kliknij „Zarządzaj zgodami cookie” w stopce, aby zmienić decyzję. Wycofanie zgody zatrzymuje dalszy pomiar Meta Pixel na tej stronie; nie wpływa na przetwarzanie, które miało miejsce wcześniej. Możesz też usunąć zapisane dane w ustawieniach przeglądarki.',
+    back: 'Wróć do strony filmu',
+  },
+  en: {
+    policy: 'Cookie policy', settings: 'Cookie settings',
+    bannerTitle: 'Your privacy matters',
+    bannerBody: 'We save a necessary preference to remember your choice. With your consent, we also use Meta Pixel to measure visits and the effectiveness of promotion for the film. You can refuse without affecting access to the site.',
+    accept: 'Accept analytics', reject: 'Reject', customize: 'Settings', save: 'Save choice', close: 'Close',
+    necessary: 'Necessary', alwaysActive: 'Always active',
+    necessaryShort: 'Stores only your choice about optional measurement.',
+    analytics: 'Analytics cookies',
+    analyticsShort: 'Meta (Facebook) — LAS 44 Pixel. Measures visits and promotion effectiveness.',
+    intro: 'This policy explains how las44.pl uses cookies and similar technologies. You can return to your consent settings from the site footer at any time.',
+    controller: 'Data controller',
+    controllerBody: 'The controller of data associated with this website is',
+    controllerContact: 'For privacy questions, contact',
+    essentialHeading: 'Necessary technology',
+    essentialBody: 'We store las44-cookie-choice in your browser’s localStorage: your acceptance or rejection of optional measurement. This remembers your choice on later visits. It is not used for analytics or advertising and does not require consent.',
+    analyticsBody: 'The only analytics tool activated by LAS 44 is Meta Pixel from Meta Platforms Ireland Limited (ID 1599722991956351). After you consent, it measures page views (PageView). Meta may store identifiers such as _fbp and _fbc and receive browser information, your IP address and the page visited. The technology may also be used to measure advertising effectiveness and build audiences in Meta services. We do not load the Pixel before consent.',
+    legalBasis: 'The legal basis for activating the Pixel and related processing is your consent (GDPR Article 6(1)(a)). Refusal does not limit your use of the site. Meta describes its data retention periods in its own policy.',
+    metaPolicy: 'Meta Privacy Policy',
+    externalHeading: 'Embedded content and external services',
+    externalBody: 'The site includes YouTube videos in privacy-enhanced mode and a Pomagam.pl fundraiser counter. Their providers may process data under their own policies when you load that content. Donations and information submitted during donations are handled by Pomagam.pl on its website and are not part of LAS 44 analytics.',
+    manageHeading: 'Changing or withdrawing consent',
+    manageBody: 'Use “Cookie settings” in the footer to change your choice. Withdrawal stops further Meta Pixel measurement on this site; it does not affect earlier processing. You can also remove stored data in your browser settings.',
+    back: 'Back to the film website',
+  },
+} as const
+
+export function cookiePolicyUrl(locale: Locale) {
+  return locale === 'en' ? '/en/cookie-policy/' : '/polityka-cookies/'
+}

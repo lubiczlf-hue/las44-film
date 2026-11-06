@@ -23,3 +23,16 @@ test('English URL serves prerendered English content with language and canonical
   assert.match(root, /The true story/)
   assert.doesNotMatch(root, /Najczęstsze pytania/)
 })
+
+test('cookie policies are prerendered in both languages and Pixel is not embedded in HTML', async () => {
+  const polish = await readFile(new URL('../dist/polityka-cookies/index.html', import.meta.url), 'utf8')
+  const english = await readFile(new URL('../dist/en/cookie-policy/index.html', import.meta.url), 'utf8')
+  const homepage = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8')
+
+  assert.match(polish, /<h1>Polityka cookies<\/h1>/)
+  assert.match(english, /<h1>Cookie policy<\/h1>/)
+  assert.match(polish, /Space Films Sp. z o.o./)
+  assert.match(english, /Analytics cookies/)
+  assert.doesNotMatch(homepage, /connect\.facebook\.net|facebook\.com\/tr\?id=/)
+  assert.doesNotMatch(english, /connect\.facebook\.net|facebook\.com\/tr\?id=/)
+})

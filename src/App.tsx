@@ -13,13 +13,17 @@ import { Faq } from './components/Faq'
 import { FinalCta } from './components/FinalCta'
 import { MobileSupportCta } from './components/MobileSupportCta'
 import { Footer } from './components/Footer'
+import { CookieConsent } from './components/CookieConsent'
+import { CookiePolicy } from './components/CookiePolicy'
+import { useState } from 'react'
 import { siteConfig } from './content/siteConfig'
 import { englishSiteConfig } from './content/siteConfig.en'
 import { LocaleContext, type Locale } from './content/locale'
 import type { SiteConfig } from './content/siteConfig'
 import { deriveCampaignView } from './lib/campaign'
 
-export default function App({ config, locale = 'pl' }: { config?: SiteConfig; locale?: Locale }) {
+export default function App({ config, locale = 'pl', page = 'home' }: { config?: SiteConfig; locale?: Locale; page?: 'home' | 'cookies' }) {
+  const [cookieSettingsOpen, setCookieSettingsOpen] = useState(false)
   const activeConfig = config ?? (locale === 'en' ? englishSiteConfig : siteConfig)
   const campaign = deriveCampaignView(activeConfig.campaign)
   const supportHref = campaign.mode === 'live' ? campaign.campaignUrl : '#wsparcie'
@@ -27,6 +31,7 @@ export default function App({ config, locale = 'pl' }: { config?: SiteConfig; lo
   return (
     <LocaleContext.Provider value={locale}>
     <div className="site-shell">
+      {page === 'cookies' ? <CookiePolicy locale={locale} producer={activeConfig.producer} email={activeConfig.contact.email} logo={activeConfig.logo} /> : <>
       <Header
         title={activeConfig.title}
         logo={activeConfig.logo}
@@ -50,7 +55,9 @@ export default function App({ config, locale = 'pl' }: { config?: SiteConfig; lo
         <FinalCta supportHref={supportHref} />
       </main>
       <MobileSupportCta href={supportHref} />
-      <Footer contact={activeConfig.contact} producer={activeConfig.producer} logo={activeConfig.logo} facebookUrl={activeConfig.social.facebookUrl} youtubeUrl={activeConfig.social.youtubeUrl} />
+      </>}
+      <Footer contact={activeConfig.contact} producer={activeConfig.producer} logo={activeConfig.logo} facebookUrl={activeConfig.social.facebookUrl} youtubeUrl={activeConfig.social.youtubeUrl} locale={locale} homeHref={page === 'cookies' ? (locale === 'en' ? '/en/' : '/') : '#top'} onCookieSettings={() => setCookieSettingsOpen(true)} />
+      <CookieConsent locale={locale} open={cookieSettingsOpen} onClose={() => setCookieSettingsOpen(false)} />
     </div>
     </LocaleContext.Provider>
   )
