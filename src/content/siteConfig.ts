@@ -97,7 +97,7 @@ export const siteConfig: SiteConfig = {
   ],
   hero: {
     eyebrow: 'Film fabularny oparty na prawdziwych wydarzeniach',
-    headline: 'Bitwa pod Pecynką — film oparty na wspomnieniach mojego dziadka, w hołdzie jego pamięci.',
+    headline: 'Bitwa pod Pecynką — historia mojego dziadka opowiedziana w jednym nieprzerwanym ujęciu. W hołdzie jego pamięci.',
     description:
       'Podczas niemieckiej obławy na żołnierzy AK w Puszczy Białej osiemnastoletni partyzant sparaliżowany moralnymi wątpliwościami musi zabić pierwszy raz, by wydostać się z oblężenia i ocalić przyjaciela.',
     image: '/media/hero-czujna-para-nowe.jpg',
@@ -160,7 +160,7 @@ export const siteConfig: SiteConfig = {
       role: 'Pomysłodawca, operator i producent',
       bio: [
         'Kształcił się na Wydziale Operatorskim Szkoły Filmowej w Łodzi oraz w Warszawskiej Szkole Reklamy. Realizował filmy fabularne, dokumentalne i reklamowe w Polsce i za granicą.',
-        'Zanim powstał scenariusz, były rozmowy z dziadkiem Jerzym. Jego wspomnienia stały się dla Franciszka początkiem osobistej opowieści o chłopaku, którego wojna zmusza do dorosłości.',
+        'Wspomnienia dziadka Jerzego stały się dla Franciszka początkiem osobistej opowieści o chłopaku, którego wojna zmusza do dorosłości.',
       ],
       image: '/media/creator.jpg',
     },

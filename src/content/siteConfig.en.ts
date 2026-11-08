@@ -12,7 +12,7 @@ export const englishSiteConfig: SiteConfig = {
   hero: {
     ...siteConfig.hero,
     eyebrow: 'A feature film inspired by true events',
-    headline: 'The Battle of Pecynka — a film shaped by my grandfather’s memories, made in tribute to him.',
+    headline: 'The Battle of Pecynka — my grandfather’s story told in one continuous shot. In tribute to his memory.',
     description: 'During the German encirclement of Home Army soldiers in Puszcza Biała, an eighteen-year-old partisan, paralysed by moral doubt, must kill for the first time to escape and save his friend.',
   },
   story: {
@@ -57,7 +57,7 @@ export const englishSiteConfig: SiteConfig = {
       role: 'Originator, cinematographer and producer',
       bio: [
         'He studied cinematography at the Łódź Film School and at the Warsaw School of Advertising. He has worked on fiction films, documentaries and commercials in Poland and abroad.',
-        'Before there was a screenplay, there were conversations with his grandfather Jerzy. Jerzy’s recollections became the starting point for Franciszek’s personal story of a boy forced to grow up by war.',
+        'His grandfather Jerzy’s recollections became the starting point for Franciszek’s personal story of a boy forced to grow up by war.',
       ],
     },
     {
