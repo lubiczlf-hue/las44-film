@@ -22,12 +22,21 @@ export function Footer({ contact, producer, donations, logo, facebookUrl, youtub
       <a className="wordmark" href={homeHref} aria-label={`LAS 44 — ${t.start}`}>
         <img src={logo} alt={`LAS 44 — ${t.officialLogo}`} />
       </a>
-      <div className="footer__producer">
-        <span className="footer__label">{t.filmProducer}</span>
-        <strong>{producer.name}</strong>
-        <address>{producer.address}</address>
-        <span>NIP {producer.nip} · REGON {producer.regon}</span>
-        <span>KRS {producer.krs}</span>
+      <div className="footer__information">
+        <div className="footer__producer">
+          <span className="footer__label">{t.filmProducer}</span>
+          <strong>{producer.name}</strong>
+          <address>{producer.address}</address>
+          <span>NIP {producer.nip} · REGON {producer.regon}</span>
+          <span>KRS {producer.krs}</span>
+        </div>
+        <section className="footer__donations" aria-label={t.donationsHeading}>
+          <h2>{t.donationsHeading}</h2>
+          <p>{donations.recipient}</p>
+          <p className="footer__account"><strong>{donations.accountNumber}</strong></p>
+          <p>{`${t.transferReference}: ${quotedReference}`}</p>
+          <small>{t.donationsNote}</small>
+        </section>
       </div>
       <div className="footer__contact">
         <span className="footer__label">{t.contact}</span>
@@ -48,13 +57,6 @@ export function Footer({ contact, producer, donations, logo, facebookUrl, youtub
         <a className="footer__cookie-link" href={cookiePolicyUrl(locale)}>{cookies.policy}</a>
         <button className="footer__cookie-link" type="button" onClick={onCookieSettings}>{cookies.settings}</button>
       </div>
-      <section className="footer__donations" aria-label={t.donationsHeading}>
-        <h2>{t.donationsHeading}</h2>
-        <p>{donations.recipient}</p>
-        <p className="footer__account"><strong>{donations.accountNumber}</strong></p>
-        <p>{`${t.transferReference}: ${quotedReference}`}</p>
-        <small>{t.donationsNote}</small>
-      </section>
     </footer>
   )
 }

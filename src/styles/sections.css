@@ -509,11 +509,18 @@
 
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1.25fr 1fr;
+  grid-template-columns: minmax(7rem, 0.7fr) minmax(0, 2.6fr) minmax(9rem, 1fr);
   align-items: start;
   gap: 2rem;
   padding: 3rem var(--page-pad) 5rem;
   border-top: 1px solid var(--line);
+}
+
+.footer__information {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
+  align-items: start;
+  gap: clamp(1.25rem, 3vw, 3rem);
 }
 
 .footer__contact,
@@ -564,32 +571,30 @@
 }
 
 .footer__donations {
-  grid-column: 1 / -1;
   display: grid;
-  justify-items: center;
   gap: 0.35rem;
-  margin-top: 1rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--line);
-  text-align: center;
+  min-width: 0;
 }
 
 .footer__donations h2 {
   margin: 0 0 0.35rem;
-  font-size: 1rem;
-  font-weight: 700;
+  color: var(--gold-soft);
+  font-size: 0.62rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .footer__donations p {
   margin: 0;
   color: var(--paper-muted);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   line-height: 1.5;
 }
 
 .footer__donations .footer__account {
   color: var(--paper);
-  font-size: clamp(0.9rem, 2.2vw, 1.15rem);
+  font-size: clamp(0.86rem, 1.6vw, 1.05rem);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.04em;
   overflow-wrap: anywhere;
@@ -598,7 +603,7 @@
 .footer__donations small {
   margin-top: 0.45rem;
   color: var(--paper-muted);
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   line-height: 1.5;
 }
 
@@ -621,8 +626,14 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .footer__information {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
   .footer__contact {
-    justify-self: start;
+    grid-column: 2;
+    grid-row: 1;
   }
 }
 
@@ -729,6 +740,18 @@
     display: grid;
     grid-template-columns: 1fr;
     padding-bottom: 6.5rem;
+  }
+
+  .footer__information {
+    grid-column: auto;
+    grid-row: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .footer__contact {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: start;
   }
 
 }
