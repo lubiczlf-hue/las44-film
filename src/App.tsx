@@ -58,7 +58,7 @@ export default function App({ config, locale = 'pl', page = 'home' }: { config?:
         <Budget content={activeConfig.budget} />
         <Creator creators={activeConfig.creators} />
         <Partners content={activeConfig.partners} />
-        <Faq items={activeConfig.faq} contact={activeConfig.contact} />
+        <Faq items={activeConfig.faq} contact={activeConfig.contact} donations={activeConfig.donations} />
         <FinalCta supportHref={supportHref} />
       </main>
       <MobileSupportCta href={supportHref} />

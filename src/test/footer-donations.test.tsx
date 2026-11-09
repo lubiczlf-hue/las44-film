@@ -34,3 +34,29 @@ it('shows the same account and Polish transfer reference in the English footer',
   expect(footer.getByText(accountNumber)).toBeInTheDocument()
   expect(footer.getByText('Transfer reference: “Darowizna na film LAS44”')).toBeInTheDocument()
 })
+
+it('removes the phone number and explains direct bank transfers in the Polish FAQ', () => {
+  render(<App />)
+  const question = screen.getByText('Czy mogę wesprzeć film bezpośrednim przelewem?').closest('details') as HTMLElement
+  const answer = within(question)
+
+  expect(answer.getByText('Darowizny na produkcję filmu LAS44')).toBeInTheDocument()
+  expect(answer.getByText('Space Films sp. z o.o.')).toBeInTheDocument()
+  expect(answer.getByText(accountNumber)).toBeInTheDocument()
+  expect(answer.getByText('Tytuł przelewu: „Darowizna na film LAS44”')).toBeInTheDocument()
+  expect(answer.getByText('Wpłata jest dobrowolną darowizną, bez świadczeń wzajemnych.')).toBeInTheDocument()
+  expect(document.querySelector('a[href^="tel:"]')).toBeNull()
+  expect(document.body).not.toHaveTextContent('+48 735 244 398')
+})
+
+it('shows the same direct transfer details in the English FAQ without a phone number', () => {
+  render(<App locale="en" />)
+  const question = screen.getByText('Can I support the film by bank transfer?').closest('details') as HTMLElement
+  const answer = within(question)
+
+  expect(answer.getByText('Donations towards the production of LAS44')).toBeInTheDocument()
+  expect(answer.getByText(accountNumber)).toBeInTheDocument()
+  expect(answer.getByText('Transfer reference: “Darowizna na film LAS44”')).toBeInTheDocument()
+  expect(answer.getByText('A payment is a voluntary donation, with no goods or services provided in return.')).toBeInTheDocument()
+  expect(document.querySelector('a[href^="tel:"]')).toBeNull()
+})

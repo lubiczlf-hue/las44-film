@@ -128,6 +128,7 @@ export const englishSiteConfig: SiteConfig = {
     { status: 'pending-content', title: 'When will the film be ready?', answer: 'The premiere date depends on raising the funds and on the production schedule. We will announce it once we can confirm a realistic date.' },
     { status: 'pending-content', title: 'Where will I be able to watch it?', answer: 'We would love for LAS 44 to reach cinemas. There is still a long way to go, so we cannot promise that today, but it is what we are working towards. We will announce screenings on the project website and social media.' },
     { status: 'pending-content', title: 'Can a company support the film?', answer: 'Yes. We welcome companies interested in supporting or sponsoring the project. Please write to franek@spacefilms.pl.' },
+    { status: 'pending-content', title: 'Can I support the film by bank transfer?', bankTransfer: true },
     { status: 'pending-content', title: 'What if the fundraiser exceeds its goal?', answer: 'The current goal is the minimum needed to prepare and begin filming. If we reach it, we will raise the target. A larger budget will help us refine the film and improve the production.' },
   ],
 }

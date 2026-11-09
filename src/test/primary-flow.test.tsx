@@ -123,10 +123,10 @@ describe('primary visitor flow', () => {
     expect(screen.getByRole('link', { name: 'LAS 44 na YouTube' })).toHaveAttribute('href', 'https://www.youtube.com/@FilmLas44')
   })
 
-  it('shows all six FAQ answers and a usable email link for sponsors', () => {
+  it('shows all seven FAQ answers and a usable email link for sponsors', () => {
     render(<App />)
     const faq = document.getElementById('faq') as HTMLElement
-    expect(faq.querySelectorAll('details')).toHaveLength(6)
+    expect(faq.querySelectorAll('details')).toHaveLength(7)
     expect(faq).toHaveTextContent('„Las ’44” wyrasta ze wspomnień mojego dziadka')
     expect(faq).toHaveTextContent('Postprodukcja nie jest objęta podstawowym celem zbiórki')
     expect(faq).toHaveTextContent('Termin premiery zależy od zebrania środków')

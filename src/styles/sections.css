@@ -492,6 +492,38 @@
   color: var(--paper-muted);
 }
 
+.faq__donations {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0 0 1.5rem;
+}
+
+.faq__donations h3 {
+  margin: 0 0 0.35rem;
+  color: var(--gold-soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.faq details .faq__donations p {
+  margin: 0;
+  padding: 0;
+}
+
+.faq__donations .faq__account {
+  color: var(--paper);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.faq__donations small {
+  margin-top: 0.35rem;
+  color: var(--paper-muted);
+  font-size: 0.75rem;
+}
+
 .final-cta {
   display: grid;
   min-height: 75svh;
