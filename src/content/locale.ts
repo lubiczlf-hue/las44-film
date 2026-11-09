@@ -34,6 +34,8 @@ const copy = {
     detailsSoon: 'Szczegóły podamy wkrótce', joinProject: 'Dołącz do projektu – zostań współtwórcą',
     filmProducer: 'Producent filmu', contact: 'Kontakt', facebookAria: 'LAS 44 na Facebooku',
     youtubeAria: 'LAS 44 na YouTube',
+    donationsHeading: 'Darowizny na produkcję filmu LAS44', transferReference: 'Tytuł przelewu',
+    donationsNote: 'Wpłata jest dobrowolną darowizną, bez świadczeń wzajemnych.',
   },
   en: {
     start: 'top of page', officialLogo: 'official film logo',
@@ -64,6 +66,8 @@ const copy = {
     detailsSoon: 'More details coming soon', joinProject: 'Join the project — become part of the story',
     filmProducer: 'Film producer', contact: 'Contact', facebookAria: 'LAS 44 on Facebook',
     youtubeAria: 'LAS 44 on YouTube',
+    donationsHeading: 'Donations towards the production of LAS44', transferReference: 'Transfer reference',
+    donationsNote: 'A payment is a voluntary donation, with no goods or services provided in return.',
   },
 } as const
 

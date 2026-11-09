@@ -3,9 +3,10 @@ import { useCopy } from '../content/locale'
 import type { Locale } from '../content/locale'
 import { cookieCopy, cookiePolicyUrl } from '../content/cookies'
 
-export function Footer({ contact, producer, logo, facebookUrl, youtubeUrl, locale, homeHref = '#top', onCookieSettings }: {
+export function Footer({ contact, producer, donations, logo, facebookUrl, youtubeUrl, locale, homeHref = '#top', onCookieSettings }: {
   contact: SiteConfig['contact']
   producer: SiteConfig['producer']
+  donations: SiteConfig['donations']
   logo: string
   facebookUrl: string
   youtubeUrl: string
@@ -15,6 +16,7 @@ export function Footer({ contact, producer, logo, facebookUrl, youtubeUrl, local
 }) {
   const t = useCopy()
   const cookies = cookieCopy[locale]
+  const quotedReference = locale === 'en' ? `“${donations.reference}”` : `„${donations.reference}”`
   return (
     <footer className="footer">
       <a className="wordmark" href={homeHref} aria-label={`LAS 44 — ${t.start}`}>
@@ -46,6 +48,13 @@ export function Footer({ contact, producer, logo, facebookUrl, youtubeUrl, local
         <a className="footer__cookie-link" href={cookiePolicyUrl(locale)}>{cookies.policy}</a>
         <button className="footer__cookie-link" type="button" onClick={onCookieSettings}>{cookies.settings}</button>
       </div>
+      <section className="footer__donations" aria-label={t.donationsHeading}>
+        <h2>{t.donationsHeading}</h2>
+        <p>{donations.recipient}</p>
+        <p className="footer__account"><strong>{donations.accountNumber}</strong></p>
+        <p>{`${t.transferReference}: ${quotedReference}`}</p>
+        <small>{t.donationsNote}</small>
+      </section>
     </footer>
   )
 }

@@ -63,7 +63,7 @@ export default function App({ config, locale = 'pl', page = 'home' }: { config?:
       </main>
       <MobileSupportCta href={supportHref} />
       </>}
-      <Footer contact={activeConfig.contact} producer={activeConfig.producer} logo={activeConfig.logo} facebookUrl={activeConfig.social.facebookUrl} youtubeUrl={activeConfig.social.youtubeUrl} locale={locale} homeHref={page === 'cookies' ? (locale === 'en' ? '/en/' : '/') : '#top'} onCookieSettings={() => setCookieSettingsOpen(true)} />
+      <Footer contact={activeConfig.contact} producer={activeConfig.producer} donations={activeConfig.donations} logo={activeConfig.logo} facebookUrl={activeConfig.social.facebookUrl} youtubeUrl={activeConfig.social.youtubeUrl} locale={locale} homeHref={page === 'cookies' ? (locale === 'en' ? '/en/' : '/') : '#top'} onCookieSettings={() => setCookieSettingsOpen(true)} />
       <CookieConsent locale={locale} open={cookieSettingsOpen} onClose={() => setCookieSettingsOpen(false)} />
     </div>
     </LocaleContext.Provider>

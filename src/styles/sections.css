@@ -563,6 +563,45 @@
   text-transform: uppercase;
 }
 
+.footer__donations {
+  grid-column: 1 / -1;
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.footer__donations h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.footer__donations p {
+  margin: 0;
+  color: var(--paper-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer__donations .footer__account {
+  color: var(--paper);
+  font-size: clamp(0.9rem, 2.2vw, 1.15rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+
+.footer__donations small {
+  margin-top: 0.45rem;
+  color: var(--paper-muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 900px) {
   .production,
   .budget,

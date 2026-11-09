@@ -79,6 +79,11 @@ export type SiteConfig = {
     regon: string
     krs: string
   }
+  donations: {
+    recipient: string
+    accountNumber: string
+    reference: string
+  }
 }
 
 export const siteConfig: SiteConfig = {
@@ -261,5 +266,10 @@ export const siteConfig: SiteConfig = {
     nip: '5213913394',
     regon: '387617634',
     krs: '0000869613',
+  },
+  donations: {
+    recipient: 'Space Films sp. z o.o.',
+    accountNumber: '35 1140 2004 0000 3602 8718 7339',
+    reference: 'Darowizna na film LAS44',
   },
 }
