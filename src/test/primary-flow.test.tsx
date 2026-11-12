@@ -136,7 +136,7 @@ describe('primary visitor flow', () => {
     expect(funding).toHaveTextContent('Podane kwoty oznaczają łączne progi zbiórki')
     expect(funding).toHaveTextContent('Postprodukcja będzie finansowana oddzielnie')
     const budget = document.querySelector('.budget') as HTMLElement
-    expect(budget).toHaveTextContent('400 000 zł')
+    expect(budget.textContent).not.toMatch(/\d[\d\s\u00a0]*zł/i)
     expect(budget).toHaveTextContent('Zbiórkę prowadzimy w pięciu etapach')
     expect(budget).toHaveTextContent('postprodukcja będzie finansowana oddzielnie')
     expect(budget.textContent).not.toMatch(/20 000|50 000|150 000|250 000/)

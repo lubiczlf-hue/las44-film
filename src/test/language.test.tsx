@@ -17,7 +17,7 @@ it('renders a fully English page with a direct link back to Polish', () => {
   expect(funding).toHaveTextContent('Our goal is PLN 400,000. We are raising it in stages!')
   expect(funding.querySelectorAll('.faq__funding-stage')).toHaveLength(5)
   const budget = document.querySelector('.budget') as HTMLElement
-  expect(budget).toHaveTextContent('PLN 400,000')
+  expect(budget.textContent).not.toMatch(/\bPLN\s*\d/i)
   expect(budget).toHaveTextContent('five stages')
   expect(budget.textContent).not.toMatch(/PLN 20,000|PLN 50,000|PLN 150,000|PLN 250,000/)
   for (const link of screen.getAllByRole('link', { name: 'Support the film' })) {

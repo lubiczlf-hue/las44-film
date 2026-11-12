@@ -121,11 +121,11 @@ it('shows the supplied FAQ answers without placeholders', () => {
   expect(answer).not.toHaveTextContent('Chcę przenieść na ekran wspomnienia mojego dziadka')
 })
 
-it('explains why the overall budget is feasible and names the five stages', () => {
+it('explains the funding approach without showing an amount in the main section', () => {
   render(<App />)
 
   const section = screen.getByRole('heading', { name: 'Na co zbieramy' }).closest('section') as HTMLElement
-  expect(section).toHaveTextContent('400 000 zł')
+  expect(section.textContent).not.toMatch(/\d[\d\s\u00a0]*zł/i)
   expect(section).toHaveTextContent('jedno nieprzerwane ujęcie')
   expect(section).toHaveTextContent('bez budowy kosztownej scenografii')
   expect(section).toHaveTextContent('Zbiórkę prowadzimy w pięciu etapach')
