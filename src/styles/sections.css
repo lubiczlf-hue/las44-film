@@ -492,6 +492,33 @@
   color: var(--paper-muted);
 }
 
+.faq__funding h3 {
+  margin: 0 0 1.25rem;
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.15;
+}
+
+.faq__funding-stage {
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+}
+
+.faq__funding-stage h4 {
+  margin: 0 0 0.45rem;
+  color: var(--gold-soft);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.faq__funding-stage .faq__funding-name {
+  padding-bottom: 0.5rem;
+  color: var(--paper);
+  font-weight: 700;
+}
+
 .faq__donations {
   display: grid;
   gap: 0.35rem;

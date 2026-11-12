@@ -5,6 +5,12 @@ export type PendingContent = {
   title: string
   answer?: string
   bankTransfer?: boolean
+  fundingPlan?: {
+    heading: string
+    introduction: string[]
+    stages: Array<{ threshold: string; name: string; description: string }>
+    conclusion: string[]
+  }
 }
 
 export type SiteConfig = {
@@ -109,7 +115,7 @@ export const siteConfig: SiteConfig = {
   },
   campaign: {
     provider: 'pomagam',
-    goalAmount: 300000,
+    goalAmount: 400000,
     campaignUrl: 'https://pomagam.pl/9crd9m',
     widgetUrl: 'https://pomagam.pl/las44/widget/stream-progress',
   },
@@ -155,8 +161,8 @@ export const siteConfig: SiteConfig = {
   budget: {
     heading: 'Na co zbieramy',
     paragraphs: [
-      'Pierwszy etap, który możesz wesprzeć, obejmuje preprodukcję i rozpoczęcie produkcji filmu. Zebrane środki przeznaczymy na rozwój scenariusza — dokumentację, pracę scenarzysty, redakcję kolejnych wersji i script doctoring — oraz konsultacje historyczne i merytoryczne, dzięki którym zadbamy o wiarygodność opowieści. Sfinansujemy także wybór lokacji, logistykę i organizację planu, pracę profesjonalnej ekipy twórczej i technicznej, kostiumy, charakteryzację i rekwizyty zgodne z realiami epoki oraz wynajem sprzętu potrzebnego do zdjęć w kinowej jakości. Przeprowadzimy próby aktorskie i techniczne niezbędne do realizacji filmu w jednym nieprzerwanym ujęciu, a następnie zrealizujemy część zdjęć.',
-      'Postprodukcja będzie kolejnym etapem, wymagającym dodatkowego finansowania.',
+      'Zbieramy etapami, aby przygotować i zrealizować zdjęcia do filmu. Wsparcie przeznaczymy na rozwój scenariusza i konsultacje historyczne, przygotowanie lokacji, kostiumów i rekwizytów, próby do jednego nieprzerwanego ujęcia oraz sprzęt i pracę obsady i ekipy.',
+      'Leśna sceneria, dwoje głównych bohaterów i precyzyjnie zaplanowane zdjęcia pomogą ograniczyć koszty. Postprodukcję sfinansujemy oddzielnie.',
     ],
   },
   creators: [
@@ -250,7 +256,28 @@ export const siteConfig: SiteConfig = {
         'Każda wpłata przybliża nas do stworzenia filmu, który odda hołd uczestnikom bitwy pod Pecynką i pomoże kolejnym pokoleniom poznać ich historię.',
       ].join('\n\n'),
     },
-    { status: 'pending-content', title: 'Na co zostaną przeznaczone pieniądze?', answer: 'Na przygotowanie i realizację zdjęć — pracę aktorów i ekipy, kostiumy, rekwizyty oraz organizację planu. Postprodukcja nie jest objęta podstawowym celem zbiórki.' },
+    {
+      status: 'pending-content',
+      title: 'Na co zostaną przeznaczone pieniądze?',
+      fundingPlan: {
+        heading: 'Nasz cel – 400 000 zł. Zbieramy etapami!',
+        introduction: [
+          'Chociaż 400 000 zł może wydawać się niewielką kwotą na realizację pełnometrażowego filmu wojennego, nasza koncepcja pozwala znacząco ograniczyć koszty produkcji. Film chcemy zrealizować w jednym nieprzerwanym ujęciu, co przy odpowiednim przygotowaniu umożliwi skrócenie okresu zdjęciowego. Akcja rozgrywa się głównie w lesie, bez kosztownej scenografii, a historia koncentruje się na dwóch głównych bohaterach. Wykorzystanie sztucznej inteligencji (AI) i efektów cyfrowych pozwoli nam również ograniczyć wydatki na broń filmową, wybuchy i pirotechnikę.',
+          'Zbiórkę podzieliliśmy na 5 etapów finansowania. Zaczynamy od 20 000 zł, a każdy kolejny próg pozwoli nam zabezpieczyć środki na konkretne elementy produkcji.',
+        ],
+        stages: [
+          { threshold: 'ETAP I – 20 000 zł', name: 'Development – rozwój projektu', description: 'Dopracowanie i script doctoring scenariusza, konsultacje historyczne, dokumentacja lokacji oraz pokrycie niezbędnych kosztów prac producenckich i organizacyjnych.' },
+          { threshold: 'ETAP II – 50 000 zł', name: 'Preprodukcja – przygotowanie filmu', description: 'Organizacja castingów i prób aktorskich, zakup i wypożyczenie umundurowania, broni filmowej i rekwizytów, przygotowanie kostiumów i charakteryzacji oraz niezbędne prace przy lokacjach zdjęciowych.' },
+          { threshold: 'ETAP III – 150 000 zł', name: 'Sprzęt filmowy i sceny batalistyczne', description: 'Wynajem sprzętu kamerowego, oświetleniowego i dźwiękowego, realizacja efektów specjalnych i pirotechnicznych, przygotowanie scen kaskaderskich oraz wynagrodzenia kaskaderów i specjalistów odpowiedzialnych za bezpieczeństwo scen batalistycznych.' },
+          { threshold: 'ETAP IV – 250 000 zł', name: 'Ekipa filmowa i obsługa techniczna', description: 'Wynagrodzenia ekipy kamerowej, oświetleniowej i dźwiękowej, obsługi technicznej planu, dyżurnych oraz pozostałych specjalistów odpowiedzialnych za sprawną realizację zdjęć.' },
+          { threshold: 'ETAP V – 400 000 zł', name: 'Obsada i realizacja zdjęć', description: 'Wynagrodzenia aktorów, udział rekonstruktorów i statystów, zakwaterowanie i wyżywienie ekipy, transport oraz pozostałe koszty logistyczne i organizacyjne niezbędne do przeprowadzenia całego okresu zdjęciowego.' },
+        ],
+        conclusion: [
+          'Podane kwoty oznaczają łączne progi zbiórki, a nie dodatkowe sumy. Docelowe 400 000 zł obejmuje przygotowanie i realizację zdjęć. Postprodukcja będzie finansowana oddzielnie.',
+          'Każda wpłata przybliża nas do stworzenia filmu i ocalenia tej historii od zapomnienia.',
+        ],
+      },
+    },
     { status: 'pending-content', title: 'Kiedy film będzie gotowy?', answer: 'Termin premiery zależy od zebrania środków i harmonogramu produkcji. Podamy go, gdy będziemy mogli potwierdzić realną datę.' },
     { status: 'pending-content', title: 'Gdzie będzie można go zobaczyć?', answer: 'Bardzo chcielibyśmy, żeby „LAS 44” trafił do kin. Przed nami jeszcze długa droga i nie możemy tego dziś obiecać, ale będziemy do tego dążyć. O pokazach będziemy informować na stronie projektu i w mediach społecznościowych.' },
     { status: 'pending-content', title: 'Czy film można wesprzeć jako firma?', answer: 'Tak — zapraszamy firmy zainteresowane wsparciem lub współpracą sponsorską. Napisz na franek@spacefilms.pl.' },

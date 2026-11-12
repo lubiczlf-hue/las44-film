@@ -47,8 +47,8 @@ export const englishSiteConfig: SiteConfig = {
   budget: {
     heading: 'What we are raising funds for',
     paragraphs: [
-      'The first stage you can support covers preproduction and the start of filming. The funds raised will go towards developing the screenplay — research, the screenwriter’s work, revisions and script consulting — as well as historical and subject-matter advice to keep the story credible. We will also fund location scouting, logistics and production planning; the work of a professional creative and technical crew; period-appropriate costumes, makeup and props; and camera equipment for cinema-quality filming. Cast and technical rehearsals are essential for a film staged as one continuous shot. After those preparations, we will film part of the story.',
-      'Postproduction is a separate stage that will require additional funding.',
+      'We are raising funds in five stages to prepare and shoot the film. Contributions will support screenplay development and historical research, locations, costumes and props, rehearsals for the continuous shot, equipment, and the work of the cast and crew.',
+      'The forest setting, two central characters and a carefully planned shoot will help keep costs down. Postproduction will be funded separately.',
     ],
   },
   creators: [
@@ -124,7 +124,28 @@ export const englishSiteConfig: SiteConfig = {
         'Every contribution brings us closer to making a film that honours those who fought at Pecynka and helps future generations learn their story.',
       ].join('\n\n'),
     },
-    { status: 'pending-content', title: 'What will the money pay for?', answer: 'It will fund preparation and filming: the work of the cast and crew, costumes, props and production logistics. Postproduction is not included in the initial fundraising goal.' },
+    {
+      status: 'pending-content',
+      title: 'What will the money pay for?',
+      fundingPlan: {
+        heading: 'Our goal is PLN 400,000. We are raising it in stages!',
+        introduction: [
+          'PLN 400,000 may seem like a small budget for a feature-length war film, but our approach can significantly reduce production costs. We plan to tell the story in one continuous shot, which, with careful preparation, will shorten the filming period. Most of the action takes place in a forest, without expensive sets, and follows two central characters. Artificial intelligence (AI) and digital effects will also help us reduce spending on prop weapons, explosions and pyrotechnics.',
+          'We have divided the fundraiser into five financing stages. We begin with PLN 20,000; each subsequent threshold will secure funding for specific parts of the production.',
+        ],
+        stages: [
+          { threshold: 'STAGE I – PLN 20,000', name: 'Development', description: 'Refining the screenplay and script doctoring, historical consultations, location research, and essential producing and organisational work.' },
+          { threshold: 'STAGE II – PLN 50,000', name: 'Preproduction', description: 'Casting and rehearsals, purchasing or renting period uniforms, prop weapons and other props, preparing costumes and makeup, and essential work at filming locations.' },
+          { threshold: 'STAGE III – PLN 150,000', name: 'Film equipment and battle scenes', description: 'Renting camera, lighting and sound equipment; creating practical effects and pyrotechnics; preparing stunt scenes; and paying stunt performers and the specialists responsible for safety during battle sequences.' },
+          { threshold: 'STAGE IV – PLN 250,000', name: 'Film crew and technical support', description: 'Paying the camera, lighting and sound crews, on-set technical support and other specialists needed to run the shoot smoothly.' },
+          { threshold: 'STAGE V – PLN 400,000', name: 'Cast and filming', description: 'Paying actors; involving reenactors and extras; accommodation, meals and transport for the crew; and the remaining logistics needed to complete the filming period.' },
+        ],
+        conclusion: [
+          'These are cumulative fundraising thresholds, not additional amounts. The full PLN 400,000 covers preparation and filming. Postproduction will be funded separately.',
+          'Every contribution brings us closer to making the film and saving this story from being forgotten.',
+        ],
+      },
+    },
     { status: 'pending-content', title: 'When will the film be ready?', answer: 'The premiere date depends on raising the funds and on the production schedule. We will announce it once we can confirm a realistic date.' },
     { status: 'pending-content', title: 'Where will I be able to watch it?', answer: 'We would love for LAS 44 to reach cinemas. There is still a long way to go, so we cannot promise that today, but it is what we are working towards. We will announce screenings on the project website and social media.' },
     { status: 'pending-content', title: 'Can a company support the film?', answer: 'Yes. We welcome companies interested in supporting or sponsoring the project. Please write to franek@spacefilms.pl.' },

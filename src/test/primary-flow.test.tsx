@@ -128,7 +128,17 @@ describe('primary visitor flow', () => {
     const faq = document.getElementById('faq') as HTMLElement
     expect(faq.querySelectorAll('details')).toHaveLength(7)
     expect(faq).toHaveTextContent('„Las ’44” wyrasta ze wspomnień mojego dziadka')
-    expect(faq).toHaveTextContent('Postprodukcja nie jest objęta podstawowym celem zbiórki')
+    const funding = screen.getByText('Na co zostaną przeznaczone pieniądze?').closest('details') as HTMLElement
+    expect(funding).toHaveTextContent('Nasz cel – 400 000 zł. Zbieramy etapami!')
+    expect(funding.querySelectorAll('.faq__funding-stage')).toHaveLength(5)
+    expect(funding).toHaveTextContent('ETAP I – 20 000 zł')
+    expect(funding).toHaveTextContent('ETAP V – 400 000 zł')
+    expect(funding).toHaveTextContent('Podane kwoty oznaczają łączne progi zbiórki')
+    expect(funding).toHaveTextContent('Postprodukcja będzie finansowana oddzielnie')
+    const budget = document.querySelector('.budget') as HTMLElement
+    expect(budget).toHaveTextContent('Zbieramy etapami')
+    expect(budget).toHaveTextContent('Postprodukcję sfinansujemy oddzielnie')
+    expect(budget.textContent).not.toMatch(/\d[\d\s]*zł/)
     expect(faq).toHaveTextContent('Termin premiery zależy od zebrania środków')
     expect(faq).toHaveTextContent('żeby „LAS 44” trafił do kin')
     expect(faq).toHaveTextContent('podniesiemy cel zbiórki')

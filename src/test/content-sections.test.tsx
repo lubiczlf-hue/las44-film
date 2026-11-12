@@ -120,17 +120,18 @@ it('shows the supplied FAQ answers without placeholders', () => {
   expect(answer).not.toHaveTextContent('Chcę przenieść na ekran wspomnienia mojego dziadka')
 })
 
-it('explains the preproduction and production goal in plain prose', () => {
+it('summarises the funding plan without amounts in the main section', () => {
   render(<App />)
 
   const section = screen.getByRole('heading', { name: 'Na co zbieramy' }).closest('section') as HTMLElement
-  expect(within(section).getByText(/Pierwszy etap, który możesz wesprzeć/)).toBeInTheDocument()
+  expect(within(section).getByText(/Zbieramy etapami/)).toBeInTheDocument()
   expect(section).toHaveTextContent('rozwój scenariusza')
-  expect(section).toHaveTextContent('konsultacje historyczne i merytoryczne')
-  expect(section).toHaveTextContent('próby aktorskie i techniczne')
+  expect(section).toHaveTextContent('konsultacje historyczne')
+  expect(section).toHaveTextContent('próby do jednego nieprzerwanego ujęcia')
   expect(within(section).queryByRole('list')).not.toBeInTheDocument()
   expect(section.querySelector('strong')).toBeNull()
-  expect(within(section).getByText(/Postprodukcja będzie kolejnym etapem/)).toBeInTheDocument()
+  expect(within(section).getByText(/Postprodukcję sfinansujemy oddzielnie/)).toBeInTheDocument()
+  expect(section.textContent).not.toMatch(/\d[\d\s]*zł/)
 })
 
 it('shows partner artwork without repeated captions', () => {

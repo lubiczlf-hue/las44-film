@@ -31,6 +31,19 @@ export function Faq({ items, contact, donations }: FaqProps) {
                 <p>{`${t.transferReference}: ${quotedReference}`}</p>
                 <small>{t.donationsNote}</small>
               </section>
+            ) : item.fundingPlan ? (
+              <div className="faq__funding">
+                <h3>{item.fundingPlan.heading}</h3>
+                {item.fundingPlan.introduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                {item.fundingPlan.stages.map((stage) => (
+                  <section className="faq__funding-stage" key={stage.threshold}>
+                    <h4>{stage.threshold}</h4>
+                    <p className="faq__funding-name">{stage.name}</p>
+                    <p>{stage.description}</p>
+                  </section>
+                ))}
+                {item.fundingPlan.conclusion.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </div>
             ) : (
               (item.answer || t.detailsSoon).split(/\n\s*\n/).map((paragraph, paragraphIndex) => (
                 <p key={paragraphIndex}>{paragraph.split(contact.email).map((part, index) => (

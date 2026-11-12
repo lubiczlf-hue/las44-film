@@ -13,6 +13,12 @@ it('renders a fully English page with a direct link back to Polish', () => {
   const answer = screen.getByText('Why are you making this film?').closest('details') as HTMLElement
   expect(answer.querySelectorAll('p')).toHaveLength(7)
   expect(answer).toHaveTextContent('LAS 44 grew out of my grandfather’s memories')
+  const funding = screen.getByText('What will the money pay for?').closest('details') as HTMLElement
+  expect(funding).toHaveTextContent('Our goal is PLN 400,000. We are raising it in stages!')
+  expect(funding.querySelectorAll('.faq__funding-stage')).toHaveLength(5)
+  const budget = document.querySelector('.budget') as HTMLElement
+  expect(budget).toHaveTextContent('five stages')
+  expect(budget.textContent).not.toMatch(/\d[\d\s,]*PLN|PLN\s*\d/)
   for (const link of screen.getAllByRole('link', { name: 'Support the film' })) {
     expect(link).toHaveAttribute('href', 'https://pomagam.pl/9crd9m')
   }
