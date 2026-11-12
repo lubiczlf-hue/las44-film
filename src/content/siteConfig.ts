@@ -161,8 +161,9 @@ export const siteConfig: SiteConfig = {
   budget: {
     heading: 'Na co zbieramy',
     paragraphs: [
-      'Zbieramy etapami, aby przygotować i zrealizować zdjęcia do filmu. Wsparcie przeznaczymy na rozwój scenariusza i konsultacje historyczne, przygotowanie lokacji, kostiumów i rekwizytów, próby do jednego nieprzerwanego ujęcia oraz sprzęt i pracę obsady i ekipy.',
-      'Leśna sceneria, dwoje głównych bohaterów i precyzyjnie zaplanowane zdjęcia pomogą ograniczyć koszty. Postprodukcję sfinansujemy oddzielnie.',
+      'Chcemy zebrać 400 000 zł na przygotowanie i realizację zdjęć do pełnometrażowego filmu wojennego. Wierzymy, że możemy zmieścić się w tym budżecie dzięki przemyślanej formie filmu. Przy odpowiednio długich próbach i precyzyjnym planowaniu jedno nieprzerwane ujęcie może ograniczyć liczbę dni zdjęciowych. Akcja rozgrywa się głównie w lesie, bez budowy kosztownej scenografii, i skupia się na dwóch głównych bohaterach. W wybranych scenach efekty cyfrowe i narzędzia AI mogą ograniczyć wydatki na broń filmową, wybuchy i pirotechnikę.',
+      'Zbiórkę prowadzimy w pięciu etapach. Na etapie developmentu dopracujemy scenariusz, skorzystamy z konsultacji historycznych i sprawdzimy lokacje. Preprodukcja obejmie castingi, próby, kostiumy i rekwizyty. Kolejny etap zabezpieczy sprzęt filmowy i sceny batalistyczne; następny — pracę ekipy i obsługę techniczną planu. Ostatni etap obejmie obsadę, logistykę i dokończenie zdjęć.',
+      'Każdy próg oznacza łączną sumę zebraną do tego momentu. Cel obejmuje przygotowanie i realizację zdjęć; postprodukcja będzie finansowana oddzielnie. Każda wpłata przybliża nas do filmu, który ocali tę historię od zapomnienia.',
     ],
   },
   creators: [

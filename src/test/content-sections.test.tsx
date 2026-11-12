@@ -121,18 +121,21 @@ it('shows the supplied FAQ answers without placeholders', () => {
   expect(answer).not.toHaveTextContent('Chcę przenieść na ekran wspomnienia mojego dziadka')
 })
 
-it('summarises the funding plan without amounts in the main section', () => {
+it('explains why the overall budget is feasible and names the five stages', () => {
   render(<App />)
 
   const section = screen.getByRole('heading', { name: 'Na co zbieramy' }).closest('section') as HTMLElement
-  expect(within(section).getByText(/Zbieramy etapami/)).toBeInTheDocument()
-  expect(section).toHaveTextContent('rozwój scenariusza')
-  expect(section).toHaveTextContent('konsultacje historyczne')
-  expect(section).toHaveTextContent('próby do jednego nieprzerwanego ujęcia')
+  expect(section).toHaveTextContent('400 000 zł')
+  expect(section).toHaveTextContent('jedno nieprzerwane ujęcie')
+  expect(section).toHaveTextContent('bez budowy kosztownej scenografii')
+  expect(section).toHaveTextContent('Zbiórkę prowadzimy w pięciu etapach')
+  expect(section).toHaveTextContent('scenariusz')
+  expect(section).toHaveTextContent('sceny batalistyczne')
+  expect(section).toHaveTextContent('obsadę, logistykę i dokończenie zdjęć')
   expect(within(section).queryByRole('list')).not.toBeInTheDocument()
   expect(section.querySelector('strong')).toBeNull()
-  expect(within(section).getByText(/Postprodukcję sfinansujemy oddzielnie/)).toBeInTheDocument()
-  expect(section.textContent).not.toMatch(/\d[\d\s]*zł/)
+  expect(section).toHaveTextContent('postprodukcja będzie finansowana oddzielnie')
+  expect(section.textContent).not.toMatch(/20 000|50 000|150 000|250 000/)
 })
 
 it('shows partner artwork without repeated captions', () => {

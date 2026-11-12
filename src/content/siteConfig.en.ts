@@ -47,8 +47,9 @@ export const englishSiteConfig: SiteConfig = {
   budget: {
     heading: 'What we are raising funds for',
     paragraphs: [
-      'We are raising funds in five stages to prepare and shoot the film. Contributions will support screenplay development and historical research, locations, costumes and props, rehearsals for the continuous shot, equipment, and the work of the cast and crew.',
-      'The forest setting, two central characters and a carefully planned shoot will help keep costs down. Postproduction will be funded separately.',
+      'We aim to raise PLN 400,000 to prepare and shoot a feature-length war film. We believe we can work within this budget because of the film’s carefully planned approach. With thorough rehearsals and precise planning, a single continuous shot could reduce the number of filming days. Most of the action takes place in a forest, without building expensive sets, and focuses on two main characters. In selected scenes, digital effects and AI tools could reduce spending on prop weapons, explosions and pyrotechnics.',
+      'We are raising funds in five stages. Development will refine the screenplay, bring in historical consultants and examine locations. Preproduction will cover casting, rehearsals, costumes and props. The next stage will secure film equipment and battle scenes; the following one will support the crew and technical work on set. The final stage will cover the cast, logistics and completion of filming.',
+      'Each threshold is a cumulative fundraising total. The goal covers preparation and filming; postproduction will be funded separately. Every contribution brings us closer to a film that will save this story from being forgotten.',
     ],
   },
   creators: [

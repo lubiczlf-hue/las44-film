@@ -136,9 +136,10 @@ describe('primary visitor flow', () => {
     expect(funding).toHaveTextContent('Podane kwoty oznaczają łączne progi zbiórki')
     expect(funding).toHaveTextContent('Postprodukcja będzie finansowana oddzielnie')
     const budget = document.querySelector('.budget') as HTMLElement
-    expect(budget).toHaveTextContent('Zbieramy etapami')
-    expect(budget).toHaveTextContent('Postprodukcję sfinansujemy oddzielnie')
-    expect(budget.textContent).not.toMatch(/\d[\d\s]*zł/)
+    expect(budget).toHaveTextContent('400 000 zł')
+    expect(budget).toHaveTextContent('Zbiórkę prowadzimy w pięciu etapach')
+    expect(budget).toHaveTextContent('postprodukcja będzie finansowana oddzielnie')
+    expect(budget.textContent).not.toMatch(/20 000|50 000|150 000|250 000/)
     expect(faq).toHaveTextContent('Termin premiery zależy od zebrania środków')
     expect(faq).toHaveTextContent('żeby „LAS 44” trafił do kin')
     expect(faq).toHaveTextContent('podniesiemy cel zbiórki')
