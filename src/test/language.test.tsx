@@ -9,6 +9,7 @@ it('renders a fully English page with a direct link back to Polish', () => {
   expect(screen.getByRole('link', { name: 'Switch to Polish' })).toHaveAttribute('href', '/')
   expect(screen.getByRole('heading', { name: 'The true story' })).toBeInTheDocument()
   expect(screen.getByRole('heading', { name: 'Frequently asked questions' })).toBeInTheDocument()
+  expect(screen.getByText('Stage 1 of fundraising — development')).toBeInTheDocument()
   const answer = screen.getByText('Why are you making this film?').closest('details') as HTMLElement
   expect(answer.querySelectorAll('p')).toHaveLength(7)
   expect(answer).toHaveTextContent('LAS 44 grew out of my grandfather’s memories')
