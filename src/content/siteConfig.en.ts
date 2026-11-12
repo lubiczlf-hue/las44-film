@@ -63,7 +63,7 @@ export const englishSiteConfig: SiteConfig = {
     {
       ...siteConfig.creators[1],
       role: 'Producer',
-      bio: ['Co-founder of the production company Space Films. He makes films with a message, including stories about Polish history and patriotism.'],
+      bio: ['Involved in the making of LAS 44 from the start. He is responsible for organising and coordinating the production, supporting the project’s development from its earliest stages.'],
     },
     {
       ...siteConfig.creators[2],
@@ -115,13 +115,9 @@ export const englishSiteConfig: SiteConfig = {
       status: 'pending-content',
       title: 'Why are you making this film?',
       answer: [
-        'LAS 44 grew out of my grandfather’s memories. He was a soldier of the Polish Home Army and fought in the Battle of Pecynka. He was only eighteen at the time. Like many of his peers, instead of entering adulthood in peace, he had to face war, hunger and the daily fear for his life.',
-        'For me, this story began with family conversations and his written recollections. Over time, I came to understand that my grandfather’s story is part of a much larger one: the story of young people who fought for a free Poland, knowing how much they stood to lose.',
-        'We want to make this film as a tribute to all of them. We want to show their courage, but also what was most human in their experience: friendship, longing for loved ones, fear and the hope of surviving another day. We want audiences to see them as people whose choices and sacrifices kept the hope of freedom alive.',
-        'The Battle of Pecynka was one of the largest partisan battles of the German occupation, yet many people in Poland have never heard of it. We believe a film can bring these events back into public memory and reach younger audiences through the stories of people barely older than they are.',
-        'The generation that remembers the war is passing away. With them go the voices of people who could tell us about it in their own words. That is why it matters so much to us to preserve their memories and pass them on.',
-        'We have already made a proof of concept that shows the atmosphere and direction of our work. Now we want to develop the screenplay, prepare the production and shoot the film itself. To do that, we need your support.',
-        'Every contribution brings us closer to making a film that honours those who fought at Pecynka and helps future generations learn their story.',
+        'The Battle of Pecynka was one of the bloodiest partisan battles in the region, yet its story remains largely unknown. We want to preserve the memory of the young people who fought and gave their lives for a free Poland.',
+        'We believe films like this are especially needed today. They remind us of courage, sacrifice, responsibility and values that should be passed on to future generations. People who show extraordinary courage even today demonstrate how important those values remain.',
+        'We want to make Poland’s first feature-length war film told in one continuous shot, without a single cut. It is an ambitious artistic and technical undertaking, but above all a story that deserves to be told.',
       ].join('\n\n'),
     },
     {

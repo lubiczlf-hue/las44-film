@@ -179,7 +179,7 @@ export const siteConfig: SiteConfig = {
       name: 'Krystian Parol',
       role: 'Producent',
       bio: [
-        'Współzałożyciel firmy producenckiej Space Films. Tworzy filmy z przesłaniem, w tym opowieści o polskiej historii i patriotyzmie.',
+        'Od początku zaangażowany w powstanie „Las ’44”. Odpowiada za organizację i koordynację produkcji, wspierając rozwój projektu od pierwszych etapów jego realizacji.',
       ],
       image: '/media/krystian-parol.jpg',
     },
@@ -247,13 +247,9 @@ export const siteConfig: SiteConfig = {
       status: 'pending-content',
       title: 'Dlaczego powstaje ten film?',
       answer: [
-        '„Las ’44” wyrasta ze wspomnień mojego dziadka — żołnierza Armii Krajowej, uczestnika bitwy pod Pecynką. Miał wtedy zaledwie osiemnaście lat. Tak jak wielu jego rówieśników, zamiast spokojnie wchodzić w dorosłość, musiał zmierzyć się z wojną, głodem i codziennym strachem o życie.',
-        'Dla mnie ta historia zaczęła się od rodzinnych rozmów i zapisanych wspomnień. Z czasem zrozumiałem, że opowieść mojego dziadka jest częścią znacznie większej historii — historii młodych ludzi, którzy stanęli do walki o wolną Polskę, choć wiedzieli, jak wiele mogą stracić.',
-        'Chcemy stworzyć film w hołdzie im wszystkim. Pokazać ich odwagę, ale też to, co w ich doświadczeniu było najbardziej ludzkie: przyjaźń, tęsknotę za bliskimi, strach i nadzieję, że uda się przeżyć kolejny dzień. Chcemy, aby widzowie zobaczyli w nich ludzi, których wybory i poświęcenie pozwoliły zachować nadzieję na wolność.',
-        'Bitwa pod Pecynką była jednym z największych starć partyzanckich podczas niemieckiej okupacji, a mimo to wielu Polaków nigdy o niej nie słyszało. Wierzymy, że film może przywrócić pamięć o tych wydarzeniach i dotrzeć także do młodych widzów — poruszyć ich historią bohaterów, którzy byli niewiele starsi od nich.',
-        'Pokolenie, które pamięta wojnę, odchodzi. Razem z nim znikają głosy ludzi, którzy mogliby opowiedzieć nam o niej własnymi słowami. Dlatego tak ważne jest dla nas, by zachować ich wspomnienia i przekazać je dalej.',
-        'Zrealizowaliśmy już materiał demonstracyjny, pokazujący klimat i kierunek naszej pracy. Teraz chcemy rozwinąć scenariusz, przygotować produkcję i zrealizować właściwe zdjęcia. Aby to było możliwe, potrzebujemy Twojego wsparcia.',
-        'Każda wpłata przybliża nas do stworzenia filmu, który odda hołd uczestnikom bitwy pod Pecynką i pomoże kolejnym pokoleniom poznać ich historię.',
+        'Bitwa pod Pecynką była jednym z najkrwawszych starć partyzanckich w regionie, a mimo to jej historia pozostaje niemal nieznana. Chcemy ocalić pamięć o młodych ludziach, którzy walczyli i oddawali życie za wolną Polskę.',
+        'Wierzymy, że takie filmy są dziś szczególnie potrzebne. Przypominają o odwadze, poświęceniu, odpowiedzialności i wartościach, które powinny być przekazywane kolejnym pokoleniom. Postawy ludzi, którzy również dzisiaj potrafią wykazać się niezwykłą odwagą, pokazują, jak ważne są te wartości.',
+        'Chcemy stworzyć pierwszy w Polsce pełnometrażowy film wojenny zrealizowany w jednym nieprzerwanym ujęciu, bez ani jednego cięcia. To ambitne przedsięwzięcie artystyczne i techniczne, ale przede wszystkim historia, która zasługuje na opowiedzenie.',
       ].join('\n\n'),
     },
     {

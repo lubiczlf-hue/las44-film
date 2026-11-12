@@ -114,9 +114,10 @@ it('shows the supplied FAQ answers without placeholders', () => {
 
   expect(screen.queryByText('Szczegóły podamy wkrótce')).not.toBeInTheDocument()
   const answer = screen.getByText('Dlaczego powstaje ten film?').closest('details') as HTMLElement
-  expect(answer.querySelectorAll('p')).toHaveLength(7)
-  expect(answer).toHaveTextContent('„Las ’44” wyrasta ze wspomnień mojego dziadka')
-  expect(answer).toHaveTextContent('Każda wpłata przybliża nas do stworzenia filmu')
+  expect(answer.querySelectorAll('p')).toHaveLength(3)
+  expect(answer).toHaveTextContent('Bitwa pod Pecynką była jednym z najkrwawszych starć partyzanckich w regionie')
+  expect(answer).toHaveTextContent('Wierzymy, że takie filmy są dziś szczególnie potrzebne')
+  expect(answer).toHaveTextContent('bez ani jednego cięcia')
   expect(answer).not.toHaveTextContent('Chcę przenieść na ekran wspomnienia mojego dziadka')
 })
 
@@ -172,6 +173,10 @@ it('shows the six film creators in order with portraits beside their bios', () =
   const portraits = within(section).getAllByRole('img')
   expect(portraits).toHaveLength(6)
   portraits.forEach((portrait) => expect(portrait.closest('.creator__person')).not.toBeNull())
+
+  const krystian = within(section).getByRole('heading', { name: 'Krystian Parol' }).closest('.creator__person') as HTMLElement
+  expect(krystian).toHaveTextContent('Od początku zaangażowany w powstanie „Las ’44”')
+  expect(krystian).toHaveTextContent('Odpowiada za organizację i koordynację produkcji')
 
   const mikolaj = within(section).getByRole('heading', { name: 'Mikołaj Paciorek' }).closest('.creator__person') as HTMLElement
   expect(mikolaj).toHaveTextContent('Konsultant historyczny · GRH Zryw')

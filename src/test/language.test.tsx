@@ -11,8 +11,8 @@ it('renders a fully English page with a direct link back to Polish', () => {
   expect(screen.getByRole('heading', { name: 'Frequently asked questions' })).toBeInTheDocument()
   expect(screen.getByText('Stage 1 of fundraising — development')).toBeInTheDocument()
   const answer = screen.getByText('Why are you making this film?').closest('details') as HTMLElement
-  expect(answer.querySelectorAll('p')).toHaveLength(7)
-  expect(answer).toHaveTextContent('LAS 44 grew out of my grandfather’s memories')
+  expect(answer.querySelectorAll('p')).toHaveLength(3)
+  expect(answer).toHaveTextContent('The Battle of Pecynka was one of the bloodiest partisan battles in the region')
   const funding = screen.getByText('What will the money pay for?').closest('details') as HTMLElement
   expect(funding).toHaveTextContent('Our goal is PLN 400,000. We are raising it in stages!')
   expect(funding.querySelectorAll('.faq__funding-stage')).toHaveLength(5)

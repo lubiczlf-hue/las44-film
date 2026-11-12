@@ -127,7 +127,7 @@ describe('primary visitor flow', () => {
     render(<App />)
     const faq = document.getElementById('faq') as HTMLElement
     expect(faq.querySelectorAll('details')).toHaveLength(7)
-    expect(faq).toHaveTextContent('„Las ’44” wyrasta ze wspomnień mojego dziadka')
+    expect(faq).toHaveTextContent('Chcemy ocalić pamięć o młodych ludziach')
     const funding = screen.getByText('Na co zostaną przeznaczone pieniądze?').closest('details') as HTMLElement
     expect(funding).toHaveTextContent('Nasz cel – 400 000 zł. Zbieramy etapami!')
     expect(funding.querySelectorAll('.faq__funding-stage')).toHaveLength(5)
