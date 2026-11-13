@@ -9,7 +9,7 @@ it('renders a fully English page with a direct link back to Polish', () => {
   expect(screen.getByRole('link', { name: 'Switch to Polish' })).toHaveAttribute('href', '/')
   expect(screen.getByRole('heading', { name: 'The true story' })).toBeInTheDocument()
   expect(screen.getByRole('heading', { name: 'Frequently asked questions' })).toBeInTheDocument()
-  expect(screen.getByText('Stage 1 of fundraising — development')).toBeInTheDocument()
+  expect(screen.getByText('Stage 1 of fundraising — development · Overall goal: PLN 400,000')).toBeInTheDocument()
   const answer = screen.getByText('Why are you making this film?').closest('details') as HTMLElement
   expect(answer.querySelectorAll('p')).toHaveLength(3)
   expect(answer).toHaveTextContent('The Battle of Pecynka was one of the bloodiest partisan battles in the region')

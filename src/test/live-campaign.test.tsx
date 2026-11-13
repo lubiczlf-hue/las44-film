@@ -23,7 +23,7 @@ it('embeds Pomagam and routes support calls to the fundraiser when URLs are conf
   )
 
   const campaign = within(screen.getByRole('region', { name: 'Pomóż nam opowiedzieć tę historię' }))
-  expect(campaign.getByText('Etap 1 zbiórki — development')).toBeInTheDocument()
+  expect(campaign.getByText('Etap 1 zbiórki — development · Docelowo zbieramy 400 000 zł')).toBeInTheDocument()
   expect(campaign.queryByRole('img', { name: 'Pomagam.pl' })).not.toBeInTheDocument()
   expect(campaign.getByRole('link', { name: 'Wesprzyj film' })).toHaveAttribute('href', 'https://pomagam.pl/las44')
 
