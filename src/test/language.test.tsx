@@ -9,6 +9,9 @@ it('renders a fully English page with a direct link back to Polish', () => {
   expect(screen.getByRole('link', { name: 'Switch to Polish' })).toHaveAttribute('href', '/')
   expect(screen.getByRole('heading', { name: 'The true story' })).toBeInTheDocument()
   expect(screen.getByRole('heading', { name: 'Frequently asked questions' })).toBeInTheDocument()
+  expect(document.querySelector('.hero__headline')).toHaveTextContent(
+    'The Battle of Pecynka — the first war film of its kind in Poland, told in one continuous shot.',
+  )
   expect(screen.getByText('Stage 1 of fundraising — development · Overall goal: PLN 400,000')).toBeInTheDocument()
   const answer = screen.getByText('Why are you making this film?').closest('details') as HTMLElement
   expect(answer.querySelectorAll('p')).toHaveLength(3)

@@ -12,7 +12,7 @@ export const englishSiteConfig: SiteConfig = {
   hero: {
     ...siteConfig.hero,
     eyebrow: 'A feature film inspired by true events',
-    headline: 'The Battle of Pecynka — my grandfather’s story told in one continuous shot. In tribute to his memory.',
+    headline: 'The Battle of Pecynka — the first war film of its kind in Poland, told in one continuous shot.',
     description: 'During the German encirclement of Home Army soldiers in Puszcza Biała, an eighteen-year-old partisan, paralysed by moral doubt, must kill for the first time to escape and save his friend.',
   },
   story: {

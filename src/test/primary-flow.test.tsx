@@ -4,6 +4,14 @@ import { describe, expect, it } from 'vitest'
 import App from '../App'
 
 describe('primary visitor flow', () => {
+  it('shows the one-shot film description below the logo', () => {
+    render(<App />)
+
+    expect(document.querySelector('.hero__headline')).toHaveTextContent(
+      'Bitwa pod Pecynką — pierwszy taki film wojenny w Polsce, opowiedziany w jednym nieprzerwanym ujęciu.',
+    )
+  })
+
   it('uses the official film logo in the header, hero and footer', () => {
     render(<App />)
 

@@ -108,7 +108,7 @@ export const siteConfig: SiteConfig = {
   ],
   hero: {
     eyebrow: 'Film fabularny oparty na prawdziwych wydarzeniach',
-    headline: 'Bitwa pod Pecynką — historia mojego dziadka opowiedziana w jednym nieprzerwanym ujęciu. W hołdzie jego pamięci.',
+    headline: 'Bitwa pod Pecynką — pierwszy taki film wojenny w Polsce, opowiedziany w jednym nieprzerwanym ujęciu.',
     description:
       'Podczas niemieckiej obławy na żołnierzy AK w Puszczy Białej osiemnastoletni partyzant sparaliżowany moralnymi wątpliwościami musi zabić pierwszy raz, by wydostać się z oblężenia i ocalić przyjaciela.',
     image: '/media/hero-czujna-para-nowe.jpg',
