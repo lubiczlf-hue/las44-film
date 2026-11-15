@@ -109,6 +109,16 @@ it('reserves the second film for the creators and their interviews', () => {
   expect(section.querySelector('.production__images')).toBeNull()
 })
 
+it('shows the current film preview in the trailer section', () => {
+  render(<App />)
+
+  const teaser = document.getElementById('teaser') as HTMLElement
+  expect(within(teaser).getByTitle('Zapowiedź filmu LAS 44')).toHaveAttribute(
+    'src',
+    'https://www.youtube-nocookie.com/embed/Ly1mLcwyoYA',
+  )
+})
+
 it('shows the supplied FAQ answers without placeholders', () => {
   render(<App />)
 

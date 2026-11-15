@@ -121,7 +121,7 @@ export const siteConfig: SiteConfig = {
   },
   teaser: {
     provider: 'youtube',
-    source: 'https://www.youtube-nocookie.com/embed/LL-cucqRc_g',
+    source: 'https://www.youtube-nocookie.com/embed/Ly1mLcwyoYA',
     poster: '/media/teaser-poster.jpg',
   },
   story: {
