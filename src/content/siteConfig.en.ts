@@ -101,6 +101,11 @@ export const englishSiteConfig: SiteConfig = {
   ],
   partners: {
     heading: 'Patrons and sponsors',
+    distribution: {
+      ...siteConfig.partners.distribution,
+      heading: 'Cinema distribution',
+      description: 'Rafael Film has expressed preliminary interest in distributing “LAS 44” in Polish cinemas.',
+    },
     logos: siteConfig.partners.logos.map((logo, index) => ({
       ...logo,
       alt: [

@@ -148,14 +148,21 @@ it('explains the funding approach without showing an amount in the main section'
   expect(section.textContent).not.toMatch(/20 000|50 000|150 000|250 000/)
 })
 
-it('shows partner artwork without repeated captions', () => {
+it('places Rafael Film above the project partner and keeps patron logos separate', () => {
   render(<App />)
 
-  const logos = document.querySelectorAll('.partners__logo img')
+  const section = document.getElementById('patroni') as HTMLElement
+  const logos = section.querySelectorAll('.partners__logo img')
 
   expect(logos).toHaveLength(4)
-  expect(within(document.getElementById('patroni') as HTMLElement).getByText('Patronat honorowy')).toBeInTheDocument()
-  expect(screen.getByText('Grupa rekonstrukcyjna')).toBeInTheDocument()
+  expect(within(section).getByText('Patronat honorowy')).toBeInTheDocument()
+  expect(within(section).getByText('Partnerzy projektu')).toBeInTheDocument()
+  const distribution = section.querySelector('.partners__distribution') as HTMLElement
+  expect(within(distribution).getByRole('img', { name: 'Rafael Film' })).toHaveAttribute('src', '/media/rafael-film.png')
+  expect(within(distribution).getByRole('heading', { name: 'Dystrybucja kinowa' })).toBeInTheDocument()
+  expect(distribution).toHaveTextContent('Rafael Film wyraził wstępne zainteresowanie dystrybucją kinową filmu „Las ’44” w Polsce.')
+  expect(section.querySelector('.partners__logos')!.compareDocumentPosition(distribution) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  expect(distribution.compareDocumentPosition(section.querySelector('.partners__supporting')!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   expect(logos[1]).toHaveAttribute('src', '/media/patron-muzeum-wiezniow-transparent.png')
   expect(logos[2]).toHaveAttribute('src', '/media/patron-muzeum-wykletych-official-white.png')
   expect(logos[3]).toHaveAttribute('src', '/media/grh-zryw-white.png')

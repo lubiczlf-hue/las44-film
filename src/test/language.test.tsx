@@ -27,6 +27,9 @@ it('renders a fully English page with a direct link back to Polish', () => {
     expect(link).toHaveAttribute('href', 'https://pomagam.pl/9crd9m')
   }
   expect(screen.getByRole('button', { name: 'Share' })).toBeInTheDocument()
+  const partners = document.getElementById('patroni') as HTMLElement
+  expect(partners).toHaveTextContent('Rafael Film has expressed preliminary interest in distributing “LAS 44” in Polish cinemas.')
+  expect(partners).toHaveTextContent('Project partners')
   expect(screen.queryByText('Prawdziwa historia')).not.toBeInTheDocument()
 })
 

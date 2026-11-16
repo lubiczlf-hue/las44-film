@@ -418,6 +418,36 @@
   mix-blend-mode: screen;
 }
 
+.partners__distribution {
+  margin-top: clamp(2rem, 4vw, 4rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.partners__distribution img {
+  display: block;
+  width: 180px;
+  height: 68px;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 1rem;
+}
+
+.partners__distribution h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.partners__distribution p {
+  max-width: 38rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
 .partners__supporting {
   margin-top: clamp(2rem, 4vw, 4rem);
 }

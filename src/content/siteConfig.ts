@@ -73,6 +73,7 @@ export type SiteConfig = {
   partners: {
     heading: string
     logos: Array<{ src: string; alt: string; showInHero?: boolean }>
+    distribution: { logo: string; heading: string; description: string }
   }
   faq: PendingContent[]
   contact: {
@@ -223,6 +224,11 @@ export const siteConfig: SiteConfig = {
   ],
   partners: {
     heading: 'Patroni i sponsorzy',
+    distribution: {
+      logo: '/media/rafael-film.png',
+      heading: 'Dystrybucja kinowa',
+      description: 'Rafael Film wyraził wstępne zainteresowanie dystrybucją kinową filmu „Las ’44” w Polsce.',
+    },
     logos: [
       {
         src: '/media/patron-dom-pileckich.png',

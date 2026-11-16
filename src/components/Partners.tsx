@@ -18,9 +18,14 @@ export function Partners({ content }: { content: SiteConfig['partners'] }) {
             </div>
           ))}
         </div>
+        <div className="partners__distribution">
+          <img src={content.distribution.logo} alt="Rafael Film" loading="lazy" />
+          <h3>{content.distribution.heading}</h3>
+          <p>{content.distribution.description}</p>
+        </div>
         {content.logos.length > 3 && (
           <div className="partners__supporting">
-            <p className="partners__group-label">{t.historicalGroup}</p>
+            <p className="partners__group-label">{t.projectPartners}</p>
             <div className="partners__logos partners__logos--supporting">
               {content.logos.slice(3).map((logo) => (
                 <div className="partners__logo" key={logo.src}>
