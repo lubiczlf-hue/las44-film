@@ -158,8 +158,11 @@ it('places Rafael Film above the project partner and keeps patron logos separate
   expect(within(section).getByText('Patronat honorowy')).toBeInTheDocument()
   expect(within(section).getByText('Partnerzy projektu')).toBeInTheDocument()
   const distribution = section.querySelector('.partners__distribution') as HTMLElement
-  expect(within(distribution).getByRole('img', { name: 'Rafael Film' })).toHaveAttribute('src', '/media/rafael-film.png')
-  expect(within(distribution).getByRole('heading', { name: 'Dystrybucja kinowa' })).toBeInTheDocument()
+  const distributionLabel = within(distribution).getByText('Dystrybucja kinowa')
+  const rafaelLogo = within(distribution).getByRole('img', { name: 'Rafael Film' })
+  expect(rafaelLogo).toHaveAttribute('src', '/media/rafael-film.png')
+  expect(distributionLabel).toHaveClass('partners__group-label')
+  expect(distributionLabel.compareDocumentPosition(rafaelLogo) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   expect(distribution).toHaveTextContent('Rafael Film wyraził wstępne zainteresowanie dystrybucją kinową filmu „Las ’44” w Polsce.')
   expect(section.querySelector('.partners__logos')!.compareDocumentPosition(distribution) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   expect(distribution.compareDocumentPosition(section.querySelector('.partners__supporting')!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()

@@ -19,8 +19,8 @@ export function Partners({ content }: { content: SiteConfig['partners'] }) {
           ))}
         </div>
         <div className="partners__distribution">
+          <p className="partners__group-label">{content.distribution.heading}</p>
           <img src={content.distribution.logo} alt="Rafael Film" loading="lazy" />
-          <h3>{content.distribution.heading}</h3>
           <p>{content.distribution.description}</p>
         </div>
         {content.logos.length > 3 && (
