@@ -131,6 +131,15 @@ it('shows the supplied FAQ answers without placeholders', () => {
   expect(answer).not.toHaveTextContent('Chcę przenieść na ekran wspomnienia mojego dziadka')
 })
 
+it('highlights the preliminary Rafael Film cinema distribution interest in the FAQ', () => {
+  render(<App />)
+
+  const answer = screen.getByText('Gdzie będzie można go zobaczyć?').closest('details') as HTMLElement
+  expect(answer).toHaveTextContent('Chcemy, żeby „LAS 44” trafił do kin, i zrobiliśmy pierwszy krok w tym kierunku.')
+  expect(within(answer).getByText('Rafael Film wyraził wstępne zainteresowanie dystrybucją kinową filmu w Polsce.').tagName).toBe('STRONG')
+  expect(answer).not.toHaveTextContent('Przed nami jeszcze długa droga')
+})
+
 it('explains the funding approach without showing an amount in the main section', () => {
   render(<App />)
 

@@ -44,6 +44,8 @@ export function Faq({ items, contact, donations }: FaqProps) {
                 ))}
                 {item.fundingPlan.conclusion.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>
+            ) : item.answerEmphasis ? (
+              <p>{item.answer} <strong>{item.answerEmphasis}</strong></p>
             ) : (
               (item.answer || t.detailsSoon).split(/\n\s*\n/).map((paragraph, paragraphIndex) => (
                 <p key={paragraphIndex}>{paragraph.split(contact.email).map((part, index) => (

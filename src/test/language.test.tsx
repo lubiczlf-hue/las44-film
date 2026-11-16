@@ -30,6 +30,9 @@ it('renders a fully English page with a direct link back to Polish', () => {
   const partners = document.getElementById('patroni') as HTMLElement
   expect(partners).toHaveTextContent('Rafael Film has expressed preliminary interest in distributing “LAS 44” in Polish cinemas.')
   expect(partners).toHaveTextContent('Project partners')
+  const cinemaAnswer = screen.getByText('Where will I be able to watch it?').closest('details') as HTMLElement
+  expect(cinemaAnswer).toHaveTextContent('We want “LAS 44” to reach cinemas, and we have taken the first step in that direction.')
+  expect(cinemaAnswer.querySelector('strong')).toHaveTextContent('Rafael Film has expressed preliminary interest in distributing the film in Polish cinemas.')
   expect(screen.queryByText('Prawdziwa historia')).not.toBeInTheDocument()
 })
 
