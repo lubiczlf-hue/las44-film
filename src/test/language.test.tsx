@@ -8,6 +8,9 @@ it('renders a fully English page with a direct link back to Polish', () => {
 
   expect(screen.getByRole('link', { name: 'Switch to Polish' })).toHaveAttribute('href', '/')
   expect(screen.getByRole('heading', { name: 'The true story' })).toBeInTheDocument()
+  const history = document.querySelector('#prawdziwa-historia .true-story__body') as HTMLElement
+  expect(history).toHaveTextContent('About 60 Home Army soldiers died at Pecynka')
+  expect(history).toHaveTextContent('448 civilians in nearby Lipniak-Majorat')
   expect(screen.getByRole('heading', { name: 'Frequently asked questions' })).toBeInTheDocument()
   expect(document.querySelector('.hero__headline')).toHaveTextContent(
     'The Battle of Pecynka — the first war film of its kind in Poland, told in one continuous shot.',

@@ -67,6 +67,18 @@ it('places the true story title over Jerzys panoramic photo', () => {
   expect(within(visual).queryByText(/Bitwa pod Pecynką rozegrała się/)).not.toBeInTheDocument()
 })
 
+it('shows the revised Pecynka battle account and the Lipniak-Majorat massacre', () => {
+  render(<App />)
+
+  const body = document.querySelector('#prawdziwa-historia .true-story__body') as HTMLElement
+  const paragraphs = body.querySelectorAll('p')
+  expect(paragraphs).toHaveLength(4)
+  expect(paragraphs[1]).toHaveTextContent('Około 150 partyzantów pod dowództwem podporucznika Alfreda Wieczorka „Tatara”')
+  expect(paragraphs[2]).toHaveTextContent('Pod Pecynką zginęło około 60 żołnierzy AK')
+  expect(paragraphs[3]).toHaveTextContent('2 września 1944 roku, niemieccy żołnierze zamordowali w pobliskim Lipniaku-Majoracie 448 cywilów')
+  expect(body).not.toHaveTextContent('W bitwie zginęło około 150 polskich żołnierzy')
+})
+
 it('places Romeks story and its title after the true story', () => {
   render(<App />)
 
