@@ -12,15 +12,17 @@ export function Partners({ content }: { content: SiteConfig['partners'] }) {
         <div className="partners__logos">
           {content.logos.slice(0, 3).map((logo, index) => (
             <div className={`partners__logo partners__logo--${index + 1}`} key={logo.src}>
-              <div className="partners__mark">
+              <a className="partners__mark" href={logo.href} target="_blank" rel="noopener noreferrer">
                 <img src={logo.src} alt={logo.alt} loading="lazy" />
-              </div>
+              </a>
             </div>
           ))}
         </div>
         <div className="partners__distribution">
           <p className="partners__group-label">{content.distribution.heading}</p>
-          <img src={content.distribution.logo} alt="Rafael Film" loading="lazy" />
+          <a className="partners__distribution-link" href={content.distribution.href} target="_blank" rel="noopener noreferrer">
+            <img src={content.distribution.logo} alt="Rafael Film" loading="lazy" />
+          </a>
           <p>{content.distribution.description}</p>
         </div>
         {content.logos.length > 3 && (
@@ -29,9 +31,9 @@ export function Partners({ content }: { content: SiteConfig['partners'] }) {
             <div className="partners__logos partners__logos--supporting">
               {content.logos.slice(3).map((logo) => (
                 <div className="partners__logo" key={logo.src}>
-                  <div className="partners__mark">
+                  <a className="partners__mark" href={logo.href} target="_blank" rel="noopener noreferrer">
                     <img src={logo.src} alt={logo.alt} loading="lazy" />
-                  </div>
+                  </a>
                 </div>
               ))}
             </div>

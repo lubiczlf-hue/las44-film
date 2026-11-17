@@ -406,6 +406,22 @@
   justify-content: center;
 }
 
+.partners__mark,
+.partners__distribution-link {
+  transition: opacity 180ms ease;
+}
+
+.partners__mark:hover,
+.partners__distribution-link:hover {
+  opacity: 0.8;
+}
+
+.partners__mark:focus-visible,
+.partners__distribution-link:focus-visible {
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 4px;
+}
+
 .partners__mark img {
   width: auto;
   height: auto;
@@ -431,6 +447,10 @@
   object-fit: contain;
   object-position: left center;
   margin-bottom: 1rem;
+}
+
+.partners__distribution-link {
+  display: inline-block;
 }
 
 .partners__distribution p:not(.partners__group-label) {

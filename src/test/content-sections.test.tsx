@@ -198,6 +198,27 @@ it('places Rafael Film above the project partner and keeps patron logos separate
   })
 })
 
+it('opens each patron and partner website from its logo in a new tab', () => {
+  render(<App />)
+
+  const section = document.getElementById('patroni') as HTMLElement
+  const destinations = new Map([
+    ['Muzeum Dom Rodziny Pileckich', 'https://muzeumpileckich.pl/'],
+    ['Muzeum Żołnierzy Wyklętych i Więźniów Politycznych PRL', 'https://rakowiecka37.pl/'],
+    ['Muzeum Żołnierzy Wyklętych', 'https://muzeumzolnierzywykletych.pl/'],
+    ['Rafael Film', 'https://rafaelfilm.pl/'],
+    ['Grupa Rekonstrukcji Historycznej „Zryw”', 'https://www.facebook.com/profile.php?id=100068181291275'],
+  ])
+
+  for (const [name, url] of destinations) {
+    const link = within(section).getByRole('link', { name })
+    expect(link).toHaveAttribute('href', url)
+    expect(link).toHaveAttribute('target', '_blank')
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer')
+    expect(within(link).getByRole('img', { name })).toBeInTheDocument()
+  }
+})
+
 it('shows the six film creators in order with portraits beside their bios', () => {
   render(<App />)
 

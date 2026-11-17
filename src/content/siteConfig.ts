@@ -73,8 +73,8 @@ export type SiteConfig = {
   }>
   partners: {
     heading: string
-    logos: Array<{ src: string; alt: string; showInHero?: boolean }>
-    distribution: { logo: string; heading: string; description: string }
+    logos: Array<{ src: string; alt: string; href: string; showInHero?: boolean }>
+    distribution: { logo: string; href: string; heading: string; description: string }
   }
   faq: PendingContent[]
   contact: {
@@ -229,6 +229,7 @@ export const siteConfig: SiteConfig = {
     heading: 'Patroni i sponsorzy',
     distribution: {
       logo: '/media/rafael-film.png',
+      href: 'https://rafaelfilm.pl/',
       heading: 'Dystrybucja kinowa',
       description: 'Rafael Film wyraził wstępne zainteresowanie dystrybucją kinową filmu „Las ’44” w Polsce.',
     },
@@ -236,18 +237,22 @@ export const siteConfig: SiteConfig = {
       {
         src: '/media/patron-dom-pileckich.png',
         alt: 'Muzeum Dom Rodziny Pileckich',
+        href: 'https://muzeumpileckich.pl/',
       },
       {
         src: '/media/patron-muzeum-wiezniow-transparent.png',
         alt: 'Muzeum Żołnierzy Wyklętych i Więźniów Politycznych PRL',
+        href: 'https://rakowiecka37.pl/',
       },
       {
         src: '/media/patron-muzeum-wykletych-official-white.png',
         alt: 'Muzeum Żołnierzy Wyklętych',
+        href: 'https://muzeumzolnierzywykletych.pl/',
       },
       {
         src: '/media/grh-zryw-white.png',
         alt: 'Grupa Rekonstrukcji Historycznej „Zryw”',
+        href: 'https://www.facebook.com/profile.php?id=100068181291275',
         showInHero: false,
       },
     ],
