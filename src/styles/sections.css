@@ -433,6 +433,7 @@
 
 .partners__logo--3 img {
   mix-blend-mode: screen;
+  clip-path: inset(0 0 2px 0);
 }
 
 .partners__distribution {
@@ -443,8 +444,8 @@
 
 .partners__distribution img {
   display: block;
-  width: 180px;
-  height: 68px;
+  width: 144px;
+  height: 54.4px;
   object-fit: contain;
   object-position: left center;
   margin-bottom: 1rem;
@@ -476,6 +477,8 @@
 .partners__logos--supporting .partners__mark img {
   max-width: 50%;
   max-height: 50%;
+  transform: scale(0.9);
+  transform-origin: left center;
 }
 
 .pending-note {

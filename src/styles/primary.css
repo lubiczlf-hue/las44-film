@@ -229,6 +229,7 @@
 
 .hero__patron--3 img {
   mix-blend-mode: screen;
+  clip-path: inset(0 0 2px 0);
 }
 
 .patron-logo--inverted {
@@ -292,7 +293,7 @@
   font-weight: 650;
   letter-spacing: 0.02em;
   box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.22);
-  transform: scale(0.575);
+  transform: scale(0.71875);
   transform-origin: top right;
 }
 
@@ -692,6 +693,7 @@
 
   .hero__facebook {
     top: 5.25rem;
+    transform: scale(0.66125);
   }
 
   .hero__scroll {
