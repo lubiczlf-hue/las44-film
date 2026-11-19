@@ -10,10 +10,10 @@ export function Partners({ content }: { content: SiteConfig['partners'] }) {
         <h2 id="partners-title">{content.heading}</h2>
         <p className="partners__group-label">{t.honoraryPatronage}</p>
         <div className="partners__logos">
-          {content.logos.slice(0, 3).map((logo, index) => (
+          {content.logos.slice(0, 4).map((logo, index) => (
             <div className={`partners__logo partners__logo--${index + 1}`} key={logo.src}>
               <a className="partners__mark" href={logo.href} target="_blank" rel="noopener noreferrer">
-                <img src={logo.src} alt={logo.alt} loading="lazy" />
+                <img className={logo.invertOnDark ? 'patron-logo--inverted' : undefined} src={logo.src} alt={logo.alt} loading="lazy" />
               </a>
             </div>
           ))}
@@ -25,14 +25,14 @@ export function Partners({ content }: { content: SiteConfig['partners'] }) {
           </a>
           <p>{content.distribution.description}</p>
         </div>
-        {content.logos.length > 3 && (
+        {content.logos.length > 4 && (
           <div className="partners__supporting">
             <p className="partners__group-label">{t.projectPartners}</p>
             <div className="partners__logos partners__logos--supporting">
-              {content.logos.slice(3).map((logo) => (
+              {content.logos.slice(4).map((logo) => (
                 <div className="partners__logo" key={logo.src}>
                   <a className="partners__mark" href={logo.href} target="_blank" rel="noopener noreferrer">
-                    <img src={logo.src} alt={logo.alt} loading="lazy" />
+                    <img className={logo.invertOnDark ? 'patron-logo--inverted' : undefined} src={logo.src} alt={logo.alt} loading="lazy" />
                   </a>
                 </div>
               ))}

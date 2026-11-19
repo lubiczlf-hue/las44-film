@@ -73,7 +73,7 @@ export type SiteConfig = {
   }>
   partners: {
     heading: string
-    logos: Array<{ src: string; alt: string; href: string; showInHero?: boolean }>
+    logos: Array<{ src: string; alt: string; href: string; showInHero?: boolean; invertOnDark?: boolean }>
     distribution: { logo: string; href: string; heading: string; description: string }
   }
   faq: PendingContent[]
@@ -248,6 +248,12 @@ export const siteConfig: SiteConfig = {
         src: '/media/patron-muzeum-wykletych-official-white.png',
         alt: 'Muzeum Żołnierzy Wyklętych',
         href: 'https://muzeumzolnierzywykletych.pl/',
+      },
+      {
+        src: '/media/muzeum-armii-krajowej.svg',
+        alt: 'Muzeum Armii Krajowej im. gen. Emila Fieldorfa „Nila” w Krakowie',
+        href: 'https://muzeum-ak.pl/',
+        invertOnDark: true,
       },
       {
         src: '/media/grh-zryw-white.png',

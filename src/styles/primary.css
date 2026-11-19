@@ -209,7 +209,7 @@
 .hero__patrons {
   display: flex;
   align-items: center;
-  gap: clamp(0.63rem, 1.53vw, 1.17rem);
+  gap: clamp(0.35rem, 0.85vw, 0.7rem);
   margin-bottom: 1.5rem;
 }
 
@@ -229,6 +229,10 @@
 
 .hero__patron--3 img {
   mix-blend-mode: screen;
+}
+
+.patron-logo--inverted {
+  filter: invert(1);
 }
 
 .hero h1 {

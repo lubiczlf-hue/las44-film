@@ -2,7 +2,7 @@ import { useCopy } from '../content/locale'
 
 type HeroProps = {
   logo: string
-  patrons: Array<{ src: string; alt: string }>
+  patrons: Array<{ src: string; alt: string; invertOnDark?: boolean }>
   content: {
     eyebrow: string
     headline: string
@@ -28,7 +28,7 @@ export function Hero({ content, logo, patrons, supportHref, facebookUrl }: HeroP
         <div className="hero__patrons" aria-label={t.supportingInstitutions}>
           {patrons.map((patron, index) => (
             <span className={`hero__patron hero__patron--${index + 1}`} key={patron.src}>
-              <img src={patron.src} alt={patron.alt} />
+              <img className={patron.invertOnDark ? 'patron-logo--inverted' : undefined} src={patron.src} alt={patron.alt} />
             </span>
           ))}
         </div>

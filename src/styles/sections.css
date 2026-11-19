@@ -387,9 +387,10 @@
 
 .partners__logos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  max-width: 65rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: start;
-  gap: clamp(1rem, 2.2vw, 2rem);
+  gap: clamp(0.5rem, 1.4vw, 1.25rem);
   padding-top: 2rem;
   border-top: 1px solid var(--line);
 }
@@ -401,7 +402,7 @@
 
 .partners__mark {
   display: flex;
-  height: 10rem;
+  height: 8.5rem;
   align-items: center;
   justify-content: center;
 }
@@ -822,7 +823,9 @@
   }
 
   .partners__logos {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    padding-top: 1.25rem;
   }
 
   .partners__logo {
@@ -830,11 +833,21 @@
   }
 
   .partners__mark {
-    height: 10rem;
+    height: 6.5rem;
   }
 
-  .partners__logo--3 .partners__mark img {
-    max-width: 12rem;
+  .partners__mark img {
+    max-width: 90%;
+    max-height: 5.8rem;
+  }
+
+  .partners__logos--supporting {
+    grid-template-columns: 1fr;
+  }
+
+  .partners__logos--supporting .partners__mark img {
+    max-width: 11rem;
+    max-height: 4rem;
   }
 
   .footer {

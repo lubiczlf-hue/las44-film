@@ -175,7 +175,7 @@ it('places Rafael Film above the project partner and keeps patron logos separate
   const section = document.getElementById('patroni') as HTMLElement
   const logos = section.querySelectorAll('.partners__logo img')
 
-  expect(logos).toHaveLength(4)
+  expect(logos).toHaveLength(5)
   expect(within(section).getByText('Patronat honorowy')).toBeInTheDocument()
   expect(within(section).getByText('Partnerzy projektu')).toBeInTheDocument()
   const distribution = section.querySelector('.partners__distribution') as HTMLElement
@@ -189,8 +189,9 @@ it('places Rafael Film above the project partner and keeps patron logos separate
   expect(distribution.compareDocumentPosition(section.querySelector('.partners__supporting')!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   expect(logos[1]).toHaveAttribute('src', '/media/patron-muzeum-wiezniow-transparent.png')
   expect(logos[2]).toHaveAttribute('src', '/media/patron-muzeum-wykletych-official-white.png')
-  expect(logos[3]).toHaveAttribute('src', '/media/grh-zryw-white.png')
-  expect(document.querySelectorAll('.hero__patron img')).toHaveLength(3)
+  expect(logos[3]).toHaveAttribute('src', '/media/muzeum-armii-krajowej.svg')
+  expect(logos[4]).toHaveAttribute('src', '/media/grh-zryw-white.png')
+  expect(document.querySelectorAll('.hero__patron img')).toHaveLength(4)
   logos.forEach((logo) => {
     expect(logo.parentElement).toHaveClass('partners__mark')
     expect(logo.closest('.partners__logo')).not.toBeNull()
@@ -206,6 +207,7 @@ it('opens each patron and partner website from its logo in a new tab', () => {
     ['Muzeum Dom Rodziny Pileckich', 'https://muzeumpileckich.pl/'],
     ['Muzeum Żołnierzy Wyklętych i Więźniów Politycznych PRL', 'https://rakowiecka37.pl/'],
     ['Muzeum Żołnierzy Wyklętych', 'https://muzeumzolnierzywykletych.pl/'],
+    ['Muzeum Armii Krajowej im. gen. Emila Fieldorfa „Nila” w Krakowie', 'https://muzeum-ak.pl/'],
     ['Rafael Film', 'https://rafaelfilm.pl/'],
     ['Grupa Rekonstrukcji Historycznej „Zryw”', 'https://www.facebook.com/profile.php?id=100068181291275'],
   ])

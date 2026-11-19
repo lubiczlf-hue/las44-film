@@ -114,6 +114,7 @@ export const englishSiteConfig: SiteConfig = {
         'Muzeum Dom Rodziny Pileckich — Pilecki Family Home Museum',
         'Muzeum Żołnierzy Wyklętych i Więźniów Politycznych PRL — Museum of the Cursed Soldiers and Political Prisoners',
         'Muzeum Żołnierzy Wyklętych — Museum of the Cursed Soldiers',
+        'Muzeum Armii Krajowej — Home Army Museum in Kraków',
         'Grupa Rekonstrukcji Historycznej Zryw — Zryw Historical Reenactment Group',
       ][index],
     })),
